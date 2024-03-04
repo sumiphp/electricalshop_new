@@ -489,10 +489,10 @@ Product list Area
             <div class="container">
                 <div class="icon-box">
                     <h4>Product Details</h4>
-                    <!--div class="arrow-sec">
+                    <div class="arrow-sec">
                         <button data-slider-prev="#productSlider7" class="slider-arrow default"><i class="far fa-arrow-left"></i></button>
                         <button data-slider-next="#productSlider7" class="slider-arrow default"><i class="far fa-arrow-right"></i></button>
-                    </div-->
+                    </div>
                  </div>
                 <div class="swiper th-slider has-shadow" id="productSlider7" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"1"},"992":{"slidesPerView":"1"},"1200":{"slidesPerView":"1"}}}'>
                     <div class="swiper-wrapper">
@@ -682,11 +682,11 @@ Product list Area
                         </div>
 
 
-                        <!--div class="swiper-slide">
+                        <div class="swiper-slide">
                             <div class="row">
                                 <div class="col-lg-6 col-md-12">
                                     <div class="products-img-box text-center">
-                                        
+                                        <!--img src="<?php //echo base_url().'electricalshop1/assets/img/e-shop/product-details.png';?>"/-->
 
 
                                         <?php if (isset($productdetails['Images']) && ! empty($productdetails['Images'])) { ?>
@@ -716,14 +716,24 @@ Product list Area
         
                                     <div class="products-details">
                                         <h2>
-                                           
+                                            <!--img src="<?php //echo base_url().'electricalshop1/assets/img/e-shop/logo-details.png';?>"/-->
 
 
-                                           
+                                            <?php
+                                        
+                                        //print_r($productdetails['Brand']);
+                                         
+                                         
+                                         //if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
+                                             <h2>
+                                                 <!--img src="<?//=site_url()?>assets/uploads/brands/<?//=$productdetails['Brand'][0]['brand_image']?>" alt="<?//=$image['prod_name']?>" title="<?//=((isset($productdetails['Brand']) && isset($productdetails['Brand'][0]) && isset($productdetails['Brand'][0]['brand_name'])) ?  $productdetails['Brand'][0]['brand_name'] : '')?>" /-->
+                                             </h2>
+                                         <?php //} ?>
 
                                          <?php
                                         
-                                       
+                                        //print_r($productdetails['Brand']);
+                                          
                                           
                                           if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
                                               <h2>
@@ -742,7 +752,7 @@ Product list Area
 
                                         <?php
                                         
-                                      
+                                        //print_r($productdetails['Brand']);
                                         
                                         
                                         if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
@@ -812,7 +822,14 @@ Product list Area
                                                     </th>
                                                     <td class="font-weight-600">
                                                        <span class="smallText"> AED<?php echo $pnumber=$prodPoints['Price'];?></span>
-                                                 
+                                                    <!--span class="inner-select">
+                                                        <select id="currencyList" class="select-box">
+                                                            <option value="AED" selected="selected" label="AED">AED</option>
+                                                            <option value="EUR" label="EUR">EUR</option>
+                                                            <option value="JPY" label="JPY">JPY</option>
+                                                            <option value="USD" label="USD">USD</option>
+                                                            </select>
+                                                    </span--> 
                                                     </td>
     
                                                 </tr>
@@ -835,14 +852,14 @@ Product list Area
                                         
                                         <div class="button-area">
                                             <div class="btn-sec mt-30">
-                                                
+                                                <!--a href="#" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a-->
 
 
                                                 <button  class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</button>
 
 
                                                 <a href="<?php echo base_url().'bulkenquiry';?>" class="th-btn btn-sm ml-20">
-                                                     
+                                                      <!-- <img src="assets/img/btn-cart.png"/> -->
                                                     Bulk Order
                                                 </a>
                                             </div>
@@ -864,10 +881,10 @@ Product list Area
                                 </div>
                                 </div>
                             </div>
-                        </div-->
+                        </div>
 
 
-                        <!--div class="swiper-slide">
+                        <div class="swiper-slide">
                             <div class="row">
                                 <div class="col-lg-6 col-md-12">
                                     <div class="products-img-box text-center">
@@ -897,15 +914,20 @@ Product list Area
                                         <h2>
                                            
 
-                                            
-                                             <h2>
-                                                
-                                             </h2>
+                                            <?php
+                                        
+                                        //print_r($productdetails['Brand']);
                                          
+                                         
+                                         //if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
+                                             <h2>
+                                                 <!--img src="<?=site_url()?>assets/uploads/brands/<?=$productdetails['Brand'][0]['brand_image']?>" alt="<?=$image['prod_name']?>" title="<?=((isset($productdetails['Brand']) && isset($productdetails['Brand'][0]) && isset($productdetails['Brand'][0]['brand_name'])) ?  $productdetails['Brand'][0]['brand_name'] : '')?>" /-->
+                                             </h2>
+                                         <?php //} ?>
 
                                          <?php
                                         
-                                       
+                                        //print_r($productdetails['Brand']);
                                           
                                           
                                           if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
@@ -928,7 +950,8 @@ Product list Area
                                        
                                         <p>   <?php
                                         
-                                       
+                                        //print_r($productdetails['Brand']);
+                                        
                                         
                                         if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
                                     
@@ -992,7 +1015,14 @@ Product list Area
                                                     </th>
                                                     <td class="font-weight-600">
                                                        <span class="smallText"> AED<?php echo $pnumber=$prodPoints['Price'];?></span>
-                                                 
+                                                    <!--span class="inner-select">
+                                                        <select id="currencyList" class="select-box">
+                                                            <option value="AED" selected="selected" label="AED">AED</option>
+                                                            <option value="EUR" label="EUR">EUR</option>
+                                                            <option value="JPY" label="JPY">JPY</option>
+                                                            <option value="USD" label="USD">USD</option>
+                                                            </select>
+                                                    </span--> 
                                                     </td>
     
     
@@ -1016,16 +1046,16 @@ Product list Area
                                         
                                         <div class="button-area">
                                             <div class="btn-sec mt-30">
-                                               
+                                                <!--a href="#" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a-->
 
                                                 <button  class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</button>
 
 
 
 
-                                              
+                                                <!--a href="<?php //echo base_url().'bulkenquiry';?>">Bulk Order3 </a-->
                                                 <a href="<?php echo base_url().'bulkenquiry';?>" class="th-btn btn-sm ml-20">
-                                                      
+                                                      <!-- <img src="assets/img/btn-cart.png"/> -->
                                                     Bulk Order
                                                 </a>
                                             </div>
@@ -1047,10 +1077,10 @@ Product list Area
                                 </div>
                                 </div>
                             </div>
-                        </div--->
+                        </div>
 
 
-                        <!--div class="swiper-slide">
+                        <div class="swiper-slide">
                             <div class="row">
                                 <div class="col-lg-6 col-md-12">
                                     <div class="products-img-box text-center">
@@ -1080,7 +1110,7 @@ Product list Area
                                         <h2>
                                         <?php
                                         
-                                      
+                                        //print_r($productdetails['Brand']);
                                           
                                           
                                           if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
@@ -1094,7 +1124,7 @@ Product list Area
                                        
                                         <p> <?php
                                         
-                                      
+                                        //print_r($productdetails['Brand']);
                                         
                                         
                                         if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
@@ -1178,9 +1208,6 @@ Product list Area
                                              
                                         </table>
                                         </div>
-
-
-
         
                                         
                                         <div class="button-area">
@@ -1189,7 +1216,7 @@ Product list Area
                                                 <button  class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</button>
 
                                                 <a href="<?php echo base_url().'bulkenquiry';?>" class="th-btn btn-sm ml-20">
-                                                     
+                                                      <!-- <img src="assets/img/btn-cart.png"/> -->
                                                     Bulk Order
                                                 </a>
                                             </div>
@@ -1210,7 +1237,7 @@ Product list Area
                                 
                                 </div>
                                 </div>
-                            </div-->
+                            </div>
                         </div>
 
 

@@ -94,42 +94,6 @@
                             <button type="submit"><i class="far fa-search"></i></button>
                         </form>
                     </div>
-
-                    <div class="col-auto">
-                            <div class="call-menu dis-block">
-                               
-
-                                <div class="box-icon dis-inblock">
-                                    <i class="fa fa-envelope""></i>
-                                </div>
-                                <div class="media-body dis-inblock">
-                                   
-                                    <h3 class="box-title"><a href="mailto:<?=$sitedetails['email_1']?>"><?=$sitedetails['email_1']?></a></h3>
-                                </div>
-                               
-                                </div> 
-                                <div class="call-menu dis-block">
-                                <div class="box-icon dis-inblock">
-                                <i class="fa fa-phone"></i>
-                                </div>
-                                <div class="media-body dis-inblock">
-                                   
-                                <h3 class="box-title"><a href="tel:+<?=$sitedetails['phone_number_1']?>"><?=$sitedetails['phone_number_1']?></a></h3>
-                                </div>
-                           
-                        </div> 
-                        </div>
-                        <!-- <div class="col-auto">
-                            <div class="call-btn">
-                                <div class="box-icon">
-                                    <i class="fa fa-phone"></i>
-                                </div>
-                                <div class="media-body">
-                                    <p class="box-subtitle">Call Us 24/7</p>
-                                    <h3 class="box-title"><a href="tel:+<?=$sitedetails['phone_number_1']?>"><?=$sitedetails['phone_number_1']?></a></h3>
-                                </div>
-                            </div>
-                        </div> -->
                   
                    
                     <div class="col-auto">
@@ -148,7 +112,7 @@
                             </button>
 
                             <div class="dropdown-link aed-sec">
-                                <a class="" href="#" ><img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/menu-icon.png';?>" alt="menuicon" />  QAR</a>
+                                <a class="" href="#" ><img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/menu-icon.png';?>" alt="menuicon" />  AED</a>
                                
                             </div>
                          
@@ -163,14 +127,35 @@
                 <div class="container">
                     <div class="row align-items-center justify-content-between">
                        
-                        <div class="ms-auto text-right">
+                        <div class="col-auto">
                             <nav class="main-menu menu-style1 d-none d-lg-inline-block">
                             <?php include('menu.php');?>
                              
                             </nav>
                             <button type="button" class="th-menu-toggle d-block d-lg-none"><i class="far fa-bars"></i></button>
                         </div>
-                       
+                        <div class="col-auto">
+                            <div class="call-btn">
+                                <div class="box-icon">
+                                    <i class="fa fa-envelope""></i>
+                                </div>
+                                <div class="media-body">
+                                    <p class="box-subtitle">Mail Us 24/7</p>
+                                    <h3 class="box-title"><a href="mailto:<?=$sitedetails['email_1']?>"><?=$sitedetails['email_1']?></a></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="call-btn">
+                                <div class="box-icon">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div class="media-body">
+                                    <p class="box-subtitle">Call Us 24/7</p>
+                                    <h3 class="box-title"><a href="tel:+<?=$sitedetails['phone_number_1']?>"><?=$sitedetails['phone_number_1']?></a></h3>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

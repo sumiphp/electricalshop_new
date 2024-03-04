@@ -4860,63 +4860,12 @@ ol.wp-block-rss {
   padding: 0;
 }
 
-/* .main-menu ul li.Sale-box
+.main-menu ul li.Sale-box
 {
   background: #F7EA00;
   padding: 0 10px;
  
   
-} */
-
-.call-menu {
-  display: flex;
-  color: #007500;
-}
-
-.call-menu:hover
-{
-  color: #007500;
-}
-.box-title {
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 0;
-  padding-top: 6px;
-  padding-left: 5px;
-}
-
-.main-menu ul li.Sale-box a
-{
-  background: #f7ea00;
-}
-
-.dis-block
-{
-  display: block;
-}
-
-.dis-inblock
-{
-  display: inline-block;
-}
-
-.text-right
-{
-  text-align: right;
-}
-
-.box-title a 
-{
-  color: #007500 !important;
-}
-.box-title:hover
-{
-  color: #007500;
-}
-
-.menu-style1 > ul > li 
-{
-  padding: 20px 0;
 }
 
 .main-menu ul li.Sale-box a
@@ -5124,21 +5073,16 @@ ol.wp-block-rss {
 }
 
 .menu-style1 > ul > li > a {
-  padding:3px 30px;
-    color: #009e4d;
-    border-radius: 15px;
-    background: #fff;
-    text-align: center;
-  
+  padding: 17px 0;
+  color: var(--white-color);
 }
 
 .menu-style1 > ul > li > a:hover {
   color: var(--theme-color2);
-  color: #009e4d !important;
 }
 
 .menu-style1 ul li.menu-item-has-children > a:after {
-  color: #009e4d;
+  color: var(--white-color);
 }
 
 .simple-icon {
@@ -5526,7 +5470,7 @@ ol.wp-block-rss {
 /*menu area - ---------------style-start*/
 .menu-top
 {
-  background: #fff;
+  background: #009e4d;
 }
 
 .aed-sec {
@@ -5613,25 +5557,10 @@ ol.wp-block-rss {
 
 .header-search input {
   height: 46px;
-  border: 1px solid #009e4d;
-  background: #009e4d;
+  border: 1px solid var(--th-border-color);
   width: 500px;
   max-width: 100%;
   /* Large devices */
-}
-
-.header-search input .place-order
-{
-  color: #fff !important;
-}
-
-.header-search input::placeholder {
-  color: #fff;
-  opacity: 1; /* Firefox */
-}
-
-.header-search input::-ms-input-placeholder { /* Edge 12 -18 */
-  color: #fff;
 }
 
 .header-search input:focus {
@@ -5650,15 +5579,14 @@ ol.wp-block-rss {
   top: 0;
   right: 0;
   border: none;
-  background-color: #fff;
-  border: 2px solid #fff;
-  color: #009e4d;
-  width: 46px;
+  background-color: var(--theme-color);
+  color: var(--white-color);
+  width: 50px;
   height: 46px;
   line-height: 45px;
   text-align: center;
   padding: 0;
-  border-radius: 60px;
+  border-radius: 0 99px 99px 0;
 }
 
 .category-menu {
@@ -6053,8 +5981,8 @@ ul.price-sec
 }
 
 .header-layout3 .icon-btn {
-  border: 1px solid #009e4d;
-  background-color: #fff;
+  border: none;
+  background-color: var(--smoke-color2);
 }
 
 .header-layout3 .icon-btn:hover {

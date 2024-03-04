@@ -613,8 +613,11 @@ Cta Area
             <div class="row gy-4 justify-content-center">
                 <div class="col-xxl-8 col-lg-7">
                     <div class="offer-box mega-hover img-first-box" data-bg-src="<?php echo base_url().'assets/uploads/homepage/'.$homepagedetails->image1;?>" style="background-size: cover;min-height: 530px;">
+                        
                         <h2 class="box-title">
                         <?php echo $homepagedetails->label9;?>
+
+
                         </h2>
                         <h4>  <?php echo $homepagedetails->label10;?></h4>
                         <a href="#" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
@@ -625,15 +628,15 @@ Cta Area
                         <div class="col-xxl-12 col-lg-12">
                             <div class="offer-box mega-hover second-box" data-bg-src="<?php echo base_url().'assets/uploads/homepage/'.$homepagedetails->image2;?>">
                                 <span class="box-subtitle bg-theme"> <?php echo $homepagedetails->label11;?></span>
-                                <h3 class="box-title text-white"> <?php echo $homepagedetails->label12;?> <br>  <?php echo $homepagedetails->label13;?></h3>
+                                <h3 class="box-title text-white"> <?php //echo $homepagedetails->label12;?> <br>  <?php //echo $homepagedetails->label13;?></h3>
                                 <a href="#" class="th-btn style4 btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
                             </div>
                         </div>
                         <div class="col-xxl-12 col-lg-12">
                             <div class="offer-box mega-hover second-box" data-bg-src="<?php echo base_url().'assets/uploads/homepage/'.$homepagedetails->image3;?>">
-                            <span class="box-subtitle bg-theme"> <?php echo $homepagedetails->label11;?></span>
-                                <h3 class="box-title"> <?php echo $homepagedetails->label15;?> <br>  <?php echo $homepagedetails->label16;?></h3>
-                                <a href="#" class="th-btn style4 btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
+                                <span class="box-subtitle"> <?php echo $homepagedetails->label14;?></span>
+                                <h3 class="box-title"> <?php //echo $homepagedetails->label15;?> <br>  <?php //echo $homepagedetails->label16;?></h3>
+                                <a href="#" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>

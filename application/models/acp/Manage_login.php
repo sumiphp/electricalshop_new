@@ -17,6 +17,8 @@ class Manage_login extends Ifix_Model
 
     public function check_access($uname, $upass)
     {
+        //echo "hello";
+        //die;
     	if (empty($uname) || empty($upass)) {
 			return FALSE;
 		}
