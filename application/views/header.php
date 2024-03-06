@@ -148,7 +148,7 @@
                             </button>
 
                             <div class="dropdown-link aed-sec">
-                                <a class="" href="#" ><img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/menu-icon.png';?>" alt="menuicon" />  QAR</a>
+                                <a class="" href="#" ><img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/menu-icon.png';?>" alt="menuicon"  />  QAR</a>
                                
                             </div>
                          

@@ -49,7 +49,9 @@
                         <div class="widget footer-widget">
                             <div class="th-widget-about">
                                 <div class="about-logo">
-                                    <a href="<?=base_url();?>"><img src="<?=base_url().'assets/uploads/site/'.$gt->site_logo //$sitedetails['logo']?>" alt="eletrical"></a>
+                                    <!--a href="<?=base_url();?>"><img src="<?//=base_url().'assets/uploads/site/'.$gt->site_logo //$sitedetails['logo']?>" alt="eletrical"></a-->
+
+                                    <a href="<?=base_url();?>"><img src="<?=base_url().'assets/uploads/site/'.'logofooter.png' //$sitedetails['logo']?>" alt="electrical"></a>
                                 </div>
                                 <p class="about-text">
 
@@ -185,15 +187,15 @@ echo $dt->country_name;
         <div class="copyright-wrap" data-bg-src="<?php echo base_url().'electricalshop1/assets/img/bg/copyright_bg_1.png';?>" alt="copyright">
             <div class="container">
                 <div class="row gy-2 align-items-center">
-                    <div class="col-md-6">
+                    <div class="col-md-12 text-center">
                        
                         <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a href="<?php echo base_url();?>">Electrical Shop</a>. All Rights Reserved.</p>
                     </div>
-                    <div class="col-md-6 text-center text-md-end">
+                    <!--div class="col-md-6 text-center text-md-end">
                         <div class="developed-area">
-                         Created with <img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/heartbeat.png';?>" alt="heartbeat" > by <a href="https://pocketfriendlyweb.com/" target="_blank">PocketFriendlyWeb</a>
+                         Created with <img src="<?php //echo base_url().'electricalshop1/assets/img/e-shop/heartbeat.png';?>" alt="heartbeat" > by <a href="https://pocketfriendlyweb.com/" target="_blank">PocketFriendlyWeb</a>
                         </div>
-                    </div>
+                    </div-->
                 </div>
             </div>
         </div>

@@ -16,8 +16,8 @@ label.error.errpopupmsg {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Electrical Shop </title>
-    <meta name="author" content="Electrical Shop">
+    <title>AMPS Electric Trading </title>
+    <meta name="author" content="Ampsqr">
    
 
     <!-- Mobile Specific Metas -->

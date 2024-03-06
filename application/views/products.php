@@ -126,7 +126,7 @@ Hero Area
         <div class="row">
             <div class="col-lg-4 col-md-4">
                 <div class="banner-img">
-                    <img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/banner-3.png';?>"/>
+                    <img src="<?php //echo base_url().'electricalshop1/assets/img/e-shop/banner-3.png';?>"/>
                 </div>
                
             </div>
