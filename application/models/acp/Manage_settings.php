@@ -29,6 +29,7 @@ class Manage_settings extends CI_Model
                 $site['site_updated_date'] = mysql_datetime();
                 $this->db->update('site', $site, array('site_id' => $siteID));
             } else {
+                $site['shipping_amount']=90;
                 $site['site_status'] = 1;
                 $site['site_created_date'] = mysql_datetime();
                 $this->db->insert('site', $site);

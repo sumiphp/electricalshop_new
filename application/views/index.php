@@ -131,7 +131,7 @@ Hero Area
                                                     <span class="title2" data-ani="slideinup" data-ani-delay="0.3s"><?php echo $re['title3'];?> </span>
                                                 </h1>
                                                 <p class="hero-text" data-ani="slideinup" data-ani-delay="0.5s"> <?php echo $re['title4'];?></p>
-                                                <a href="#" class="th-btn style4" data-ani="slideinup" data-ani-delay="0.6s">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
+                                                <a href="<?php echo base_url().'products';?>" class="th-btn style4" data-ani="slideinup" data-ani-delay="0.6s">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -288,16 +288,48 @@ Product Area
                                             
                                             $username=$this->session->userdata('username');
                                             
-                                            if ($username==''){?>
+                                            if ($username==''){
+                                                
+                                                
+                                                if ($product['addtoquote']==1){
+
+                                                    ?>
+<a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+
+
+
+                                                <?php }else{
+                                                
+                                                
+                                                
+                                                ?>
 
 
                                                 <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
                                         
                                             
                                             
-                                            <?php } else { ?>
+                                            <?php } } else { 
+                                                
+                                                
+                                                if ($product['addtoquote']==1){            
+                                                
+                                                
+                                                ?>
+
+<a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+
+
+
+
+<?php } else { ?>
+
+
+
+
+
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
-                                            <?php } ?>
+                                            <?php } } ?>
 
 
 
@@ -387,24 +419,40 @@ Product list Area
                                             
                                             $username=$this->session->userdata('username');
                                             
-                                            if ($username==''){?>
+                                            if ($username==''){
+
+
+
+                                              
+                                                
+                                                
+                                                
+                                                ?>
+
+
+
+
+
+                                                
+                                                
+                                                
+                                             
+
+
+
                                     <a href="<?php echo base_url('home/login'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                    <?php } else { ?>
-                                        <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+                                    <?php  } else { 
+ 
+                                                ?>
 
 
-                                        <?php } ?>
+                                        <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i>mmmmmmm</a>
+
+
+                                        <?php  } ?>
                                           
 
-
-
-
-
-                                        
                                         <a href="javascript:void(0)" onclick=addwishlist(<?php echo $product['prod_id'];?>) class="icon-btn"><i class="far fa-heart"></i></a>
-
-
-
 
 
                                             <!--a href="#" class="icon-btn"><i class="far fa-cart-plus"></i></a>
@@ -450,7 +498,7 @@ Product list Area
                                             if ($username==''){?>
 
 
-                                                <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
+                                                <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart----</a>
                                         
                                             
                                             
@@ -617,7 +665,7 @@ Cta Area
                         <?php echo $homepagedetails->label9;?>
                         </h2>
                         <h4>  <?php echo $homepagedetails->label10;?></h4>
-                        <a href="#" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
+                        <a href="<?php echo base_url().'products';?>" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-xxl-4 col-lg-5">
@@ -626,14 +674,14 @@ Cta Area
                             <div class="offer-box mega-hover second-box" data-bg-src="<?php echo base_url().'assets/uploads/homepage/'.$homepagedetails->image2;?>">
                                 <span class="box-subtitle bg-theme"> <?php echo $homepagedetails->label11;?></span>
                                 <h3 class="box-title text-white"> <?php echo $homepagedetails->label12;?> <br>  <?php echo $homepagedetails->label13;?></h3>
-                                <a href="#" class="th-btn style4 btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
+                                <a href="<?php echo base_url().'products';?>" class="th-btn style4 btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
                             </div>
                         </div>
                         <div class="col-xxl-12 col-lg-12">
                             <div class="offer-box mega-hover second-box" data-bg-src="<?php echo base_url().'assets/uploads/homepage/'.$homepagedetails->image3;?>">
                             <span class="box-subtitle bg-theme"> <?php echo $homepagedetails->label11;?></span>
                                 <h3 class="box-title"> <?php echo $homepagedetails->label15;?> <br>  <?php echo $homepagedetails->label16;?></h3>
-                                <a href="#" class="th-btn style4 btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
+                                <a href="<?php echo base_url().'products';?>" class="th-btn style4 btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
@@ -761,7 +809,7 @@ Our Store Sec
                 </div>
 
                 <div class="text-center add-cart-btn mt-4">
-                    <a href="#" class="th-btn">Join Member</a>
+                    <a href="<?php echo base_url().'home/login';?>" class="th-btn">Join Member</a>
                 </div>
             </div>
         </div>

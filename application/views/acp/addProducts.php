@@ -251,8 +251,23 @@
 															</div>
 
 
+                                                            <div class="form-group row">
+                                                                    <div class="col-md-12 mb-3">
 
+                                                                    <label for="addtoquote" class="col-form-label"> Product Add To Quote</label>
+                                                                    <select class="form-control" id="addtoquote" name="addtoquote" style="height:43px;" required>
+																	<option value="">Select</option>
+																		<option value="1">Yes</option>
+                                                                        <option value="0">No</option>
+																	
+																</select>
 
+                                                                           
+                                                                    </div>
+
+                                                                   
+
+                                                                </div>
 
 
 

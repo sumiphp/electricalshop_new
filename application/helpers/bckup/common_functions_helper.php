@@ -294,6 +294,7 @@ if (!function_exists('sitedetails')) {
 		}
 
 		$sitedetails = array(
+			'shippingamount'=>$site['shippingamount'],
 			'sitename' => $CompanyName,
 			'site_shortname' => ((!empty($site) && isset($site['site_short_name']) && (trim($site['site_short_name']) != ''))? $site['site_short_name'] : $CompanyName),
 

@@ -133,9 +133,9 @@
                     </li>
 
 
-                    <li class="<?=(($main_menu_active == 'Meta tag')? 'active' : '')?>" style="<?=((!hasUserAccess(13))? 'display:none;' : '')?>">
-                        <a href="<?=site_url()?>acp/Settings/bulkupload" aria-expanded="true"><i class="fa fa-quote-right"></i><span>Bulk Upload</span></a>
-                    </li> 
+                    <!--li class="<?//=(($main_menu_active == 'Meta tag')? 'active' : '')?>" style="<?//=((!hasUserAccess(13))? 'display:none;' : '')?>">
+                        <a href="<?//=site_url()?>acp/Settings/bulkupload" aria-expanded="true"><i class="fa fa-quote-right"></i><span>Bulk Upload</span></a>
+                    </li--> 
                     
                     <li class="<?=(($main_menu_active == 'Meta tag')? 'active' : '')?>" style="<?=((!hasUserAccess(13))? 'display:none;' : '')?>">
                         <a href="<?=site_url()?>acp/Settings/bulkuploadimages" aria-expanded="true"><i class="fa fa-quote-right"></i><span>Bulk Upload Images</span></a>

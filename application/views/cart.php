@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Electrical Shop </title>
+    <title>AMPS Electric Trading </title>
     <meta name="author" content="Electrical Shop">
    
 
@@ -114,6 +114,7 @@ function updateCartItembtdown(val,rowid){
 </script>
 
 <?php $sitedetails = sitedetails(); 
+//print_r($sitedetails);
          
         
          
@@ -283,7 +284,7 @@ function updateCartItembtdown(val,rowid){
                             <tr class="shipping">
                                 <th>Shipping and Handling</th>
                                 <td data-title="Shipping and Handling">
-                                    0.00
+                                <?php echo $sitedetails['shippingamount'];?>
                                     <!--ul class="woocommerce-shipping-methods list-unstyled">
                                         <li>
                                             <input type="radio" id="free_shipping" name="shipping_method" class="shipping_method">
@@ -332,7 +333,11 @@ function updateCartItembtdown(val,rowid){
                             <tr class="order-total">
                                 <td>Order Total</td>
                                 <td data-title="Total">
-                                    <strong><span class="amount"><bdi><span>$</span><?php echo $this->cart->total().' USD'; ?></bdi></span></strong>
+                                    <strong><span class="amount"><bdi><span>$</span><?php 
+                                    $net=$this->cart->total()+$sitedetails['shippingamount'];
+                                    echo $net.' USD';
+                                    
+                                    //echo $this->cart->total().' USD'; ?></bdi></span></strong>
                                 </td>
                             </tr>
                         </tfoot>

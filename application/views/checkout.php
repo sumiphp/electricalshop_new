@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Electrical Shop </title>
+    <title>AMPS Electric Trading</title>
     <meta name="author" content="Electrical Shop">
    
 
@@ -338,7 +338,15 @@ Checkout Arae
         <td></td>
         <td></td>
         <td><strong>Cart Total</strong></td>
-        <td class="text-right"><strong><?php echo '$'.$this->cart->total().' USD'; ?></strong></td>
+        <td class="text-right"><strong>
+        <?php 
+        $net=$this->cart->total();
+        echo $net.' USD';
+        
+       
+        
+        
+        //echo '$'.$this->cart->total().' USD'; ?></strong></td>
         <td></td>
     </tr>
     <?php } ?>
@@ -350,12 +358,16 @@ Checkout Arae
                         </tr>
                         <tr class="woocommerce-shipping-totals shipping">
                             <th>Shipping</th>
-                            <td data-title="Shipping" colspan="4"> 0.00
+                            <td data-title="Shipping" colspan="4">  <?php echo $sitedetails['shippingamount'];?>
                             </td>
                         </tr>
                         <tr class="order-total">
                             <th>Total</th>
-                            <td data-title="Total" colspan="4"><strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span><?php echo $this->cart->total().' USD'; ?></bdi></span></strong>
+                            <td data-title="Total" colspan="4"><strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span><?php 
+                                    $net=$this->cart->total()+$sitedetails['shippingamount'];
+                                    echo $net.' USD';
+                                    
+                                    //echo $this->cart->total().' USD'; ?></bdi></span></strong>
                             </td>
                         </tr>
                     </tfoot>

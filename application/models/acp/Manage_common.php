@@ -9,7 +9,8 @@ class Manage_common extends Ifix_Model
 
     public function getSiteDetails()
     {
-		$getSiteDetails = $this->db->select('S.*, UNIX_TIMESTAMP(S.site_created_date) AS unix_site_created_date, UNIX_TIMESTAMP(site_updated_date) AS unix_site_updated_date')->from("{$this->table["site"]} S")->where(array('site_status' => 1))->get()->row_array();
+		$getSiteDetails = $this->db->select('S.*, UNIX_TIMESTAMP(S.site_created_date) AS unix_site_created_date, UNIX_TIMESTAMP(site_updated_date) AS unix_site_updated_date','shippingamount')->from("{$this->table["site"]} S")->where(array('site_status' => 1))->get()->row_array();
+		//print_r($getSiteDetails);
 		return $getSiteDetails;
     }
 

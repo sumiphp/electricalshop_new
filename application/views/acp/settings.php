@@ -94,6 +94,8 @@
 
                                         'site_created_date' => $settings['site_created_date'],
                                         'site_updated_date' => $settings['site_updated_date'],
+                                        'shippingamount' => $settings['shippingamount'],
+
 
                                     );
                                 } ?>
@@ -137,6 +139,18 @@
                                                                     </select>
                                                                 </div>
                                                             </div>
+
+
+                                                            <div class="form-group row">
+                                                                <div class="col-md-12 mb-3">
+                                                                    <label for="shippingamount" class="col-form-label">Shipping Amount</label>
+                                                                    <input class="form-control" type="text" id="shippingamount" name="shippingamount" placeholder="Enter Shipping Amount" value="<?=((!empty($setgDtl) && isset($setgDtl['shippingamount']))? $setgDtl['shippingamount'] : '')?>">
+                                                                </div>
+                                                            </div>
+
+
+
+
 
                                                             <?php if (!empty($setgDtl) && isset($setgDtl['site_created_date']) && (trim($setgDtl['site_created_date'] != ''))) { ?>
                                                                 <div class="form-control-feedback">Site Created On: <?=converttoUserTZ($setgDtl['site_created_date'])?></div>

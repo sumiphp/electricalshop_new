@@ -231,7 +231,10 @@ class Manage_products extends CI_Model
                 'prod_updated_date' => ((isset($prod['pid']))? mysql_datetime() : NULL),
                 'metatag' => trim($prod['metatag']),
                 'rating'=>trim($prod['rating']),
-                'prdspec'=>trim($prod['prdspec'])
+                'prdspec'=>trim($prod['prdspec']),
+                'addtoquote'=>trim($prod['addtoquote'])
+                
+                
             );
 
             if (isset($prod['pid']) && !empty($prod['pid'])) {

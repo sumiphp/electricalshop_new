@@ -51,6 +51,7 @@ class Products extends CI_Controller {
 		if (!empty($pid)) {
 			$this->data['product'] = $this->acpProducts->getProductAllDetails($pid);
 		}
+
 		$this->load->view('acp/addProducts', $this->data);
 	}
 
@@ -134,8 +135,13 @@ class Products extends CI_Controller {
 				'tech_data_sheet' => $prodTech,
 				'metatag'=>trim($prod['metatag']),
 				'rating'=>trim($prod['rating']),
-				'prdspec'=>trim($prod['prdspec'])
+				'prdspec'=>trim($prod['prdspec']),
+				'addtoquote'=>trim($prod['addtoquote'])
 			);
+
+
+			//print_r($productAdd);
+			//die;
 			
 			if (isset($prod['pid']) && !empty($prod['pid'])) {
 				// Edit product

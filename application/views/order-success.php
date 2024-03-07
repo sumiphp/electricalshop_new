@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Electrical Shop </title>
+    <title>AMPS Electric Trading </title>
     <meta name="author" content="Electrical Shop">
    
 
@@ -219,12 +219,13 @@ Checkout Arae
                         </tr>
                         <tr class="woocommerce-shipping-totals shipping">
                             <th>Shipping</th>
-                            <td data-title="Shipping" colspan="4"> 0.00
+                            <td data-title="Shipping" colspan="4">  <?php echo $sitedetails['shippingamount'];?>
                             </td>
                         </tr>
                         <tr class="order-total">
                             <th>Total</th>
-                            <td data-title="Total" colspan="4"><strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span><?php echo $order['grand_total'].' USD'; ?></bdi></span></strong>
+                            <td data-title="Total" colspan="4"><strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span><?php   $net=$order['grand_total']+$sitedetails['shippingamount'];
+                                    echo $net.' USD';//echo $order['grand_total'].' USD'; ?></bdi></span></strong>
                             </td>
                         </tr>
                     </tfoot>
@@ -237,7 +238,12 @@ Checkout Arae
                 <div class="row col-lg-12 ord-addr-info">
         <div class="hdr">Order Info</div>
         <p><b>Reference ID:</b> #<?php echo $order['id']; ?></p>
-        <p><b>Total:</b> <?php echo '$'.$order['grand_total'].' USD'; ?></p>
+        <p><b>Total:</b> <?php 
+        
+ $net=$order['grand_total']+$sitedetails['shippingamount'];
+                                    echo $net.' USD';//echo $order['grand_total'].' USD'; 
+        
+        //echo '$'.$order['grand_total'].' USD'; ?></p>
         <p><b>Placed On:</b> <?php echo $order['created']; ?></p>
         <p><b>Buyer Name:</b> <?php 
         //print_r($custIDdt);
