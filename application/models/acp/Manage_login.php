@@ -33,4 +33,17 @@ class Manage_login extends Ifix_Model
         }
     }
 
+
+
+public function forgetpasswordemail(){
+
+
+
+    
+}
+
+
+
+
+
 }

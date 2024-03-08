@@ -189,7 +189,7 @@ echo $dt->country_name;
                 <div class="row gy-2 align-items-center">
                     <div class="col-md-12 text-center">
                        
-                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a href="<?php echo base_url();?>">Electrical Shop</a>. All Rights Reserved.</p>
+                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a href="<?php echo base_url();?>">AMPS Electric Trading</a>. All Rights Reserved.</p>
                     </div>
                     <!--div class="col-md-6 text-center text-md-end">
                         <div class="developed-area">

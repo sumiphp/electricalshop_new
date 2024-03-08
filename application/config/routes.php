@@ -71,6 +71,11 @@ $route['contact-us'] = 'Home/contactUs';
 $route['clearencesale'] = 'Home/clearencesale';
 $route['bulkenquiry'] = 'Home/bulkenquiry';
 $route['login'] = 'Home/login';
+
+
+
+$route['forgetpasswordemail'] = 'Home/forgetpasswordemail';
+
 $route['acp'] = 'acp/Login';
 
 $route['acp/error'] = 'acp/Errorpages';

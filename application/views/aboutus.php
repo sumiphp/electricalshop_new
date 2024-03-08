@@ -439,7 +439,7 @@ Hero Area
             <div class="col-lg-7 col-md-7">
                 <div class="inner-banner-content">
                     <h1 class="breadcumb-title">About Us</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                    <p>Our extensive inventory includes a wide range of electrical supplies, from wiring and cables to switches, outlets, lighting fixtures, and more. We source our products from trusted manufacturers known for their durability, performance, and safety standards, ensuring that our customers receive only the best.</p>
                     <a href="#" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span> <?=$sitedetails['phone_number_1']?></a>
                 
                 </div>
@@ -461,7 +461,7 @@ Contact Info Area
                 <div class="col-xl-12 col-lg-12 text-center text-xl-start">
                     <div class="title-area">
                         <h2 class="sec-title">About Our Company !</h2>
-                        <p class="sec-text">At ELECTRICAL SHOPE, we are more than just an electrical equipment supplier; we are your partners in electrifying progress and innovation. With a deep commitment to excellence, we have curated a comprehensive catalog of electrical components to meet your commercial, residential, industrial, manufacturing, and hotel field requirements.</p>
+                        <p class="sec-text">At AMPS Electric Trading, we are more than just an electrical equipment supplier; we are your partners in electrifying progress and innovation. With a deep commitment to excellence, we have curated a comprehensive catalog of electrical components to meet your commercial, residential, industrial, manufacturing, and hotel field requirements.</p>
                         <p>Our journey began with a simple yet powerful vision: to simplify acquiring high-quality electrical and automation products while fostering a community of knowledge and expertise. This vision drives us to deliver superior quality, impeccable service, and competitive pricing to empower individuals, businesses, and industries to thrive through efficient, sustainable, and safe electrical solutions.</p>
                     </div>
                 </div>
@@ -483,7 +483,7 @@ Contact Info Area
                                         <img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/opportunity.png';?>" alt="Icon">
                                     </div>
                                     <h3 class="box-title">Our Mission</h3>
-                                    <p class="box-text">ELECTRICAL SHOPE aims to empower our customers by delivering high-quality electrical products and automation solutions that enhance their lives and businesses. We aim to achieve this by continuously innovating and providing exceptional service while adhering to the highest standards of integrity and sustainability..</p>
+                                    <p class="box-text">AMPS Electric Trading aims to empower our customers by delivering high-quality electrical products and automation solutions that enhance their lives and businesses. We aim to achieve this by continuously innovating and providing exceptional service while adhering to the highest standards of integrity and sustainability..</p>
                                 </div>
                               
                                

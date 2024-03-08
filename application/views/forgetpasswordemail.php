@@ -113,7 +113,7 @@ Product Lightbox
             </div>
             <div class="col-lg-7 col-md-7">
                 <div class="inner-banner-content">
-                    <h1 class="breadcumb-title">Login</h1>
+                    <h1 class="breadcumb-title">Forget Password</h1>
                     <p>Our extensive inventory includes a wide range of electrical supplies, from wiring and cables to switches, outlets, lighting fixtures, and more. We source our products from trusted manufacturers known for their durability, performance, and safety standards, ensuring that our customers receive only the best.</p>
                     <a href="tel:+<?=$sitedetails['phone_number_1']?>" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span><?=$sitedetails['phone_number_1']?></a>
                 
@@ -142,25 +142,17 @@ Checkout Arae
                 <div class="col-12">
                     <!--form action="#" class="woocommerce-form-login mb-20"-->
 
-                    <h6 style='color:red'><?php echo $this->session->flashdata('flash_msg');?></h6>
-					<form method="post" name="frm1" id="frm1" action="<?php echo base_url().'/home/loginprocess';?>">
+                    <h6 style='color:green'><?php echo $this->session->flashdata('flash_msg');?></h6>
+					<form method="post" name="frm1" id="frm1" action="<?php echo base_url().'/home/forgetpasswordemailprocess';?>">
                         <div class="form-group">
-                            <label for="username" >Username or email *</label>
-                            <input type="text" class="form-control" placeholder="Username or email" name="username" required>
+                            <label for="username" >Email *</label>
+                            <input type="text" class="form-control" placeholder="Email" name="usernameemail" id="usernameemail" required>
                         </div>
+                        
+                        
                         <div class="form-group">
-                            <label>Password *</label>
-                            <input type="password" class="form-control" placeholder="Password" name="password" required>
-                        </div>
-                        <div class="form-group">
-                            <div class="custom-checkbox">
-                                <input type="checkbox" id="remembermylogin">
-                                <label for="remembermylogin">Remember Me</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="th-btn">Login</button>
-                            <p class="mt-3 mb-0"><a class="text-reset" href="<?php echo base_url().'forgetpasswordemail';?>">Lost your password?</a></p>
+                            <button type="submit" class="th-btn">Reset Password</button>
+                            <p class="mt-3 mb-0"><a class="text-reset" href="<?php echo base_url().'forgetpasswordemail';?>">Lost your password? Please enter your email address. You will receive a link to create a new password via email.</a></p>
                         </div>
 
                      
@@ -282,14 +274,14 @@ $('#newsmsg').html('');
 
 $('form[id="frm1"]').validate({  
     rules: {  
-      username: 'required',  
-      password: 'required',
+        usernameemail: 'required',  
+      //password: 'required',
       
     },  
     messages: {  
 
-        username: 'Username is required',  
-      password: 'Password is required',
+        usernameemail: 'Email is required',  
+      //password: 'Password is required',
 
     },  
     submitHandler: function(form) { 

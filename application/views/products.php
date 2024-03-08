@@ -305,7 +305,7 @@ Product list Area
                 <div class="col-lg-8 col-md-8">
                     <div class="banner-center-content">
                         <h2>Capacitor Switches & Sockets</h2>
-                        <p>Electrical shope is one of the largest and reputed distributor and wholesaler of electrical, Electronics and Automation products in Dubai-UAE</p>
+                        <p>AMPS Electric Trading is one of the largest and reputed distributor and wholesaler of electrical, Electronics and Automation products in Qatar</p>
                         <h4>Special Discount</h4>
 
                         <a href="#" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>

@@ -431,7 +431,7 @@ Hero Area
             <div class="col-lg-7 col-md-7">
                 <div class="inner-banner-content">
                     <h1 class="breadcumb-title">ContactUs</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                    <p>Thank you for choosing AMPS Electric Trading for all your electrical needs. We're committed to providing exceptional service and top-quality products to our valued customers. </p>
                     <a href="tel:+<?=$sitedetails['phone_number_1']?>" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span><?=$sitedetails['phone_number_1']?></a>
                 
                 </div>
@@ -452,7 +452,7 @@ Contact Info Area
             <div class="col-xl-6 col-md-7">
                 <div class="title-area text-center">
                     <h2 class="sec-title">Contact Information</h2>
-                    <p class="sec-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                    <p class="sec-text">If you have any questions, comments, or concerns, please don't hesitate to reach out to us.</p>
                 </div>
             </div>
         </div>

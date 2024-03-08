@@ -740,6 +740,85 @@ $this->data['wishlistcount'] =0;
     }
 
 
+public function forgetpasswordemail(){
+
+
+
+$this->data['menus']=$this->frontend->get_menus();
+        
+$this->data['gt']=$this->db->get('site')->row();
+$this->data['site']= $this->frontend->sitedetails();
+$this->data['homepagedetails']= $this->frontend->homepagedetails();
+$custname=$this->session->userdata('username');
+
+
+  if($custname!=''){
+
+    $custID=$this->product->getcustdata($custname);
+
+
+   
+        //$custID=1;
+        $this->db->where('customer_id',$custID);
+        $this->db->select('*');
+        $this->db->from('wishlist');
+        $query = $this->db->get();
+        $this->data['wishlistcount'] = $query->num_rows();
+}
+else{
+$this->data['wishlistcount'] =0;
+}
+
+
+    $this->load->view('forgetpasswordemail', $this->data);
+
+
+}
+
+
+
+public function forgetpasswordemailprocess(){
+
+    $usernameemail=$this->input->post('usernameemail');
+
+//echo "kkkkk";
+//die;
+$this->db->where('user_primary_email',$usernameemail);
+$this->db->select('*');
+$this->db->from('users');
+$query1 = $this->db->get();
+$user_firstnamedt =$query1->result_array();
+$count = $query1->num_rows();
+//$count=$this->data['usercount'];
+
+echo $count;
+//die;
+echo $this->db->last_query();
+//die;
+
+print_r($user_firstnamedt);
+die;
+$name=$user_firstnamedt->user_firstname; 
+$pass=rand(10000,99999);
+if ($count==0){
+    $this->sendemailpassword($usernameemail,$pass,$name);
+    $this->session->set_flashdata('flash_msg','Wrong Email,Please enter correct email id');
+    redirect("home/forgetpasswordemail");
+ }else {
+
+    $this->sendemailpassword($usernameemail,$pass,$name);
+
+
+    $this->session->set_flashdata('flash_msg','A new password is send to your emailid');
+    redirect("home/forgetpasswordemail");
+ }
+
+
+}
+
+
+
+
 
     public function register(){
 
@@ -1311,6 +1390,72 @@ $this->load->view('bulkenquiry', $this->data);
           }
 
 
+
+          public function sendemailpassword($email,$pass,$name){
+
+            $from_email=$email;
+            $message=$msg;
+            
+            //$to_email =$toemailid;
+            //$to_email = 'sumila.c@gmail.com';
+            $config = array(
+               'protocol' => 'smtp', // 'mail', 'sendmail', or 'smtp'
+               'smtp_host' => 'smtp.gmail.com',
+               'smtp_port' => 587,
+               'smtp_user' => 'sumilaifix@gmail.com',
+               //'smtp_user' => 'crayoprojects2022@gmail.com',
+               //'smtp_pass' => 'wosmqbffmatsefdz',
+               'smtp_pass'=>'jcqa cvfq iwrc plsu',
+               'smtp_crypto' => 'tls', //can be 'ssl' or 'tls' for example
+               'mailtype' => 'html', //plaintext 'text' mails or 'html'
+               'smtp_timeout' => '4', //in seconds
+               'charset' => 'utf-8',
+               'wordwrap' => TRUE,
+               'newline' => "\r\n",
+           );
+        
+            $this->load->library('email', $config);
+        
+          $this->email->set_newline("\r\n");
+        
+          
+        
+            $this->email->from($from_email,$name);
+           
+        
+            $data = array(
+                'pass'=>$pass,
+               'name'=>$name,
+               //'subject'=>$subject,'email'=>$email,'phone'=>$phone,'message'=>$message
+        
+                 );
+        
+                 //$userEmail='sumilaifix@gmail.com';
+                 $subject='Forget Password';
+                 /*$this->db->select('*');
+                 $this->db->from('contact_us');
+                 $query = $this->db->get();
+                 $contactusdte=$query->row();
+                 $fn1=$contactusdte->toemail1;
+                 $fn2=$contactusdte->toemail2;
+                 $fn3=$contactusdte->toemail3;*/
+                 
+                 $fn1="$email";
+                 $this->email->to($fn1);
+                 //$this->email->to($fn2);
+                 //$this->email->bcc(array($fn2,$fn3));
+          $this->email->subject($subject); // replace it with relevant subject
+        
+          
+        
+             $body = $this->load->view('forgetp.php',$data,TRUE);
+            //die;
+        
+          $this->email->message($body); 
+        
+            $this->email->send();
+        
+          }
 
 
 

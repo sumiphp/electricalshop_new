@@ -110,7 +110,7 @@ label.error.errpopupmsg {
             <div class="col-lg-7 col-md-7">
                 <div class="inner-banner-content">
                     <h1 class="breadcumb-title">Order</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                    <p>Our extensive inventory includes a wide range of electrical supplies, from wiring and cables to switches, outlets, lighting fixtures, and more.</p>
                     <a href="tel:+<?=$sitedetails['phone_number_1']?>" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span><?=$sitedetails['phone_number_1']?></a>
                 
                 </div>

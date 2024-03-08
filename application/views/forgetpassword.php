@@ -114,7 +114,7 @@ Product Lightbox
             <div class="col-lg-7 col-md-7">
                 <div class="inner-banner-content">
                     <h1 class="breadcumb-title">Login</h1>
-                    <p>Our extensive inventory includes a wide range of electrical supplies, from wiring and cables to switches, outlets, lighting fixtures, and more. We source our products from trusted manufacturers known for their durability, performance, and safety standards, ensuring that our customers receive only the best.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
                     <a href="tel:+<?=$sitedetails['phone_number_1']?>" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span><?=$sitedetails['phone_number_1']?></a>
                 
                 </div>
@@ -160,7 +160,7 @@ Checkout Arae
                         </div>
                         <div class="form-group">
                             <button type="submit" class="th-btn">Login</button>
-                            <p class="mt-3 mb-0"><a class="text-reset" href="<?php echo base_url().'forgetpasswordemail';?>">Lost your password?</a></p>
+                            <p class="mt-3 mb-0"><a class="text-reset" href="#">Lost your password?</a></p>
                         </div>
 
                      
