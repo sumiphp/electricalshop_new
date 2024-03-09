@@ -410,7 +410,7 @@ Product list Area
                                     <div class="product-img">
                                      
                                         <img src="<?=site_url()?>assets/uploads/products/<?=$product['prod_primary_image']?>" alt="<?=$product['prod_name']?>" title="<?=$product['prod_name']?>"/>
-                                        <span class="product-tag">10% OFF</span>
+                                        <span class="product-tag"><?php echo $product['discountper'];?>% OFF</span>
                                         <span class="product-tag-second">Sale</span>
                                         <div class="actions">
                                             <a href="<?php echo site_url().'product/'.$product['prod_canonial_name']?>" class="icon-btn popup-content"><i class="far fa-eye"></i></a>
@@ -553,7 +553,7 @@ Product list Area
                                         <div class="product-img">
                                             <!--img src="<?php //echo base_url().'electricalshop/assets/img/e-shop/product/1.png';?>" alt="Product Image"--->
                                             <img src="<?=site_url()?>assets/uploads/products/<?=$product['prod_primary_image']?>" alt="<?=$product['prod_name']?>" title="<?=$product['prod_name']?>"/>
-                                            <span class="product-tag">10% OFF</span>
+                                            <span class="product-tag"><?php echo $product['discountper'];?>% OFF</span>
                                             <span class="product-tag-second">Sale</span>
                                             <div class="actions">
                                                 <a href="<?php echo site_url().'product/'.$product['prod_canonial_name']?>" class="icon-btn popup-content1"><i class="far fa-eye"></i></a>
@@ -715,7 +715,7 @@ Cta Area
                         <div class="product-img">
                             <!--img src="<?php //echo base_url().'electricalshop/assets/img/e-shop/product/1.png';?>" alt="Product Image"-->
                             <img src="<?=site_url()?>assets/uploads/products/<?=$product['prod_primary_image']?>" alt="<?=$product['prod_name']?>" title="<?=$product['prod_name']?>"/>
-                            <span class="product-tag">10% OFF</span>
+                            <span class="product-tag"><?php echo $product['discountper'];?>% OFF</span>
                             <span class="product-tag-second">Sale</span>
                             <div class="actions">
                                 <a href="<?php echo site_url().'product/'.$product['prod_canonial_name']?>" class="icon-btn popup-content1"><i class="far fa-eye"></i></a>

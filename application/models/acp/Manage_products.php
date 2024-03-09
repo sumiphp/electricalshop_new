@@ -232,10 +232,17 @@ class Manage_products extends CI_Model
                 'metatag' => trim($prod['metatag']),
                 'rating'=>trim($prod['rating']),
                 'prdspec'=>trim($prod['prdspec']),
-                'addtoquote'=>trim($prod['addtoquote'])
-                
+                'addtoquote'=>trim($prod['addtoquote']),
+                'discountper'=>trim($prod['discountper']),
+                'mostviewed'=>trim($prod['mostviewed'])
                 
             );
+
+           // print_r($productData);
+
+//die();
+
+            
 
             if (isset($prod['pid']) && !empty($prod['pid'])) {
                 // Update product

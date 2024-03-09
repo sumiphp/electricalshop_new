@@ -136,7 +136,9 @@ class Products extends CI_Controller {
 				'metatag'=>trim($prod['metatag']),
 				'rating'=>trim($prod['rating']),
 				'prdspec'=>trim($prod['prdspec']),
-				'addtoquote'=>trim($prod['addtoquote'])
+				'addtoquote'=>trim($prod['addtoquote']),
+				'discountper'=>trim($prod['discountper']),
+                'mostviewed'=>trim($prod['mostviewed'])
 			);
 
 

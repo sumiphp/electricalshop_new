@@ -111,6 +111,11 @@
                     <li class="<?=(($main_menu_active == 'Customers')? 'active' : '')?>" style="<?=((!hasUserAccess(13))? 'display:none;' : '')?>">
                         <a href="<?=site_url()?>acp/Settings/listcustomers" aria-expanded="true"><i class="fa fa-quote-right"></i><span>Customers</span></a>
                     </li>
+                    <li class="<?=(($main_menu_active == 'Subscribers')? 'active' : '')?>" style="<?=((!hasUserAccess(13))? 'display:none;' : '')?>">
+                        <a href="<?=site_url()?>acp/Settings/listsubscribers" aria-expanded="true"><i class="fa fa-quote-right"></i><span> 
+Subscribers</span></a>
+
+                    </li>
                     <li class="<?=(($main_menu_active == 'Customers')? 'active' : '')?>" style="<?=((!hasUserAccess(13))? 'display:none;' : '')?>">
                         <a href="<?=site_url()?>acp/Settings/listbillingdetails" aria-expanded="true"><i class="fa fa-quote-right"></i><span>Billing details</span></a>
                     </li>

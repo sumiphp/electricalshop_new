@@ -71,7 +71,7 @@ $route['contact-us'] = 'Home/contactUs';
 $route['clearencesale'] = 'Home/clearencesale';
 $route['bulkenquiry'] = 'Home/bulkenquiry';
 $route['login'] = 'Home/login';
-
+$route['register'] = 'Home/register';
 
 
 $route['forgetpasswordemail'] = 'Home/forgetpasswordemail';

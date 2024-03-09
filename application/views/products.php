@@ -186,7 +186,7 @@ Product list Area
                                 <div class="th-product product-grid">
                                     <div class="product-img">
                                         <img src="<?=site_url()?>assets/uploads/products/<?=$product['prod_primary_image']?>" alt="<?=$product['prod_name']?>" title="<?=$product['prod_name']?>">
-                                        <span class="product-tag">10% OFF</span>
+                                        <span class="product-tag"><?php echo $product['discountper'];?>% OFF</span>
                                         <span class="product-tag-second">Sale</span>
                                         <div class="actions">
                                             <a href="<?=site_url().'product/'.$product['prod_canonial_name']?>" class="icon-btn popup-content1"><i class="far fa-eye"></i></a>
@@ -419,7 +419,7 @@ Cta Area
                     <div class="th-product product-grid">
                         <div class="product-img">
                             <img  src="<?=site_url()?>assets/uploads/products/<?=$product['prod_primary_image']?>" alt="<?=$product['prod_name']?>" alt="Product Image">
-                            <span class="product-tag">10% OFF</span>
+                            <span class="product-tag"><?php echo $product['discountper'];?>% OFF</span>
                             <span class="product-tag-second">Sale</span>
                             <div class="actions">
                                 <a href="<?=site_url().'product/'.$product['prod_canonial_name']?>" class="icon-btn popup-content1"><i class="far fa-eye"></i></a>

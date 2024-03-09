@@ -75,11 +75,17 @@
                             <h3 class="widget_title">Quick Links</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="<?php echo 'about-us';?>">About Us</a></li>
-                                    <li><a href="#">Portfolio</a></li>
+                                    <li><a href="<?php echo site_url().'about-us/';?>">About Us</a></li>
+
+                                     <!--li><a href="#">Portfolio</a></li>
                                     <li><a href="#">Help & FAQs</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="<?php echo 'contact-us';?>">Contact Us</a></li>
+                                    <li><a href="#">Blog</a></li-->
+
+                                   
+                                    <li><a href="<?php echo site_url().'login';?>">Login</a></li>
+                                    <li><a href="<?php echo base_url().'register';?>">Register</a></li>
+                                    <li><a href="<?php echo base_url().'clearencesale';?>">Clearence Sale</a></li>
+                                    <li><a href="<?php echo base_url(). 'contact-us';?>">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>

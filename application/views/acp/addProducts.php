@@ -121,6 +121,14 @@
                                         $prodMain['metatag'] = $product['Product']['metatag'];
                                         $prodMain['rating'] = $product['Product']['rating'];
                                         $prodMain['prdspec'] = $product['Product']['prdspec'];
+
+
+                                        $prodMain['addtoquote'] = $product['Product']['addtoquote'];
+                                        $prodMain['discountper'] = $product['Product']['discountper'];
+                                        $prodMain['mostviewed'] = $product['Product']['mostviewed'];
+
+
+
                                     }
                                     if (isset($product['Details']) && !empty($product['Details'])) {
                                         foreach ($product['Details'] as $pdkey => $pdvalue) { 
@@ -257,8 +265,8 @@
                                                                     <label for="addtoquote" class="col-form-label"> Product Add To Quote</label>
                                                                     <select class="form-control" id="addtoquote" name="addtoquote" style="height:43px;" required>
 																	<option value="">Select</option>
-																		<option value="1">Yes</option>
-                                                                        <option value="0">No</option>
+																		<option value="1" <?php if (($prodMain['addtoquote'])==1){?> selected <?php }?>>Yes</option>
+                                                                        <option value="0" <?php if (($prodMain['addtoquote'])==0){?> selected <?php }?>>No</option>
 																	
 																</select>
 
@@ -269,6 +277,39 @@
 
                                                                 </div>
 
+
+
+
+                                                                <div class="form-group row">
+                                                                    <div class="col-md-12 mb-3">
+
+                                                                    <label for="mostviewed" class="col-form-label"> Most viewed Product</label>
+                                                                    <select class="form-control" id="mostviewed" name="mostviewed" style="height:43px;" required>
+																	<option value="">Select</option>
+																		<option value="1" <?php if (($prodMain['mostviewed'])==1){?> selected <?php }?>>Yes</option>
+                                                                        <option value="0" <?php if (($prodMain['mostviewed'])==0){?> selected <?php }?>>No</option>
+																	
+																</select>
+
+                                                                           
+                                                                    </div>
+
+                                                                   
+
+                                                                </div>
+
+                                                                <div class="form-group row">
+                                                                    <div class="col-md-12 mb-3">
+
+                                                                    <label for="discountper" class="col-form-label"> Discount %</label>
+                                                                    <input class="form-control" type="text" name="discountper" id="discountper" value="<?=((isset($prodMain['discountper']) && !empty($prodMain['discountper']))? $prodMain['discountper'] : '')?>" >
+
+                                                                           
+                                                                    </div>
+
+                                                                   
+
+                                                                </div>
 
 
                                                             <div class="form-group row" style="display:none">
