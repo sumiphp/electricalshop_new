@@ -124,7 +124,7 @@ Subscribers</span></a>
 
 
                     <li class="<?=(($main_menu_active == 'Contact Us')? 'active' : '')?>" style="<?=((!hasUserAccess(13))? 'display:none;' : '')?>">
-                        <a href="<?=site_url()?>acp/Contactus" aria-expanded="true"><i class="fa fa-quote-right"></i><span>Contact Us</span></a>
+                        <a href="<?=site_url()?>acp/Contactus" aria-expanded="true"><i class="fa fa-quote-right"></i><span>Enquries / Quote</span></a>
                     </li>
 
 

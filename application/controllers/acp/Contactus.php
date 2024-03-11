@@ -38,7 +38,7 @@ class Contactus extends CI_Controller {
 	{
 		if (!empty($qaid)) {
 			$this->data['request'] = $this->acpSupport->getContactus($qaid);
-			$this->data['page_breadcrumb'] = array("Contact Us" => array('active' => false, 'link' => site_url().'acp/Contactus'), 'Detail Page' => array('active' => true, 'link' => ''));
+			$this->data['page_breadcrumb'] = array("Bulk Enquiry/Quotes" => array('active' => false, 'link' => site_url().'acp/Contactus'), 'Detail Page' => array('active' => true, 'link' => ''));
 			
 			if (!empty($qaid)) {
 				if ($this->data['request']['cus_status'] == 1) $this->acpSupport->action($qaid, 'read');

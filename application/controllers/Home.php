@@ -1303,17 +1303,19 @@ $this->load->view('bulkenquiry', $this->data);
         $name=$this->input->post('name');
         $subject=$this->input->post('msg_subject');
         $email=$this->input->post('email');
-        $phone=$this->input->post('phone');
+        $phone=$this->input->post('phone_number');
         $message=$this->input->post('message');	
+        $producttype=$this->input->post('producttype');	
+        $brand=$this->input->post('brand');	
         $data = array(
             'cus_name' =>"$name",
             'cus_subject' =>"$subject",
             'cus_email' =>"$email",
             'cus_phone' =>"$phone",
             'cus_message' =>"$message",
-            //'packages'=>"$packages",
-            //'note'=>"$note",
-            //'businesswebsiteduration'=>"$businesswebsiteduration"
+            'brand'=>"$brand",
+            'producttype'=>"$producttype",
+          'type'=>"1"
          );
          $this->db->insert('contact_us',$data);
          //echo $this->db->last_query();

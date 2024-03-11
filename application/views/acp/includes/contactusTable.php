@@ -8,6 +8,9 @@
             <th>Subject</th>
           
             <th>Message</th>
+            <th>Brand</th>
+            <th>Product Type</th>
+            <th>Type</th>
             <th>Date</th>
             <th>Action</th>
         </tr>
@@ -26,6 +29,24 @@
                 <td><?=trim($contus['cus_subject'])?></td>
                 
                 <td><?=trim($contus['cus_message'])?></td>
+                <td><?=trim($contus['brand'])?></td>
+                <td><?=trim($contus['producttype'])?></td>
+                
+                <td><?//=trim($contus['type'])?>
+            
+            <?php if ($contus['type']==1){
+               echo "Enquries";
+
+            }?><?php if ($contus['type']==2){
+                echo "Quote";
+ 
+             }?>
+            
+            
+            </td>
+
+
+
                 <td><?php echo converttoUserTZ($contus['cus_added_date']); ?></td>
                 <td>
                     <ul class="d-flex justify-content-center">
