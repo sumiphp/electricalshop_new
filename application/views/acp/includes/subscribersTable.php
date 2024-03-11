@@ -1,28 +1,40 @@
-<table id="dealersList" class="text-center listingPage">
+<table id="customersList" class="text-center listingPage">
     <thead class="text-capitalize">
         <tr>
             <th>Sl.No:</th>
-            <th>Name</th>
-            <th>Primary Email</th>
-            <th>Primary Phone</th>
-            <th>Added date</th>
+            <!--th>Name</th-->
+           
+            <th>Email</th>
+            <!--th>Phone</th>
+            <th>Registration date</th-->
             <th class="no-sorting">Actions</th>
         </tr>
     </thead>
     <tbody>
         <?php 
         $slno = 0;
-        foreach ($subscribers as $k => $subscriberVal) {
+        //print_r($customers);
+        //die;
+        foreach ($customers as $k => $customerVal) {
             $slno++; ?>
             <tr>
                 <td><?=$slno?></td>
-                <td><?=trim($subscriberVal['cust_firstname'].' '.$subscriberVal['cust_lastname'])?> <span class="badge <?=(($subscriberVal['cust_is_dealer'] == 1)? 'badge-secondary' : 'badge-primary')?>"><?=(($subscriberVal['cust_is_dealer'] == 1)? 'Dealer' : 'Customer')?></td>
-                <td><?=$subscriberVal['cust_email']?></td>
-                <td><?=$subscriberVal['cust_phone1']?></td>
-                <td><?php echo converttoUserTZ($subscriberVal['cust_created_date']); ?></td>
+                <!--td><?//=trim($customerVal['name'])?></td-->
+                <td><?=$customerVal['subscribeemailid']?></td>
+                <!--td><?//=$customerVal['phone']?></td>
+                <td><?//=$customerVal['regdate']?></td-->
                 <td>
                     <ul class="d-flex justify-content-center">
-                        <li title="Unsubscribe" class="unsubscribe" data-action="2" data-toggle="modal" data-target="#confirm" data-custid="<?=$subscriberVal['cust_id']?>"><a href="#" class="text-danger deleteCust"><i class="ti-trash"></i></a></li>
+                        <!--li class="mr-3" data-customerid="<?=$customerVal['userid']?>"><a href="<?=site_url()?>acp/Client/view/<?//=$customerVal['userid']?>" class="text-secondary"><i class="fa fa-eye"></i></a></li>
+                        <li class="mr-3" data-customerid="<?=$customerVal['userid']?>"><a href="<?=site_url()?>acp/Client/edit/<?//=$customerVal['userid']?>" class="text-secondary"><i class="fa fa-pencil"></i></a></li-->
+                        <?php //if ($customerVal['cust_status'] == 1) { ?>
+                            <!--li title="Make unavailable" class="mr-3 lock" data-action="0" data-custid="<?//=$customerVal['userid']?>"><a href="#"><i class="fa fa-unlock text-success"></i></a></li>
+                        <?php //} else { ?>
+                            <li title="Make available" class="mr-3 unlock" data-action="1" data-custid="<?//=$customerVal['userid']?>"><a href="#"><i class="fa fa-lock text-danger"></i></a></li-->
+                        <?php //} ?>
+                        <!--li title="Remove" class="delete" data-action="2" data-toggle="modal" data-target="#confirm" data-custid="<?//=$customerVal['userid']?>"><a href="#" class="text-danger deleteCust"><i class="ti-trash"></i></a></li-->
+
+                        <li data-custid="<?=$customerVal['newsletterid']?>" data-action="delete" data-toggle="modal" data-target="#confirm" class="delete"><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
                     </ul>
                 </td>
             </tr>
@@ -38,11 +50,11 @@
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
             </div>
             <div class="modal-body">
-                <p>Are you sure you want to unsubscribe this customer/dealer from our mail?</p>
+                <p>Are you sure you want to Delete this Subscriber?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger">Unsubscribe</button>
+                <button type="button" class="btn btn-danger">Confirm</button>
             </div>
         </div>
     </div>

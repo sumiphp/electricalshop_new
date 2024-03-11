@@ -115,8 +115,8 @@ Hero Area
             </div>
             <div class="col-lg-7 col-md-7">
                 <div class="inner-banner-content">
-                    <h1 class="breadcumb-title">CIRCUIT BREAKER Best price </h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                    <h1 class="breadcumb-title">Clearence Sale</h1>
+                    <p>Get ready to light up your world with our electrifying clearance sale! From gadgets to appliances, we've got everything you need to power up your home or workspace at unbeatable prices. Don't miss out on this electrifying opportunity to grab top-quality electrical items at jaw-dropping discounts!</p>
                     <a href="#" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span> <?=$sitedetails['phone_number_1']?></a>
                 
                 </div>

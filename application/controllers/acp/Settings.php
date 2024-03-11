@@ -620,6 +620,21 @@ public function getcustomersTable()
 	}
 }
 
+
+public function getsubscribersTable()
+{
+	if ($this->input->is_ajax_request()) {
+		//$this->data['carousal'] = $this->commonModel->getcarousal();
+		$this->data['customers'] = $this->commonModel->get_subscribers();
+	$this->load->view('acp/includes/subscribersTable', $this->data);
+	}
+}
+
+
+
+
+
+
 public function listcarousal(){
 	$this->load->model('acp/Manage_common', 'commonModel');
 
@@ -652,16 +667,16 @@ $this->data['page_breadcrumb'] = array("Carousel" => array('active' => false, 'l
 
 
 //public function listcarousal1(){
-	public function listcustomers(){
+	public function listsubscribers(){
 	$this->load->model('acp/Manage_common', 'commonModel');
 
 
 	$config = array();
 //$config["base_url"] = base_url()."acp/Settings/listmenus";
-$config["base_url"] = base_url()."acp/Settings/listcustomers";
+$config["base_url"] = base_url()."acp/Settings/listsubscribers";
 //$config["total_rows"] = $this->commonModel->get_countmenu();
 //$config["total_rows"] = $this->commonModel->get_countcarousel();
-$config["total_rows"] = $this->commonModel->get_countcustomers();
+$config["total_rows"] = $this->commonModel->get_countsubscribers();
 $config["per_page"] = 10;
 $config["uri_segment"] = 3;
 $this->pagination->initialize($config);
@@ -670,16 +685,16 @@ $data["links"] = $this->pagination->create_links();
 //$data['result']=$this->commonModel->get_menuadmin($config["per_page"],$page);
 //$data['result']=$this->commonModel->get_carousel($config["per_page"],$page);
 
-$data['result']=$this->commonModel->get_customers($config["per_page"],$page);
+$data['result']=$this->commonModel->get_countsubscribers($config["per_page"],$page);
 /*$data['contactus']=$this->sm->get_contactus();
 $data['newsletter']=$this->sm->get_newsletter();
 $data['siteinf']=$this->sm->get_siteinf();*/
-$this->data['page_title'] = "List Customers";
-$this->data['page_breadcrumb'] = array("Customers" => array('active' => false, 'link' => site_url().'acp/Settings/listcarousal1'), ((empty($uid))? "List" : (($view)? "View" : "List" )) => array('active' => true, 'link' => ''));
+$this->data['page_title'] = "List Subscribers";
+$this->data['page_breadcrumb'] = array("Subscribers" => array('active' => false, 'link' => site_url().'acp/Settings/listcarousal1'), ((empty($uid))? "List" : (($view)? "View" : "List" )) => array('active' => true, 'link' => ''));
 	//$this->data['page_breadcrumb'] = array("Products" => array('active' => false, 'link' => site_url().'acp/listmenus'), "Product Brands" => array('active' => false, 'link' => site_url().'acp/Productbrands'), "List Brands" => array('active' => true, 'link' => ''));
-	$this->data['innersub_menu_active'] = "List  Customers";
+	$this->data['innersub_menu_active'] = "List  Subscriberss";
 	//$this->load->view('acp/listcarousal1', $this->data);
-$this->load->view('acp/listcustomers', $this->data);
+$this->load->view('acp/listsubscribers', $this->data);
 
 
 
@@ -840,6 +855,29 @@ public function action()
 			acp_show404();
 		}
 	}
+
+
+	public function actionsub()
+	{
+		if ($this->input->is_ajax_request()) {
+			// Fetching data from form
+			$brand = $this->input->post('brand', true);
+			$action = $this->input->post('action', true); // 2=> delete / 0=> lock / 1=> unlock
+			$resp = $this->commonModel->actionsub($brand, $action);
+			if ($resp) {
+				send_json_response(array('status' => 'success', 'title' => 'Success', 'message' => 'Customer '.(($action == 'delete')? 'deleted' : (($action == 'unlock')? 'unlocked' : 'locked')).' successfully.'));
+			} else {
+				send_json_response(array('status' => 'error', 'title' => 'Error', 'message' => 'Oops! Something has went wrong.'));
+			}
+		} else {
+			acp_show404();
+		}
+	}
+
+
+
+
+
 
 	public function actionbill()
 	{

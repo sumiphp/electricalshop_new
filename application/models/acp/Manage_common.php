@@ -142,7 +142,16 @@ public function get_customers($bid = null)
  
  }
 
-
+ public function get_subscribers($bid = null)
+ {
+ 
+	 
+	  $this->db->select('*');
+	  $this->db->from('newslettersubscribe');
+	  $query = $this->db->get();
+	  return $query->result_array();
+  
+  }
 
 
  public function get_billingdetails($bid = null)
@@ -203,6 +212,19 @@ public function get_customers($bid = null)
 	
 	
 	}
+
+
+
+	function get_countsubscribers(){
+		$this->db->select('*');
+			$this->db->from('newslettersubscribe');
+			$query = $this->db->get();
+			return $query->num_rows();
+		
+		
+		}
+
+
 	
 	public function get_carousel($limit,$start){
 		$this->db->limit($limit,$start);
@@ -331,6 +353,34 @@ $this->db->where('carouselid',$id);
 		}
         return false;
 	}
+
+
+
+
+	public function actionsub($custid = null, $action = null)
+	{
+		//$menu=37;
+		if (!empty($custid) && !empty($action)) {
+			if ($action == 'delete') { // Delete this product
+                //$this->db->update("{$this->table["brands"]}", array('brand_status' => 2), array('menuid' => $menu)));
+
+				$this->db->where('newsletterid',$custid);
+                $this->db->delete('newslettersubscribe');
+                return true;
+			} else if ($action == 'unlock') { // Make available in frontend
+				//$this->db->update("{$this->table["brands"]}", array('brand_status' => 1), array('menuid' => $menu)));
+                return true;
+			} else if ($action == 'lock') { // Make unavailable in frontend
+				//$this->db->update("{$this->table["brands"]}", array('brand_status' => 0), array('menuid' => $menu)));
+                return true;
+			}
+		}
+        return false;
+	}
+
+
+
+
 
 
 
