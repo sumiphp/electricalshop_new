@@ -83,6 +83,7 @@ class ProductBrands extends CI_Controller {
 				'brand_added_user' => $this->loggedInUser['user_id'],
 				'addinmenu'=> trim($brands['addinmenu']),
 				'brand_orderno' => trim($brands['brand_order']),
+				'brandshortdesc' => trim($brands['brand_descsht']),
 			);
 			if (isset($brands['brand_id']) && !empty($brands['brand_id'])) {
 				// Edit product brand

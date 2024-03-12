@@ -292,7 +292,7 @@ else{
             //die;
             /*$this->data['best_selling'] = $this->frontend->getProducts(null, [], [], 3, $brand, null);
             $this->data['products'] = $this->frontend->getProducts(null, [], [], null, $brand, null);*/
-
+            $this->data['branddt']=$this->frontend->branddt($brand);
 
             $config = array();
         //$config["base_url"] = base_url() . "Welcome/listcategory";
@@ -307,13 +307,6 @@ else{
         $limit=array('limit'=>"$config[per_page]",'offset'=>$page);
         $this->data['best_selling'] = $this->frontend->getProducts(null, [], [], 3, $brand, null);
         $this->data['products']=$this->frontend->getProducts(null, $limit,[], null, $brand, null);
-
-
-
-
-
-
-
 
             $this->data['getga']= $this->frontend->getga();
             $this->data['menus']=$this->frontend->get_menus();

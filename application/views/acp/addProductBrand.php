@@ -46,6 +46,8 @@
                                         'brand_image' => $productbrand['brand_image'],
                                         'addinmenu'=> $productbrand['addinmenu'],
                                         'brand_orderno' => $productbrand['brand_orderno'],
+                                        'brand_desc' => $productbrand['brand_desc'],
+                                        'brandshortdesc'=>$productbrand['brandshortdesc'],
                                     );
                                     //print_r($brd);
                                 } ?>
@@ -81,6 +83,16 @@
 
                                             </div>
                                     </div>
+
+
+                                    <div class="form-group row">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="brand_descsht" class="col-form-label">Brand Short descriptions</label>
+                                            <textarea class="form-control" rows="4" id="brand_descsht" name="brand_descsht" placeholder="Enter Brand Short description"><?=((!empty($brd) && isset($brd['brandshortdesc']))? $brd['brandshortdesc'] : '')?></textarea>
+                                        </div>
+                                    </div>
+
+
                                     <div class="form-group row">
                                         <div class="col-md-12 mb-3">
                                             <label for="brand_desc" class="col-form-label">Brand description</label>

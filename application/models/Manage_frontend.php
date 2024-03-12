@@ -667,6 +667,23 @@ $this->db->where('mostviewed',1);
 
     }
 
+    public function branddt($brand){
+
+
+
+        $this->db->where('brand_canonial_name',$brand);
+        $this->db->from('brands');
+        $query = $this->db->get();
+        return $dt=$query->row();
+
+
+
+    }
+
+
+
+
+
     public function get_user($username,$password){
 
 

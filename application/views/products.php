@@ -79,18 +79,6 @@ label.error.errpopupmsg {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 </style>
 </head>
 
@@ -132,8 +120,35 @@ Hero Area
             </div>
             <div class="col-lg-7 col-md-7">
                 <div class="inner-banner-content">
-                    <h1 class="breadcumb-title"><?php echo $catdt->cat_name;?> </h1>
-                    <p><?php echo $catdt->cat_shdesc;?></p>
+                    <h1 class="breadcumb-title"><?php 
+                    if (isset($catdt)){
+                    
+                    
+                    echo $catdt->cat_name; }?> 
+                    
+                    <?php 
+                    if (isset($branddt)){
+                    
+                    
+                    echo $branddt->brand_name; }?> 
+                
+                
+                </h1>
+                    <p><?php 
+                    if (isset($catdt)){
+                    
+                    
+                    echo $catdt->cat_shdesc; }?>
+                    
+                    <?php 
+                    if (isset($branddt)){
+                    
+                    
+                    echo $branddt->brandshortdesc; }?> 
+                
+                
+                
+                </p>
                     <a href="#" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span> <?=$sitedetails['phone_number_1']?></a>
                 
                 </div>
@@ -315,8 +330,45 @@ Product list Area
                 </div>
                 <div class="col-lg-8 col-md-8">
                     <div class="banner-center-content">
-                        <h2><?php echo $catdt->cat_name;?></h2>
-                        <p><?php echo $catdt->cat_shdesc;?></p>
+                    <h2>
+                    <?php 
+                    if (isset($catdt)){
+                    
+                    
+                    echo $catdt->cat_name; }?> 
+                    
+                
+                    <?php 
+                    if (isset($branddt)){
+                    
+                    
+                    echo $branddt->brand_name; }?> 
+                
+                
+                
+                </h2>
+                    <p><?php 
+                    if (isset($catdt)){
+                    
+                    
+                    echo $catdt->cat_shdesc; }?> 
+                    
+                
+                    <?php 
+                    if (isset($branddt)){
+                    
+                    
+                    echo $branddt->brandshortdesc; }?> 
+                
+                
+                
+                
+                
+                </p>
+
+
+
+                      
                         <h4>Special Discount</h4>
 
                         <a href="#" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>

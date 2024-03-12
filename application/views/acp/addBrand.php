@@ -58,12 +58,17 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-12 mb-3">
+                                            <label for="brand_descsht" class="col-form-label">Brand Short descriptions</label>
+                                            <textarea class="form-control" rows="4" id="brand_descsht" name="brand_descsht" placeholder="Enter Brand Short description"><?=((!empty($brd) && isset($brd['brand_descsht']))? $brd['brand_descsht'] : '')?></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-md-12 mb-3">
                                             <label for="brand_desc" class="col-form-label">Brand descriptions</label>
                                             <textarea class="form-control" rows="8" id="brand_desc" name="brand_desc" placeholder="Enter Brand description"><?=((!empty($brd) && isset($brd['brand_desc']))? $brd['brand_desc'] : '')?></textarea>
                                         </div>
                                     </div>
-
-
 
                                   
 
