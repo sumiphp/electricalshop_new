@@ -39,6 +39,11 @@ class Home extends CI_Controller {
 	{
         $this->data['page_title'] = "Home";
         $this->data['best_selling'] = $this->frontend->getProducts(null, [], [], 3);
+
+//print_r($this->data['best_selling']);
+//die;
+
+
         $this->data['latest_products'] = $this->frontend->getProducts(null, [], [], 2);
         $this->data['featured_products'] = $this->frontend->getProducts(null, [], [], 1);
         //print_r($this->data['featured_products']);
@@ -75,11 +80,7 @@ else{
     $this->data['wishlistcount'] =0;
 }
         
-        
-       
-
-
-
+   
 		$this->load->view('index', $this->data);
 	}
 
@@ -357,7 +358,9 @@ else{
         } else {
             $this->data['brands'] = $this->frontend->getBrands();
             $this->data['categories'] = $this->categories;
-
+            $this->data['catdt']=$this->frontend->catdt($category);
+           // print_r($this->data['categories']);
+//die;
 
             $config = array();
 

@@ -557,7 +557,8 @@ echo $dt->country_name;
     
                 <div class="col-lg-6 col-md-6">
                     <div class="contact-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.9694612837607!2d55.3081646750693!3d25.271612728683053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43d4dc0c74f7%3A0x7e50984d4dc47dba!2sSchneider%20electric%20supplier!5e0!3m2!1sen!2sin!4v1705383017858!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                        <!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.9694612837607!2d55.3081646750693!3d25.271612728683053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43d4dc0c74f7%3A0x7e50984d4dc47dba!2sSchneider%20electric%20supplier!5e0!3m2!1sen!2sin!4v1705383017858!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe-->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28879.72789907399!2d51.58133435!3d25.2043695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45cebdfbd5c125%3A0x388db881b4786d9c!2sBarwa%20Village%2C%20Doha%2C%20Qatar!5e0!3m2!1sen!2sin!4v1710224331590!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
     
                     </div>

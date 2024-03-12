@@ -171,7 +171,7 @@ Product list Area
                                 <div class="th-product product-grid">
                                     <div class="product-img">
                                         <img src="<?=site_url()?>assets/uploads/products/<?=$product['prod_primary_image']?>" alt="<?=$product['prod_name']?>" title="<?=$product['prod_name']?>">
-                                        <span class="product-tag">10% OFF</span>
+                                        <span class="product-tag"><?php echo $product['discountper'];?> OFF</span>
                                         <span class="product-tag-second">Sale</span>
                                         <div class="actions">
                                             <a href="<?=site_url().'product/'.$product['prod_canonial_name']?>" class="icon-btn popup-content1"><i class="far fa-eye"></i></a>
@@ -186,7 +186,9 @@ Product list Area
                                         
                                             
                                             
-                                            <?php } else { ?>
+                                            <?php } else {
+                                                
+                                                ?>
                                             
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
                                             <?php } ?>
@@ -238,8 +240,17 @@ Product list Area
                                             
                                             
                                             <?php } else { ?>
-                                            <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
-                                            <?php } ?>
+
+<?php if ($product['addtoquote']==1){?> 
+
+    <a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote---</a>
+
+
+<?php } else { ?>
+
+
+                                            <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart---</a>
+                                            <?php } } ?>
 
                                         </div>
                                        
@@ -400,7 +411,7 @@ Cta Area
                     <div class="th-product product-grid">
                         <div class="product-img">
                             <img  src="<?=site_url()?>assets/uploads/products/<?=$product['prod_primary_image']?>" alt="<?=$product['prod_name']?>" alt="Product Image">
-                            <span class="product-tag">10% OFF</span>
+                            <span class="product-tag"><?php echo $product['discountper'];?> OFF</span>
                             <span class="product-tag-second">Sale</span>
                             <div class="actions">
                                 <a href="<?=site_url().'product/'.$product['prod_canonial_name']?>" class="icon-btn popup-content1"><i class="far fa-eye"></i></a>
@@ -468,8 +479,22 @@ Cta Area
                                             
                                             
                                             <?php } else { ?>
-                                            <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
-                                            <?php } ?>
+
+
+                                                <?php if ($product['addtoquote']==1){?> 
+
+<a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote---</a>
+
+
+<?php } else { ?>
+
+
+
+
+
+
+                                            <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart----</a>
+                                            <?php } } ?>
 
                             </div>
                         </div>

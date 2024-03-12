@@ -46,7 +46,9 @@
                                         'cat_image' => $productcategory['cat_image'],
                                         'cat_orderno' => $productcategory['cat_orderno'],
                                         'addinmenu'=> $productcategory['addinmenu'],
+                                        'cat_shdesc' => $productcategory['cat_shdesc'],
                                     );
+                                   // print_r($catg);
                                 } ?>
                                 <form id="manageCatg">
                                     <div class="form-group row">
@@ -58,6 +60,19 @@
                                             <span>After saving URL to this category will be: <?=site_url()?>products/category/<strong id="show_canonial_name"><?=((!empty($catg) && isset($catg['cat_canonial_name']))? $catg['cat_canonial_name'] : '')?></strong></span>
                                         </div>
                                     </div>
+
+
+
+                                    <div class="form-group row">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="cat_desc" class="col-form-label">Category short description</label>
+                                            <textarea class="form-control" rows="4" id="cat_shdesc" name="cat_shdesc" placeholder="Enter Category Short description" maxlength=150 ><?=((!empty($catg) && isset($catg['cat_shdesc']))? $catg['cat_shdesc'] : '')?></textarea>
+                                        </div>
+                                    </div>
+
+
+
+
                                     <div class="form-group row">
                                         <div class="col-md-12 mb-3">
                                             <label for="cat_desc" class="col-form-label">Category description</label>

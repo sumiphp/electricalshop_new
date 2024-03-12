@@ -737,25 +737,7 @@ $this->load->view('acp/listbillingdetails', $this->data);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public function listcustomers_old(){
+public function listcustomers(){
 	$this->load->model('acp/Manage_common', 'commonModel');
 
 
@@ -781,24 +763,6 @@ $this->data['page_breadcrumb'] = array("Carousel" => array('active' => false, 'l
 //$this->load->view('acp/addmenu', $this->data);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 public function action()
@@ -895,13 +859,6 @@ public function action()
 			acp_show404();
 		}
 	}
-
-
-
-
-
-
-
 
 
 

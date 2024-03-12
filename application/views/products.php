@@ -132,8 +132,8 @@ Hero Area
             </div>
             <div class="col-lg-7 col-md-7">
                 <div class="inner-banner-content">
-                    <h1 class="breadcumb-title">CIRCUIT BREAKER Best price </h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                    <h1 class="breadcumb-title"><?php echo $catdt->cat_name;?> </h1>
+                    <p><?php echo $catdt->cat_shdesc;?></p>
                     <a href="#" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span> <?=$sitedetails['phone_number_1']?></a>
                 
                 </div>
@@ -253,8 +253,19 @@ Product list Area
                                             
                                             
                                             <?php } else { ?>
+
+
+                                                <?php if ($product['addtoquote']==1){?> 
+
+<a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote---</a>
+
+
+<?php } else { ?>
+
+
+
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
-                                            <?php } ?>
+                                            <?php } } ?>
 
                                         </div>
                                        
@@ -292,7 +303,7 @@ Product list Area
     </div>
 </section>
 
-  
+
   <section>
     <div class="center-banner" data-bg-src="<?php echo base_url().'electricalshop1/assets/img/e-shop/banner-center.png';?>">
         <div class="container">
@@ -304,8 +315,8 @@ Product list Area
                 </div>
                 <div class="col-lg-8 col-md-8">
                     <div class="banner-center-content">
-                        <h2>Capacitor Switches & Sockets</h2>
-                        <p>AMPS Electric Trading is one of the largest and reputed distributor and wholesaler of electrical, Electronics and Automation products in Qatar</p>
+                        <h2><?php echo $catdt->cat_name;?></h2>
+                        <p><?php echo $catdt->cat_shdesc;?></p>
                         <h4>Special Discount</h4>
 
                         <a href="#" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
@@ -487,8 +498,22 @@ Cta Area
                                             
                                             
                                             <?php } else { ?>
-                                            <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
-                                            <?php } ?>
+
+
+
+                                                <?php if ($product['addtoquote']==1){?> 
+
+<a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote---</a>
+
+
+<?php } else { ?>
+
+
+
+
+
+                                            <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart mmm</a>
+                                            <?php }} ?>
 
                             </div>
                         </div>

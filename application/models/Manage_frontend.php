@@ -631,8 +631,12 @@ class Manage_frontend extends CI_Model
         ->from('products AS P');
         //->where_in('P.prod_status', array(1));
         //$this->db->where('prod_views',1);
-        $this->db->where('prod_views!=',0);
+        //$this->db->where('prod_views!=',0);
         //if (empty($where)) {
+
+$this->db->where('mostviewed',1);
+
+
             $getProducts = $this->db->order_by('P.prod_views', 'DESC')->get()->result_array();
         //}
         //echo $this->db->last_query();
@@ -650,8 +654,18 @@ class Manage_frontend extends CI_Model
 
     }
 
+    public function catdt($category){
 
 
+
+        $this->db->where('cat_canonial_name',$category);
+        $this->db->from('category');
+        $query = $this->db->get();
+        return $dt=$query->row();
+
+
+
+    }
 
     public function get_user($username,$password){
 

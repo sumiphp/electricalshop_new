@@ -234,7 +234,8 @@ class Manage_products extends CI_Model
                 'prdspec'=>trim($prod['prdspec']),
                 'addtoquote'=>trim($prod['addtoquote']),
                 'discountper'=>trim($prod['discountper']),
-                'mostviewed'=>trim($prod['mostviewed'])
+                'mostviewed'=>trim($prod['mostviewed']),
+                'instock'=>trim($prod['instock'])
                 
             );
 

@@ -56,9 +56,20 @@
                                             <span>After saving URL to this category will be: <?=MAIN_SITE_URL?>category/<strong id="show_canonial_name"><?=((!empty($categ) && isset($categ['cat_canonial_name']))? $categ['cat_canonial_name'] : '')?></strong></span>
                                         </div>
                                     </div>
+
                                     <div class="form-group row">
                                         <div class="col-md-12 mb-3">
-                                            <label for="cat_desc" class="col-form-label">Category description</label>
+                                            <label for="cat_desc" class="col-form-label">Category short description</label>
+                                            <textarea class="form-control" rows="8" id="cat_shdesc" name="cat_shdesc" placeholder="Enter Category Short description"><?=((!empty($categ) && isset($categ['cat_shdesc']))? $categ['cat_shdesc'] : '')?></textarea>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="form-group row">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="cat_desc" class="col-form-label">Category description----</label>
                                             <textarea class="form-control" rows="8" id="cat_desc" name="cat_desc" placeholder="Enter Category description"><?=((!empty($categ) && isset($categ['cat_desc']))? $categ['cat_desc'] : '')?></textarea>
                                         </div>
                                     </div>

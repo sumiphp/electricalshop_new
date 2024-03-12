@@ -107,9 +107,9 @@
                                 }
                                 $prodMain = $prodDtls = $prodImg = $prodCat = $prodBrand = $prodSame = array(); 
 
-                                //print_r($product);
-                               //echo "hello";
-                                //die;
+                               //print_r($product);
+                            //echo "hello";
+                              //die;
                                 if (isset($product) && !empty($product)) {
                                     //print_r($product);
                                     if (isset($product['Product']) && !empty($product['Product'])) {
@@ -126,10 +126,13 @@
                                         $prodMain['addtoquote'] = $product['Product']['addtoquote'];
                                         $prodMain['discountper'] = $product['Product']['discountper'];
                                         $prodMain['mostviewed'] = $product['Product']['mostviewed'];
-
+                                        $prodMain['instock'] = $product['Product']['instock'];
+                                        
 
 
                                     }
+
+                                    print_r($prodMain['mostviewed']);
                                     if (isset($product['Details']) && !empty($product['Details'])) {
                                         foreach ($product['Details'] as $pdkey => $pdvalue) { 
                                             $prodDtls[$pdvalue['pd_type_id']]['prod_dt_id'] = $pdvalue['prod_dt_id'];
@@ -265,19 +268,46 @@
                                                                     <label for="addtoquote" class="col-form-label"> Product Add To Quote</label>
                                                                     <select class="form-control" id="addtoquote" name="addtoquote" style="height:43px;" required>
 																	<option value="">Select</option>
+
+                                                                    <?php if (isset($prodMain['addtoquote'])){?>
 																		<option value="1" <?php if (($prodMain['addtoquote'])==1){?> selected <?php }?>>Yes</option>
                                                                         <option value="0" <?php if (($prodMain['addtoquote'])==0){?> selected <?php }?>>No</option>
+                                                                        <?php } else {?>
+
+
+                                                                            <option value="1">Yes </option>
+                                                                <option value="0">No</option>
+                                                               
+                                                                            <?php } ?>
 																	
 																</select>
 
                                                                            
-                                                                    </div>
-
-                                                                   
-
-                                                                </div>
+                                                                    </div></div>
 
 
+                                                                    <div class="form-group row">
+                                                                    <div class="col-md-12 mb-3">
+
+                                                                    <label for="instock" class="col-form-label"> Product Instock</label>
+                                                                    <select class="form-control" id="instock" name="instock" style="height:43px;" required>
+																	<option value="">Select</option>
+
+                                                                    <?php if (isset($prodMain['instock'])){?>
+																		<option value="1" <?php if (($prodMain['instock'])==1){?> selected <?php }?>>Yes</option>
+                                                                        <option value="0" <?php if (($prodMain['instock'])==0){?> selected <?php }?>>No</option>
+                                                                        <?php } else {?>
+
+
+                                                                            <option value="1">Yes </option>
+                                                                <option value="0">No</option>
+                                                               
+                                                                            <?php } ?>
+																	
+																</select>
+
+                                                                           
+                                                                    </div></div>
 
 
                                                                 <div class="form-group row">
@@ -286,8 +316,15 @@
                                                                     <label for="mostviewed" class="col-form-label"> Most viewed Product</label>
                                                                     <select class="form-control" id="mostviewed" name="mostviewed" style="height:43px;" required>
 																	<option value="">Select</option>
+
+                                                                    <?php if (isset($prodMain['mostviewed'])){?>
 																		<option value="1" <?php if (($prodMain['mostviewed'])==1){?> selected <?php }?>>Yes</option>
                                                                         <option value="0" <?php if (($prodMain['mostviewed'])==0){?> selected <?php }?>>No</option>
+                                                                        <?php } else {?>
+                                                                            <option value="1">Yes </option>
+                                                                <option value="0">No</option>
+
+                                                                            <?php } ?>
 																	
 																</select>
 

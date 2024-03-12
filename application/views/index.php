@@ -249,6 +249,11 @@ Product Area
                                             if ($username==''){?>
                                     <a href="<?php echo base_url('home/login'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
                                     <?php } else { ?>
+
+
+
+
+                                        
                                         <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
 
 
@@ -359,6 +364,14 @@ Product Area
     <!--==============================
 Product list Area  
 ==============================-->
+<?php
+//echo '<pre>';
+                            //print_r($best_selling);
+                            //echo '</pre>';
+
+
+?>
+
 <section class="mt-50 space-bottom">
     <div class="container">
         <div class="row justify-content-lg-between justify-content-center align-items-end">
@@ -403,7 +416,12 @@ Product list Area
                    
 
 
-                            <?php foreach ($best_selling as $product) { ?>
+                            <?php 
+                            
+                            
+                            //echo "fffff----";
+                            
+                            foreach ($best_selling as $product) { ?>
 
                             <div class="swiper-slide">
                                 <div class="th-product product-grid">
@@ -422,11 +440,6 @@ Product list Area
                                             if ($username==''){
 
 
-
-                                              
-                                                
-                                                
-                                                
                                                 ?>
 
 
@@ -437,7 +450,7 @@ Product list Area
                                                 ?>
 
 
-                                        <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i>mmmmmmm</a>
+                                        <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
 
 
                                         <?php  } ?>
@@ -480,7 +493,12 @@ Product list Area
                                             <!--del class="right">-$06.99</del--></span>
 
                                         </div>
-                                        <?php //echo $user ;?>
+                                        <?php //echo $user ;
+                                        
+                                        //echo "bbbbb".$product['addtoquote'];
+                                        
+                                        
+                                        ?>
                                         <div class="add-cart-btn mt-4">
                                             <?php 
                                             
@@ -489,13 +507,28 @@ Product list Area
                                             if ($username==''){?>
 
 
-                                                <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
+                                                <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart---</a>
                                         
                                             
                                             
-                                            <?php } else { ?>
+                                            <?php } else { 
+                                                
+                                                //echo "kkk".$product['addtoquote'];
+                                                if ($product['addtoquote']==1){
+
+                                                    ?>
+<a href="<?php echo base_url('bulkenquiry
+'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+
+
+
+                                                <?php } else {               
+                                                
+                                                
+                                                
+                                                ?>
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
-                                            <?php } ?>
+                                            <?php }} ?>
                                         </div>
                                        
                                        
@@ -609,9 +642,24 @@ Product list Area
                                         
                                             
                                             
-                                            <?php } else { ?>
+                                            <?php } else { 
+                                                
+                                                
+                        //echo "kkk".$product['addtoquote'];
+                        if ($product['addtoquote']==1){
+
+                            ?>
+<a href="<?php echo base_url('bulkenquiry
+'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+
+
+
+                       <?php }  else{                        
+                                                
+                                                
+                                                ?>
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
-                                            <?php } ?>
+                                            <?php } } ?>
 
 
                                             </div>
@@ -769,9 +817,20 @@ Cta Area
                                         
                                             
                                             
-                                            <?php } else { ?>
+                                            <?php } else { 
+                                                
+                                          if ($product['addtoquote']==1){?> 
+
+                                                    <a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote---</a>
+                                                    
+                                                    
+                                                    <?php } else { ?>                         
+                                                
+                                                
+                                                
+                                              
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
-                                            <?php } ?>
+                                            <?php } } ?>
 
 
                                 

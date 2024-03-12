@@ -74,6 +74,7 @@ class ProductCategories extends CI_Controller {
 				'cat_added_user' => $this->loggedInUser['user_id'],
 				'addinmenu'=> trim($catgry['addinmenu']),
 				'cat_orderno' => trim($catgry['cat_order']),
+				'cat_shdesc' => trim($catgry['cat_shdesc']),
 			);
 			if (isset($catgry['cat_id']) && !empty($catgry['cat_id'])) {
 				// Edit product category
