@@ -139,7 +139,8 @@ class Products extends CI_Controller {
 				'addtoquote'=>trim($prod['addtoquote']),
 				'discountper'=>trim($prod['discountper']),
                 'mostviewed'=>trim($prod['mostviewed']),
-				'instock'=>trim($prod['instock'])
+				'instock'=>trim($prod['instock']),
+				'prdshdesc'=>trim($prod['prdshdesc'])
 			);
 
 

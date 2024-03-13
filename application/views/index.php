@@ -277,8 +277,10 @@ Product Area
         $query = $this->db->get();
         $rowdt=$query->row();
         $string1=$rowdt->prod_dt_desc;
-        echo substr($string1, 0, 100); 
+        //echo substr($string1, 0, 100); 
+        //echo $rowdt->prdshdesc;
         //echo  $currency.' '.$pricedt->prod_dt_desc;
+        echo $product['prdshdesc'];
         
         ?>
                                             </p>

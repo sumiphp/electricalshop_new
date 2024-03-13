@@ -107,7 +107,7 @@
                                 }
                                 $prodMain = $prodDtls = $prodImg = $prodCat = $prodBrand = $prodSame = array(); 
 
-                               //print_r($product);
+                              //print_r($product);
                             //echo "hello";
                               //die;
                                 if (isset($product) && !empty($product)) {
@@ -127,12 +127,12 @@
                                         $prodMain['discountper'] = $product['Product']['discountper'];
                                         $prodMain['mostviewed'] = $product['Product']['mostviewed'];
                                         $prodMain['instock'] = $product['Product']['instock'];
-                                        
+                                        $prodMain['prdshdesc'] = $product['Product']['prdshdesc'];
 
 
                                     }
 
-                                    print_r($prodMain['mostviewed']);
+                                    //print_r($prodMain['mostviewed']);
                                     if (isset($product['Details']) && !empty($product['Details'])) {
                                         foreach ($product['Details'] as $pdkey => $pdvalue) { 
                                             $prodDtls[$pdvalue['pd_type_id']]['prod_dt_id'] = $pdvalue['prod_dt_id'];
@@ -209,6 +209,25 @@
                                                                     </div>
                                                                 </div>
                                                             <?php } ?>
+
+
+
+
+                                                            <div class="form-group row">
+                                                                    <div class="col-md-12 mb-3">
+
+                                                                    <label for="prdspec" class="col-form-label"> Product Short Description</label>
+                                                                            <textarea class="form-control" id="prdshdesc" name="prdshdesc" placeholder="Enter Product Short description" rows="5"><?=((isset($prodMain['prdshdesc']) && !empty($prodMain['prdshdesc']))? $prodMain['prdshdesc'] : '')?></textarea>
+
+
+                                                                           
+                                                                    </div>
+
+                                                                   
+
+                                                                </div>
+
+
 
 
                                                             <div class="form-group row">
@@ -426,6 +445,7 @@
 															<div class="col-md-6 mb-3">
                                                                 <label for="prodCategory" class="col-form-label">Product Category</label>
 																<select class="form-control" id="prodCategory" name="prodCategory" style="height:43px;">
+                                                                <option value="">Select Category</option>
 																	<?php foreach ($productCategories as $pcKey => $pcVal) { ?>
 																		<option value="<?=$pcVal['cat_id']?>" <?=((in_array($pcVal['cat_id'], $prodCat))? 'selected' : '')?>><?=$pcVal['cat_name']?></option>
 																	<?php } ?>

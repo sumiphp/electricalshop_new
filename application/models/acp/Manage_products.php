@@ -219,6 +219,8 @@ class Manage_products extends CI_Model
             // Save product
             $this->db->trans_begin();
 
+            //print_r($prod);
+
             $productData = array(
                 'prod_name' => trim($prod['prod_name']),
                 'prod_canonial_name' => trim($prod['prod_canonial_name']),
@@ -235,7 +237,8 @@ class Manage_products extends CI_Model
                 'addtoquote'=>trim($prod['addtoquote']),
                 'discountper'=>trim($prod['discountper']),
                 'mostviewed'=>trim($prod['mostviewed']),
-                'instock'=>trim($prod['instock'])
+                'instock'=>trim($prod['instock']),
+                'prdshdesc'=>trim($prod['prdshdesc'])
                 
             );
 
