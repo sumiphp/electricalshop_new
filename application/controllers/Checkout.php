@@ -145,7 +145,11 @@ class Checkout extends CI_Controller{
      $pnumber=$this->input->post('pnumber');
      $message=$this->input->post('message');
      $state=$this->input->post('state');
-
+     $name=$fname.','.$lname;
+     $billdetail=array('billshipflag'=>1,'city'=>$city,'country'=>$country,'state'=>$state,'message'=>$message,'apartment'=>$apartment,'name'=>$name,'companyname'=>$cname,'address'=>$saddress,'zip'=>$zip,'email'=> $eadd,'phone'=>$pnumber);
+     
+     
+     $insertbill = $this->product->insertbill($billdetail);
 
 
      $ship_to_different_address=$this->input->post('ship_to_different_address');
@@ -164,10 +168,10 @@ if ($ship_to_different_address==1){
      $pnumber=$this->input->post('pnumber1');
 }
 
-$name=$fname.','.$lname;
 
-$billdetail=array('city'=>$city,'country'=>$country,'state'=>$state,'message'=>$message,'apartment'=>$apartment,'name'=>$name,'companyname'=>$cname,'address'=>$saddress,'zip'=>$zip,'email'=> $eadd,'phone'=>$pnumber);
-$insertbill = $this->product->insertbill($billdetail);
+
+$shipdetail=array('billshipflag'=>2,'city'=>$city,'country'=>$country,'state'=>$state,'message'=>$message,'apartment'=>$apartment,'name'=>$name,'companyname'=>$cname,'address'=>$saddress,'zip'=>$zip,'email'=> $eadd,'phone'=>$pnumber);
+$insertship = $this->product->insertbill($shipdetail);
 
 
 

@@ -163,15 +163,15 @@ Checkout Arae
                                 <input type="text" class="form-control" placeholder="Your Company Name" name="cname"  value="<?php echo $custdetails->companyname;?>" >
                             </div>
                             <div class="col-12 form-group">
-                                <input type="text" class="form-control" placeholder="Street Address *" name="saddress" >
-                                <input type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)" name="apartment" >
+                                <input type="text" class="form-control" placeholder="Street Address *" name="saddress"  value="<?php echo $custdetails->address;?>">
+                                <input type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)" name="apartment" value="<?php echo $custdetails->apartment ;?>">
                             </div>
                             <div class="col-12 form-group">
-                                <input type="text" class="form-control" placeholder="Town / City *" name="city" >
+                                <input type="text" class="form-control" placeholder="Town / City *" name="city" value="<?php echo $custdetails->city ;?>">
                             </div>
 
                             <div class="col-12 form-group">
-                                <input type="text" class="form-control" placeholder="State *" name="state" >
+                                <input type="text" class="form-control" placeholder="State *" name="state" value="<?php echo $custdetails->state;?>" >
                             </div>
                             <div class="col-md-6 form-group">
                               
@@ -180,7 +180,7 @@ Checkout Arae
                                 <option value=''>Select Country *</option>
 
                                 <?php foreach($countries as $re){ ?>
-                                        <option value="<?php echo $re['country_name'];?>"><?php echo $re['country_name'];?></option>
+                                        <option value="<?php echo $re['country_name'];?>" <?php if($custdetails->country==$re['country_name']){?> selected <?php } ?>><?php echo $re['country_name'];?></option>
                                         <?php } ?>
                                         <!--option>United State (US)</option>
                                         <option>Equatorial Guinea (GQ)</option>
@@ -190,11 +190,11 @@ Checkout Arae
 
                             </div>
                             <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" placeholder="Postcode / Zip *" name="zip" >
+                                <input type="text" class="form-control" placeholder="Postcode / Zip *" name="zip" value="<?php echo $custdetails->zip;?>" >
                             </div>
                             <div class="col-12 form-group">
-                                <input type="text" class="form-control" placeholder="Email Address *" name="eadd" value="<?php echo $custdetails->email;?>" >
-                                <input type="text" class="form-control" placeholder="Phone number *" name="pnumber" value="<?php echo $custdetails->phone;?>"  >
+                                <input type="text" class="form-control" placeholder="Email Address *" name="eadd" value="<?php echo $custdetails->email;?>" value="<?php echo $custdetails->email;?>" >
+                                <input type="text" class="form-control" placeholder="Phone number *" name="pnumber" value="<?php echo $custdetails->phone;?>"  value="<?php echo $custdetails->phone;?>" >
                             </div>
                             <!--div class="col-12 form-group">
                                 <input type="checkbox" id="accountNewCreate">

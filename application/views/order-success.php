@@ -248,7 +248,7 @@ Checkout Arae
         <p><b>Buyer Name:</b> <?php 
         //print_r($custIDdt);
         
-        echo $custIDdt->name; ?></p>
+        echo $custIDdt->name.' '.$custIDdt->lastname; ?></p>
         <p><b>Email:</b> <?php echo $custIDdt->email; ?></p>
         <p><b>Phone:</b> <?php echo $custIDdt->phone; ?></p>
     </div>

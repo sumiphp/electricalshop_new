@@ -2,7 +2,7 @@
     <thead class="text-capitalize">
         <tr>
             <th>Sl.No:</th>
-            <th>Name</th>
+            <th>Name1</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Address</th>
@@ -11,13 +11,14 @@
             <th>Zip</th>
             <th>Company Name</th>
             <th>Message</th><th>City</th><th>State</th>
+            <th>Billing and Address</th>
             <th class="no-sorting">Actions</th>
         </tr>
     </thead>
     <tbody>
         <?php 
         $slno = 0;
-        //print_r($customers);
+        //print_r($billcustomers);
         //die;
         foreach ($billcustomers as $k => $customerVal) {
             $slno++; ?>
@@ -34,6 +35,20 @@
                 <td><?=$customerVal['message']?></td>
                 <td><?=$customerVal['city']?></td>
                 <td><?=$customerVal['state']?></td>
+
+                <td><?php $sflag=$customerVal['billshipflag'];
+                if ($sflag==1){
+echo "Billing Address";
+
+                }else{
+                    echo "Shipping Address";
+                }
+
+                
+                
+                
+                
+                ?></td>
                 
 
                
