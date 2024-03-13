@@ -154,25 +154,30 @@ Checkout Arae
 
                             <input type="hidden" class="form-control" placeholder="First Name" name="uname" value="<?php echo $this->session->userdata('username');?>" >
                             <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" placeholder="First Name" name="fname" value="<?php echo $custdetails->name;?>">
+                                <input type="text" class="form-control" placeholder="First Name *" name="fname" value="<?php echo $custdetails->name;?>">
                             </div>
                             <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" placeholder="Last Name" name="lname"  value="<?php echo $custdetails->lastname;?>">
+                                <input type="text" class="form-control" placeholder="Last Name *" name="lname"  value="<?php echo $custdetails->lastname;?>">
                             </div>
                             <div class="col-12 form-group">
                                 <input type="text" class="form-control" placeholder="Your Company Name" name="cname"  value="<?php echo $custdetails->companyname;?>" >
                             </div>
                             <div class="col-12 form-group">
-                                <input type="text" class="form-control" placeholder="Street Address" name="saddress" >
+                                <input type="text" class="form-control" placeholder="Street Address *" name="saddress" >
                                 <input type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)" name="apartment" >
                             </div>
                             <div class="col-12 form-group">
-                                <input type="text" class="form-control" placeholder="Town / City" name="city" >
+                                <input type="text" class="form-control" placeholder="Town / City *" name="city" >
+                            </div>
+
+                            <div class="col-12 form-group">
+                                <input type="text" class="form-control" placeholder="State *" name="state" >
                             </div>
                             <div class="col-md-6 form-group">
                               
 
                                 <select class="form-select" name="country">
+                                <option value=''>Select Country *</option>
 
                                 <?php foreach($countries as $re){ ?>
                                         <option value="<?php echo $re['country_name'];?>"><?php echo $re['country_name'];?></option>
@@ -185,11 +190,11 @@ Checkout Arae
 
                             </div>
                             <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" placeholder="Postcode / Zip" name="zip" >
+                                <input type="text" class="form-control" placeholder="Postcode / Zip *" name="zip" >
                             </div>
                             <div class="col-12 form-group">
-                                <input type="text" class="form-control" placeholder="Email Address" name="eadd" value="<?php echo $custdetails->email;?>" >
-                                <input type="text" class="form-control" placeholder="Phone number" name="pnumber" value="<?php echo $custdetails->phone;?>"  >
+                                <input type="text" class="form-control" placeholder="Email Address *" name="eadd" value="<?php echo $custdetails->email;?>" >
+                                <input type="text" class="form-control" placeholder="Phone number *" name="pnumber" value="<?php echo $custdetails->phone;?>"  >
                             </div>
                             <!--div class="col-12 form-group">
                                 <input type="checkbox" id="accountNewCreate">
@@ -220,25 +225,26 @@ Checkout Arae
                                     </select>
                                 </div-->
                                 <div class="col-md-6 form-group">
-                                    <input type="text" class="form-control" placeholder="First Name" name="fname1">
+                                    <input type="text" class="form-control" placeholder="First Name *" name="fname1">
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <input type="text" class="form-control" placeholder="Last Name" name="lname1" >
+                                    <input type="text" class="form-control" placeholder="Last Name *" name="lname1" >
                                 </div>
                                 <div class="col-12 form-group">
                                     <input type="text" class="form-control" placeholder="Your Company Name" name="cname1">
                                 </div>
                                 <div class="col-12 form-group">
-                                    <input type="text" class="form-control" placeholder="Street Address" name="saddress1" >
+                                    <input type="text" class="form-control" placeholder="Street Address *" name="saddress1" >
                                     <input type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)" name="apartment1">
                                 </div>
                                 <div class="col-12 form-group">
-                                    <input type="text" class="form-control" placeholder="Town / City" name="city1">
+                                    <input type="text" class="form-control" placeholder="Town / City *" name="city1">
                                 </div>
                                 <div class="col-md-6 form-group">
                                     <!--input type="text" class="form-control" placeholder="Country" name="country1"-->
 
                                     <select class="form-select" name="country1">
+                                    <option value=''>Select Country *</option>
 
 <?php foreach($countries as $re){ ?>
         <option value="<?php echo $re['country_name'];?>"><?php echo $re['country_name'];?></option>
@@ -254,16 +260,16 @@ Checkout Arae
 
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <input type="text" class="form-control" placeholder="Postcode / Zip" name="zip1">
+                                    <input type="text" class="form-control" placeholder="Postcode / Zip " name="zip1">
                                 </div>
                                 <div class="col-12 form-group">
-                                    <input type="text" class="form-control" placeholder="Email Address"  name="eadd1">
-                                    <input type="text" class="form-control" placeholder="Phone number" name="pnumber1">
+                                    <input type="text" class="form-control" placeholder="Email Address *"  name="eadd1">
+                                    <input type="text" class="form-control" placeholder="Phone number *" name="pnumber1">
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 form-group">
-                            <textarea cols="20" rows="5" class="form-control" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                            <textarea cols="20" rows="5" name='message' class="form-control" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
                         </div>
                     </div>
                 </div>
@@ -551,9 +557,10 @@ $('form[id="frm"]').validate({
      /*password:{  required: true,
         minlength:8,  
      }*/
+     zip:"required",
       city:"required",
       country:"required",
-      zip:"required",
+      saddress:"required",
     },  
     messages: {  
       //uname: 'First Name is required',
@@ -561,7 +568,8 @@ $('form[id="frm"]').validate({
       lname:'Last Name is required',       
       /*msg_subject: 'Subject is required', */ 
       pnumber: 'Enter a valid Phone',
-      eadd: 'Enter a valid Email', 
+      eadd: 'Enter a valid Email',
+     saddress: 'Enter a valid Streat Address', 
       city: 'Enter a valid City', 
       country:"Enter a valid Country",
       zip:'Please enter Zip',

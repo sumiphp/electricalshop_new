@@ -113,6 +113,14 @@ label.error.errpopupmsg {
 </div>
     <div class="th-checkout-wrapper space-top space-extra-bottom">
         <div class="container">
+
+
+        
+           
+           <div class="woocommerce-info">Registration</a>
+           </div>
+
+
            
             <div class="row">
                 <div class="col-12">
@@ -136,27 +144,61 @@ label.error.errpopupmsg {
                         </div>
 
                         <div class="form-group">
-                            <label>Email</label>
+                        <label>Street Address *</label>
+
+                                <input type="text" class="form-control" placeholder="Street Address" name="saddress" >
+
+                                <label>Apartment, suite, unit etc. (optional) </label>
+                                <input type="text" class="form-control" placeholder="Apartment, suite, unit etc. (optional)" name="apartment" >
+                            </div>
+                            <div class="form-group">
+                            <label>City *</label>
+                                <input type="text" class="form-control" placeholder="Town / City" name="city" >
+                            </div>
+                            <div class="form-group">
+                            <label>Country *</label>
+
+                                <select class="form-select" name="country">
+                                <option value=''>Select Country</option>
+
+                                <?php foreach($countries as $re){ ?>
+                                        <option value="<?php echo $re['country_name'];?>"><?php echo $re['country_name'];?></option>
+                                        <?php } ?>
+                                        <!--option>United State (US)</option>
+                                        <option>Equatorial Guinea (GQ)</option>
+                                        <option>Australia (AU)</option>
+                                        <option>Germany (DE)</option-->
+                                    </select>
+
+                            </div>
+                            <div class="form-group">
+                            <label>Postcode / Zip </label>
+                                <input type="text" class="form-control" placeholder="Postcode / Zip" name="zip" >
+                            </div>
+                           
+                           
+                        <div class="form-group">
+                            <label>Email *</label>
                             <input type="text" class="form-control" placeholder="Email" name="email" >
                         </div>
 
                         <div class="form-group">
-                            <label>Phone</label>
+                            <label>Phone *</label>
                             <input type="text" class="form-control" placeholder="Phone" name="phone" >
                         </div>
 
                         <div class="form-group">
-                            <label>Password</label>
+                            <label>Password *</label>
                             <input type="password" class="form-control" placeholder="Password" name="password">
                         </div>
 
 
-                        <div class="form-group">
-                            <div class="custom-checkbox">
-                                <input type="checkbox" id="remembermylogin">
+                        <!--div class="form-group">
+                            <div class="custom-checkbox1">
+                                <input type="checkbox" id="userterms" name="userterms" >
                                 <label for="remembermylogin">I agree to the Terms of User</label>
                             </div>
-                        </div>
+                        </div-->
                         <div class="form-group">
                             <button type="submit" class="th-btn">Create Account</button>
                             <p class="mt-3 mb-0">HAVE NOT ACCOUNT YET?<a class="text-reset" href="<?php echo base_url().'home/login';?>">Login</a></p>
@@ -267,7 +309,7 @@ $('form[id="frm"]').validate({
     rules: {  
       firstname: 'required',
       lastname: 'required',
-      companyname:'required',   
+      //companyname:'required',   
      /* msg_subject: 'required',*/
       phone:'required',  
       email: {  
@@ -276,18 +318,44 @@ $('form[id="frm"]').validate({
       }, 
      password:{  required: true,
         minlength:8,  
-     }
+     },
      /* producttype:"required",
       brand:"required",*/
+
+      /* msg_subject: 'required',*/
+      pnumber:'required',  
+      /*eadd: {  
+        required: true,  
+        email: true,  
+      }, */
+     /*password:{  required: true,
+        minlength:8,  
+     }*/
+      city:"required",
+      country:"required",
+      saddress:"required",
+     userterms:"required",
+
+
+
+
+
+
     },  
     messages: {  
       firstname: 'First Name is required',
       lastname: 'Last Name is required',
-      companyname:'Company name is required',       
+      //companyname:'Company name is required',       
       /*msg_subject: 'Subject is required', */ 
       phone: 'Enter a valid Phone',
       email: 'Enter a valid Email', 
-      password: 'Enter a valid Password', 
+      password: 'Enter a valid Password',
+      
+      //eadd: 'Enter a valid Email', 
+      city: 'Enter a valid City', 
+      country:"Enter a valid Country",
+      saddress:"Enter a valid Street address",
+      userterms:'Please Select User terms',
       /*producttype:"Enter a valid Product Type",
       message:'Please enter Message',
       brand:"Please enter brand", */

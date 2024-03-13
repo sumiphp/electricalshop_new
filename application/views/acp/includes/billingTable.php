@@ -9,6 +9,8 @@
             <th>Apartment</th>
             <th>Country</th>
             <th>Zip</th>
+            <th>Company Name</th>
+            <th>Message</th><th>City</th><th>State</th>
             <th class="no-sorting">Actions</th>
         </tr>
     </thead>
@@ -28,6 +30,13 @@
                 <td><?=$customerVal['apartment']?></td>
                 <td><?=$customerVal['country']?></td>
                 <td><?=$customerVal['zip']?></td>
+                <td><?=$customerVal['companyname']?></td>
+                <td><?=$customerVal['message']?></td>
+                <td><?=$customerVal['city']?></td>
+                <td><?=$customerVal['state']?></td>
+                
+
+               
                 <td>
                     <ul class="d-flex justify-content-center">
                         <!--li class="mr-3" data-customerid="<?=$customerVal['billingid']?>"><a href="<?=site_url()?>acp/Client/view/<?//=$customerVal['userid']?>" class="text-secondary"><i class="fa fa-eye"></i></a></li>

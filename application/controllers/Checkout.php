@@ -143,6 +143,11 @@ class Checkout extends CI_Controller{
      $zip=$this->input->post('zip');
      $eadd=$this->input->post('eadd');
      $pnumber=$this->input->post('pnumber');
+     $message=$this->input->post('message');
+     $state=$this->input->post('state');
+
+
+
      $ship_to_different_address=$this->input->post('ship_to_different_address');
 
 if ($ship_to_different_address==1){
@@ -161,7 +166,7 @@ if ($ship_to_different_address==1){
 
 $name=$fname.','.$lname;
 
-$billdetail=array('name'=>$name,'companyname'=>$cname,'address'=>$saddress,'zip'=>$zip,'email'=> $eadd,'phone'=>$pnumber);
+$billdetail=array('city'=>$city,'country'=>$country,'state'=>$state,'message'=>$message,'apartment'=>$apartment,'name'=>$name,'companyname'=>$cname,'address'=>$saddress,'zip'=>$zip,'email'=> $eadd,'phone'=>$pnumber);
 $insertbill = $this->product->insertbill($billdetail);
 
 

@@ -823,7 +823,7 @@ if ($count==0){
         $this->data['site']= $this->frontend->sitedetails();
         $this->data['homepagedetails']= $this->frontend->homepagedetails();
        
-        
+        $this->data['countries']=$this->product->getcountries();
         $custname=$this->session->userdata('username');
 
 
@@ -991,12 +991,27 @@ $this->data['custwishlist']=$this->product->custwishlist($custID);
        // $name=$fname.' '.$lname;
        $name=$fname;
 
+       $lname=$this->input->post('lname');
+     $cname=$this->input->post('cname');
+     $saddress=$this->input->post('saddress');
+     $apartment=$this->input->post('apartment');
+     $city=$this->input->post('city');
+
+     $country=$this->input->post('country');
+     $zip=$this->input->post('zip');
+     //$eadd=$this->input->post('email');
+     //$pnumber=$this->input->post('pnumber');
+
+
+
+     //$billdetail=array('name'=>$name,'companyname'=>$cname,'address'=>$saddress,'zip'=>$zip,'email'=> $eadd,'phone'=>$pnumber);
 
 
         $data = array(
-            'email' =>"$email",
+            'apartment' =>"$apartment",
+            'city' =>"$city",
             'companyname' =>"$companyname",
-            'phone'=>$phone,'name'=>"$name",'password'=>"$pass",'lastname'=>"$lname"
+            'phone'=>$phone,'name'=>"$name",'password'=>"$pass",'lastname'=>"$lname",'address'=>$saddress,'zip'=>$zip,'email'=> $email
          );
          //$this->db->insert('category', $data);
     
@@ -1004,7 +1019,8 @@ $this->data['custwishlist']=$this->product->custwishlist($custID);
         // print_r($data);
          //die;
         
-        $user_detail=$this->frontend->insertdt($data,'userlogin');
+        $user_detail=$this->frontend->insertdt($data,'customers
+        ');
      
          
         $this->session->set_flashdata('flash_msg', 'You are registered Successfully');
@@ -1195,6 +1211,7 @@ if($custname!=''){
 else{
 $this->data['wishlistcount'] =0;
 }
+$this->data['custdetails']=$this->product->getcustdetails($custID);
 $this->load->view('bulkenquiry', $this->data);
 
     }

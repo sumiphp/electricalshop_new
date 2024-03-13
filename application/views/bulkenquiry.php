@@ -118,21 +118,21 @@ Checkout Area
                             <div class="row">
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" name="name" id="name" class="form-control" required="" data-error="Please enter your name" placeholder="Your Name">
+                                        <input type="text" name="name" id="name" class="form-control" required="" data-error="Please enter your name" placeholder="Your Name" value="<?php echo $custdetails->name;?>" >
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
     
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="form-group">
-                                        <input type="email" name="email" id="email" class="form-control" required="" data-error="Please enter your email" placeholder="Your Email">
+                                        <input type="email" name="email" id="email" class="form-control" required="" data-error="Please enter your email" placeholder="Your Email" value="<?php echo $custdetails->email;?>">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
     
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" name="phone_number" id="phone_number" required="" data-error="Please enter your number" class="form-control" placeholder="Your Phone">
+                                        <input type="text" name="phone_number" id="phone_number" required="" data-error="Please enter your number" class="form-control" placeholder="Your Phone" value="<?php echo $custdetails->phone;?>">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -164,6 +164,8 @@ Checkout Area
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
+
+                                <?php //print_r($custdetails);?>
     
                                 <div class="col-lg-12 col-md-12 text-center">
                                     <span id='msg' style='color:green' class="h3"></span>
