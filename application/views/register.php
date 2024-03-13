@@ -155,6 +155,13 @@ label.error.errpopupmsg {
                             <label>City *</label>
                                 <input type="text" class="form-control" placeholder="Town / City" name="city" >
                             </div>
+
+
+                            <div class="form-group">
+                            <label>State *</label>
+                                <input type="text" class="form-control" placeholder="State" name="state" >
+                            </div>
+
                             <div class="form-group">
                             <label>Country *</label>
 

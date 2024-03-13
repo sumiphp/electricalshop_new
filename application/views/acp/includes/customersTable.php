@@ -5,8 +5,19 @@
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
+            <th>Address</th>
+            <th>Apartment</th>
+            <th>Country</th>
+            <th>Zip</th>
+            <th>Company Name</th>
+            <th>Message</th><th>City</th><th>State</th>
             <th>Registration date</th>
             <th class="no-sorting">Actions</th>
+
+
+           
+
+
         </tr>
     </thead>
     <tbody>
@@ -21,6 +32,18 @@
                 <td><?=trim($customerVal['name'])?></td>
                 <td><?=$customerVal['email']?></td>
                 <td><?=$customerVal['phone']?></td>
+                <td><?=$customerVal['address']?></td>
+                <td><?=$customerVal['apartment']?></td>
+                <td><?=$customerVal['country']?></td>
+                <td><?=$customerVal['zip']?></td>
+                <td><?=$customerVal['companyname']?></td>
+                <td><?=$customerVal['message']?></td>
+                <td><?=$customerVal['city']?></td>
+                <td><?=$customerVal['state']?></td>
+
+
+
+
                 <td><?=$customerVal['regdate']?></td>
                 <td>
                     <ul class="d-flex justify-content-center">

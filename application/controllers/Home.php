@@ -991,7 +991,7 @@ $this->data['custwishlist']=$this->product->custwishlist($custID);
        // $name=$fname.' '.$lname;
        $name=$fname;
 
-       $lname=$this->input->post('lname');
+       //$lname=$this->input->post('lname');
      $cname=$this->input->post('cname');
      $saddress=$this->input->post('saddress');
      $apartment=$this->input->post('apartment');
@@ -999,7 +999,7 @@ $this->data['custwishlist']=$this->product->custwishlist($custID);
 
      $country=$this->input->post('country');
      $zip=$this->input->post('zip');
-     //$eadd=$this->input->post('email');
+     $state=$this->input->post('state');
      //$pnumber=$this->input->post('pnumber');
 
 
@@ -1008,6 +1008,9 @@ $this->data['custwishlist']=$this->product->custwishlist($custID);
 
 
         $data = array(
+            'lastname' =>"$lname",
+            'state' =>"$state",
+            'country' =>"$country",
             'apartment' =>"$apartment",
             'city' =>"$city",
             'companyname' =>"$companyname",
@@ -1019,7 +1022,7 @@ $this->data['custwishlist']=$this->product->custwishlist($custID);
         // print_r($data);
          //die;
         
-        $user_detail=$this->frontend->insertdt($data,'customers
+        $user_detail=$this->frontend->insertdt($data,'userlogin
         ');
      
          
