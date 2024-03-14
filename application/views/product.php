@@ -26,10 +26,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Lexend:wght@300;400;500;600;700;800;900&family=Lobster&display=swap" rel="stylesheet">
 
-    <!--==============================
-	    All CSS File
-	============================== -->
-    <!-- Bootstrap -->
+  
+
 
 
     <link rel="stylesheet" href="<?php echo base_url().'electricalshop1/assets/css/bootstrap.min.css';?>">
@@ -48,35 +46,8 @@
 
 
 
+
 </head>
-
-<body>
-
-
-
-
-<?php $sitedetails = sitedetails();
-    $productMetaTags = $prodDesc = '';
-    $prodPoints = [];
-    foreach ($productdetails['Details'] as $key => $value) {
-        if ($value['pd_type_name'] == 'Meta Tags') {
-            $productMetaTags = html_entity_decode($value['prod_dt_desc']);
-        } else if ($value['pd_type_name'] == 'Description') {
-            $prodDesc = $value['prod_dt_desc'];
-        } else {
-            $prodPoints[$value['pd_type_name']] = $value['prod_dt_desc'];
-        }
-    }
-
-    $currency = '';
-    if (isset($sitecurrency)) {
-        $currency = $sitecurrency['currency'];
-    }
-    ?>
-
-
-
-
 <style>
 label.error.errpopupmsg {
     position: absolute;
@@ -87,9 +58,10 @@ label.error.errpopupmsg {
 }
 
 </style>
+<body>
 
     
-    <!--div class="preloader ">
+    <div class="preloader ">
        
         <div class="preloader-inner">
             <div class="loader">
@@ -101,15 +73,15 @@ label.error.errpopupmsg {
                 <span></span>
             </div>
         </div>
-    </div--><!--==============================
+    </div><!--==============================
 Product Lightbox
 ==============================-->
-    <!--div id="QuickView" class="white-popup mfp-hide">
+    <div id="QuickView" class="white-popup mfp-hide">
         <div class="container bg-white rounded-10">
             <div class="row gx-60">
                 <div class="col-lg-6">
                     <div class="product-big-img">
-                        <div class="img"><img src="assets/img/product/product_details_1_1.jpg" alt="Product Image"></div>
+                        <div class="img"><img src="<?php echo base_url().'electricalshop1/assets/img/product/product_details_1_1.jpg';?>" alt="Product Image"></div>
                     </div>
                 </div>
                 <div class="col-lg-6 align-self-center">
@@ -146,11 +118,11 @@ Product Lightbox
             </div>
             <button title="Close (Esc)" type="button" class="mfp-close">×</button>
         </div>
-    </div-->
+    </div>
     <!--==============================
     Sidemenu
 ============================== -->
-    <!--div class="sidemenu-wrapper sidemenu-cart d-none d-lg-block ">
+    <div class="sidemenu-wrapper sidemenu-cart d-none d-lg-block ">
         <div class="sidemenu-content">
             <button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
             <div class="widget woocommerce widget_shopping_cart">
@@ -204,14 +176,16 @@ Product Lightbox
             </div>
         </div>
     </div> 
-    
+    <!--==============================
+    Sidemenu
+============================== -->
     <div class="sidemenu-wrapper sidemenu-info d-none d-lg-block ">
         <div class="sidemenu-content">
             <button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
             <div class="widget  ">
                 <div class="th-widget-about">
                     <div class="about-logo">
-                        <a href="#"><img src="assets/img/logo-eletrical.png" alt="logo"></a>
+                        <a href="#"><img src="<?php echo base_url().'electricalshop1/assets/img/logo-eletrical.png';?>" alt="logo"></a>
                     </div>
                     <p class="about-text">We provide specialized winterization services to safeguard your pool during the off-season, and when spring arrives, we handle the thorough opening process.</p>
                     <div class="th-social">
@@ -266,12 +240,14 @@ Product Lightbox
             <input type="text" placeholder="What are you looking for?">
             <button type="submit"><i class="fal fa-search"></i></button>
         </form>
-    </div>
+    </div><!--==============================
+    Mobile Menu
+  ============================== -->
     <div class="th-menu-wrapper">
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="electric shop#"><img src="assets/img/logo-eletrical.png" alt="Electrical Shop"></a>
+                <a href="electric shop#"><img src="<?php echo base_url().'electrical-shop1/assets/img/logo-eletrical.png';?>" alt="Electrical Shop"></a>
             </div>
             <div class="th-mobile-menu">
                 <ul>
@@ -318,14 +294,22 @@ Product Lightbox
             </div>
         </div>
     </div>
-    <header class="th-header header-layout3">
+    
+    
+    
+    
+    
+    <!--==============================
+	Header Area
+==============================-->
+    <!--header class="th-header header-layout3">
         
         <div class="menu-top">
             <div class="container">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
                         <div class="header-logo">
-                            <a href="electric shop#"><img src="assets/img/logo-eletrical.png" alt="electric shop"></a>
+                            <a href="electric shop#"><img src="<?php echo base_url().'electricalshop1/assets/img/logo-eletrical.png';?>" alt="electric shop"></a>
                         </div>
                     </div>
                     <div class="col-auto d-none d-lg-block">
@@ -352,7 +336,7 @@ Product Lightbox
                             </button>
 
                             <div class="dropdown-link aed-sec">
-                                <a class="" href="#" ><img src="assets/img/e-shop/menu-icon.png"/>  AED</a>
+                                <a class="" href="#" ><img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/menu-icon.png';?>"/>  AED</a>
                                
                             </div>
                          
@@ -362,7 +346,7 @@ Product Lightbox
             </div>
         </div>
         <div class="sticky-wrapper">
-        
+           
             <div class="menu-area">
                 <div class="container">
                     <div class="row align-items-center justify-content-between">
@@ -450,6 +434,25 @@ Hero Area
    <!--==============================
     Breadcumb
 ============================== -->
+<?php $sitedetails = sitedetails();
+    $productMetaTags = $prodDesc = '';
+    $prodPoints = [];
+    foreach ($productdetails['Details'] as $key => $value) {
+        if ($value['pd_type_name'] == 'Meta Tags') {
+            $productMetaTags = html_entity_decode($value['prod_dt_desc']);
+        } else if ($value['pd_type_name'] == 'Description') {
+            $prodDesc = $value['prod_dt_desc'];
+        } else {
+            $prodPoints[$value['pd_type_name']] = $value['prod_dt_desc'];
+        }
+    }
+
+    $currency = '';
+    if (isset($sitecurrency)) {
+        $currency = $sitecurrency['currency'];
+    }
+    ?>
+
 <?php include('header.php');?>
 <div class="breadcumb-wrapper " data-bg-src="<?php echo base_url().'electricalshop1/assets/img/e-shop/inner-banner-img.png';?>">
     <div class="container">
@@ -458,13 +461,17 @@ Hero Area
                 <div class="banner-img">
                     <img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/banner-3.png';?>"/>
                 </div>
+
+
+
+                
                
             </div>
             <div class="col-lg-8 col-md-8">
                 <div class="inner-banner-content">
-                    <h1 class="breadcumb-title">CIRCUIT BREAKER Best price </h1>
+                    <h1 class="breadcumb-title"><?=$product['prod_name']?> </h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                    <a href="#" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span> <?=$sitedetails['phone_number_1']?></a>
+                    <a href="#" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span> 9843245333</a>
                 
                 </div>
 
@@ -487,43 +494,34 @@ Product list Area
        
         <div class="product-deatils-area">
             <div class="container">
-                <div class="icon-box">
+                <div class="icon-box mb-20">
                     <h4>Product Details</h4>
-                    <!--div class="arrow-sec">
-                        <button data-slider-prev="#productSlider7" class="slider-arrow default"><i class="far fa-arrow-left"></i></button>
-                        <button data-slider-next="#productSlider7" class="slider-arrow default"><i class="far fa-arrow-right"></i></button>
-                    </div-->
+                   
                  </div>
-                <div class="swiper th-slider has-shadow" id="productSlider7" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"1"},"992":{"slidesPerView":"1"},"1200":{"slidesPerView":"1"}}}'>
-                    <div class="swiper-wrapper">
+                <div class="product th-slider has-shadow">
+                    <div class="product-wrapper">
 
-                        <div class="swiper-slide">
+                        <div class="product-details">
                             <div class="row">
                                 <div class="col-lg-6 col-md-12">
-                                    <div class="products-img-box text-center">
-                                        <!--img src="<?php //echo base_url().'electricalshop1/assets/img/e-shop/product-details.png';?>"/-->
-
-                                        <?php if (isset($productdetails['Images']) && ! empty($productdetails['Images'])) { ?>
-                                    <?php 
-                                        $i=0;
-                                        
-                                        foreach ($productdetails['Images'] as $image) { 
-                                            if ($i==0){
-                                            
-                                            ?>
                                   
+                                     <!-- thumbs -->
+                <div class="productImage">
+                    <img id="largeImage" src="<?php echo base_url().'electricalshop1/assets/img/e-shop/product-details.png';?>">
+                  </div>
+                  <div id="thumbs" class="mb-20">
+                    <img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/small-product1.png';?>" />
+                    <img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/small-product2.png';?>"/>
+                    <img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/small-product3.png';?>" />
+                    <img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/small-product4.png';?>"/>
+                  
+                  </div>
 
-                                    <img src="<?=site_url()?>assets/uploads/products/<?=$image['pd_img_image']?>" alt="<?=$image['prod_name']?>" title="<?=((trim($image['pd_img_description']) != '') ? $image['pd_img_description'] : $image['prod_name'])?>"/>
-
-
-
-                                    <?php
-                                }  $i++; }} ?>
+               <!-- thumbs -->
 
 
 
 
-                                    </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12">
                                     <div class="product-box-details-area">
@@ -535,40 +533,19 @@ Product list Area
 
                                             <?php
                                         
-                                       //print_r($productdetails['Brand']);
-                                         
-                                         
-                                         if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
-                                             <h2>
-                                                 <img src="<?=site_url()?>assets/uploads/brands/<?=$productdetails['Brand'][0]['brand_image']?>" alt="<?//=$image['prod_name']?>" title="<?=((isset($productdetails['Brand']) && isset($productdetails['Brand'][0]) && isset($productdetails['Brand'][0]['brand_name'])) ?  $productdetails['Brand'][0]['brand_name'] : '')?>" />
-                                             </h2>
-                                         <?php } ?>
-
-
-
-
-
+                                        //print_r($productdetails['Brand']);
+                                          
+                                          
+                                          if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
+                                              <h2>
+                                                  <img src="<?=site_url()?>assets/uploads/brands/<?=$productdetails['Brand'][0]['brand_image']?>" alt="<?//=$image['prod_name']?>" title="<?=((isset($productdetails['Brand']) && isset($productdetails['Brand'][0]) && isset($productdetails['Brand'][0]['brand_name'])) ?  $productdetails['Brand'][0]['brand_name'] : '')?>" />
+                                              </h2>
+                                          <?php } ?>
                                         </h2>
     
                                        
-                                        <p> <?php
-                                        
-                                        
-                                        
-                                        
-                                       if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
-                                    
-
-                                    <?php
-                               echo $productdetails['Brand'][0]['brand_name'];
-                                
-                               } ?>
-                                        ,  <?=$product['prod_name']?>
-                                    </p>
+                                        <p><?=$product['prod_name']?></p>
                                     </div>
-
-
-                                    <form action="<?php echo base_url('productssample/addToCartqty/'); ?>" method="post">
                                     
                                     <div class="matrial-details">
                                       
@@ -581,7 +558,7 @@ Product list Area
                                                         Part Number :
                                                     </th>
                                                     <td>
-                                                    <?php echo $pnumber=$prodPoints['Part Number'];?>
+                                                        00000
                                                     </td>
                                                 </tr>
                                                 
@@ -592,7 +569,7 @@ Product list Area
                                                     <td>
                                                         <span class="btn-sec">
                                                             <a href="#" class="default-btn small-btn instock-btn"> Instock</a>    
-                                                            <!--a href="#" class="default-btn small-btn request-btn"> Request </a--> 
+                                                            <a href="#" class="default-btn small-btn request-btn"> Request </a> 
                                                         </span>  
                                                     </td>
                                                 </tr>
@@ -601,7 +578,7 @@ Product list Area
                                                         SKU :
                                                     </th>
                                                     <td>
-                                                    <?php echo $pnumber=$prodPoints['SKU'];?>
+                                                        Schneider
                                                     </td>
                                                 </tr>
     
@@ -610,7 +587,7 @@ Product list Area
                                                         Country origin :
                                                     </th>
                                                     <td>
-                                                    <?php echo $pnumber=$prodPoints['Country origin'];?>
+                                                        France
                                                     </td>
                                                 </tr>
     
@@ -619,15 +596,15 @@ Product list Area
                                                         Price :
                                                     </th>
                                                     <td class="font-weight-600">
-                                                        <span class="smallText"> AED<?php echo $pnumber=$prodPoints['Price'];?></span> <!--AED 850 +VAT--> 
-                                                    <!--span class="inner-select">
+                                                        <span class="smallText"> AED 1000</span> AED 850 +VAT 
+                                                    <span class="inner-select">
                                                         <select id="currencyList" class="select-box">
                                                             <option value="AED" selected="selected" label="AED">AED</option>
                                                             <option value="EUR" label="EUR">EUR</option>
                                                             <option value="JPY" label="JPY">JPY</option>
                                                             <option value="USD" label="USD">USD</option>
                                                             </select>
-                                                    </span--> 
+                                                    </span> 
                                                     </td>
     
                                                 </tr>
@@ -637,13 +614,8 @@ Product list Area
                                                         Quantity :
                                                     </th>
                                                     <td>
-                                                  
-
-
-<input type="hidden" id="prdid" name="prdid" value="<?php echo $product['prod_id'];?>" >
-
-<input type="number" id="quantity" name="quantity" min="1" max="500000">
-
+                                                        <input type="number" id="quantity" name="quantity" min="1" max="5">
+    
                                                     </td>
                                                 </tr>
                                              
@@ -653,19 +625,15 @@ Product list Area
                                         
                                         <div class="button-area">
                                             <div class="btn-sec mt-30">
-                                                <!--a href="#" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a-->
-                                                <button  class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</button>
-
-
-                                                <a href="<?php echo base_url().'bulkenquiry';?>"><button type="button" class="th-btn"><i class="far fa-cart-shopping mr-5"></i>   Bulk Enquiry</button> </a>
-
-
+                                                <a href="#" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
+                                                <a href="#" class="th-btn btn-sm ml-20">
+                                                      <!-- <img src="assets/img/btn-cart.png"/> -->
+                                                    Bulk Order
+                                                </a>
                                             </div>
         
                                             
                                         </div>
-
-                                        </form>
                                        
                                     </div>
                                   
@@ -682,536 +650,12 @@ Product list Area
                         </div>
 
 
-                        <!--div class="swiper-slide">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="products-img-box text-center">
-                                        
+                      
 
+                       
 
-                                        <?php if (isset($productdetails['Images']) && ! empty($productdetails['Images'])) { ?>
-                                    <?php 
-                                        $i=0;
-                                        
-                                        foreach ($productdetails['Images'] as $image) { 
-                                            if ($i==0){
-                                            
-                                            ?>
-                                  
 
-                                    <img src="<?=site_url()?>assets/uploads/products/<?=$image['pd_img_image']?>" alt="<?=$image['prod_name']?>" title="<?=((trim($image['pd_img_description']) != '') ? $image['pd_img_description'] : $image['prod_name'])?>"/>
-
-
-
-                                    <?php
-                                }  $i++; }} ?>
-
-
-
-
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="product-box-details-area">
-        
-                                    <div class="products-details">
-                                        <h2>
-                                           
-
-
-                                           
-
-                                         <?php
-                                        
-                                       
-                                          
-                                          if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
-                                              <h2>
-                                                  <img src="<?=site_url()?>assets/uploads/brands/<?=$productdetails['Brand'][0]['brand_image']?>" alt="<?//=$image['prod_name']?>" title="<?=((isset($productdetails['Brand']) && isset($productdetails['Brand'][0]) && isset($productdetails['Brand'][0]['brand_name'])) ?  $productdetails['Brand'][0]['brand_name'] : '')?>" />
-                                              </h2>
-                                          <?php } ?>
- 
-
-
-
-
-                                        </h2>
-    
-                                       
-                                        <p>
-
-                                        <?php
-                                        
-                                      
-                                        
-                                        
-                                        if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
-                                    
-
-                                    <?php
-                               echo $productdetails['Brand'][0]['brand_name'];
-                                
-                                } ?>
-                                        ,  <?=$product['prod_name']?>
-
-
-
-
-
-                                        </p>
-                                    </div>
-
-                                    <form action="<?php echo base_url('productssample/addToCartqty/'); ?>" method="post">
-                                    
-                                    <div class="matrial-details">
-                                      
-    
-                                        <div class="details-table-sec">
-                                         
-                                            <table id="part" cellspacing="0">
-                                                <tr>
-                                                    <th class="label">
-                                                        Part Number :
-                                                    </th>
-                                                    <td>
-                                                    <?php echo $pnumber=$prodPoints['Part Number'];?>
-                                                    </td>
-                                                </tr>
-                                                
-                                                <tr>
-                                                    <th class="label">
-                                                        Availability :
-                                                    </th>
-                                                    <td>
-                                                        <span class="btn-sec">
-                                                        <a href="#" class="default-btn small-btn instock-btn"> Instock</a>    
-                                                        </span>  
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="label">
-                                                        SKU :
-                                                    </th>
-                                                    <td>
-                                                    <?php echo $pnumber=$prodPoints['SKU'];?>
-                                                    </td>
-                                                </tr>
-    
-                                                <tr>
-                                                    <th class="label">
-                                                        Country origin :
-                                                    </th>
-                                                    <td>
-                                                    <?php echo $pnumber=$prodPoints['Country origin'];?>
-                                                    </td>
-                                                </tr>
-    
-                                                <tr>
-                                                    <th class="label">
-                                                        Price :
-                                                    </th>
-                                                    <td class="font-weight-600">
-                                                       <span class="smallText"> AED<?php echo $pnumber=$prodPoints['Price'];?></span>
-                                                 
-                                                    </td>
-    
-                                                </tr>
-    
-                                                <tr>
-                                                    <th class="label">
-                                                        Quantity :
-                                                    </th>
-                                                    <td>
-                                                    <input type="hidden" id="prdid" name="prdid" value="<?php echo $product['prod_id'];?>" >
-
-<input type="number" id="quantity" name="quantity" min="1" max="500000">
-    
-                                                    </td>
-                                                </tr>
-                                             
-                                        </table>
-                                        </div>
-        
-                                        
-                                        <div class="button-area">
-                                            <div class="btn-sec mt-30">
-                                                
-
-
-                                                <button  class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</button>
-
-
-                                                <a href="<?php echo base_url().'bulkenquiry';?>" class="th-btn btn-sm ml-20">
-                                                     
-                                                    Bulk Order
-                                                </a>
-                                            </div>
-        
-                                            
-                                        </div>
-
-                                        </form>
-                                       
-                                    </div>
-                                  
-        
-                                   
-        
-                                    
-                                   
-        
-                                
-                                </div>
-                                </div>
-                            </div>
-                        </div-->
-
-
-                        <!--div class="swiper-slide">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="products-img-box text-center">
-                                    <?php if (isset($productdetails['Images']) && ! empty($productdetails['Images'])) { ?>
-                                    <?php 
-                                        $i=0;
-                                        
-                                        foreach ($productdetails['Images'] as $image) { 
-                                            if ($i==0){
-                                            
-                                            ?>
-                                  
-
-                                    <img src="<?=site_url()?>assets/uploads/products/<?=$image['pd_img_image']?>" alt="<?=$image['prod_name']?>" title="<?=((trim($image['pd_img_description']) != '') ? $image['pd_img_description'] : $image['prod_name'])?>"/>
-
-
-
-                                    <?php
-                                }  $i++; }} ?>
-
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="product-box-details-area">
-        
-                                    <div class="products-details">
-                                        <h2>
-                                           
-
-                                            
-                                             <h2>
-                                                
-                                             </h2>
-                                         
-
-                                         <?php
-                                        
-                                       
-                                          
-                                          
-                                          if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
-                                              <h2>
-                                                  <img src="<?=site_url()?>assets/uploads/brands/<?=$productdetails['Brand'][0]['brand_image']?>" alt="<?//=$image['prod_name']?>" title="<?=((isset($productdetails['Brand']) && isset($productdetails['Brand'][0]) && isset($productdetails['Brand'][0]['brand_name'])) ?  $productdetails['Brand'][0]['brand_name'] : '')?>" />
-                                              </h2>
-                                          <?php } ?>
- 
-
-
-
-
-
-
-                                        </h2>
-
-
-
-    
-                                       
-                                        <p>   <?php
-                                        
-                                       
-                                        
-                                        if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
-                                    
-
-                                    <?php
-                               echo $productdetails['Brand'][0]['brand_name'];
-                                
-                                } ?>
-                                        ,  <?=$product['prod_name']?></p>
-                                    </div>
-
-                                    <form action="<?php echo base_url('productssample/addToCartqty/'); ?>" method="post">
-                                    
-                                    
-                                    <div class="matrial-details">
-                                      
-    
-                                        <div class="details-table-sec">
-                                         
-                                            <table id="part" cellspacing="0">
-                                                <tr>
-                                                    <th class="label">
-                                                        Part Number :
-                                                    </th>
-                                                    <td>
-                                                    <?php echo $pnumber=$prodPoints['Part Number'];?>
-                                                    </td>
-                                                </tr>
-                                                
-                                                <tr>
-                                                    <th class="label">
-                                                        Availability :
-                                                    </th>
-                                                    <td>
-                                                        <span class="btn-sec">
-                                                        <a href="#" class="default-btn small-btn instock-btn"> Instock</a>   
-                                                        </span>  
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="label">
-                                                        SKU :
-                                                    </th>
-                                                    <td>
-                                                    <?php echo $pnumber=$prodPoints['SKU'];?>
-                                                    </td>
-                                                </tr>
-    
-                                                <tr>
-                                                    <th class="label">
-                                                        Country origin :
-                                                    </th>
-                                                    <td>
-                                                    <?php echo $pnumber=$prodPoints['Country origin'];?>
-                                                    </td>
-                                                </tr>
-    
-                                                <tr>
-                                                    <th class="label">
-                                                        Price :
-                                                    </th>
-                                                    <td class="font-weight-600">
-                                                       <span class="smallText"> AED<?php echo $pnumber=$prodPoints['Price'];?></span>
-                                                 
-                                                    </td>
-    
-    
-                                                </tr>
-    
-                                                <tr>
-                                                    <th class="label">
-                                                        Quantity :
-                                                    </th>
-                                                    <td>
-                                                    <input type="hidden" id="prdid" name="prdid" value="<?php echo $product['prod_id'];?>" >
-
-<input type="number" id="quantity" name="quantity" min="1" max="500000">
-    
-                                                    </td>
-                                                </tr>
-                                             
-                                        </table>
-                                        </div>
-        
-                                        
-                                        <div class="button-area">
-                                            <div class="btn-sec mt-30">
-                                               
-
-                                                <button  class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</button>
-
-
-
-
-                                              
-                                                <a href="<?php echo base_url().'bulkenquiry';?>" class="th-btn btn-sm ml-20">
-                                                      
-                                                    Bulk Order
-                                                </a>
-                                            </div>
-        
-                                            
-                                        </div>
-
-                                        </form>
-                                       
-                                    </div>
-                                  
-        
-                                   
-        
-                                    
-                                   
-        
-                                
-                                </div>
-                                </div>
-                            </div>
-                        </div--->
-
-
-                        <!--div class="swiper-slide">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="products-img-box text-center">
-                                    <?php if (isset($productdetails['Images']) && ! empty($productdetails['Images'])) { ?>
-                                    <?php 
-                                        $i=0;
-                                        
-                                        foreach ($productdetails['Images'] as $image) { 
-                                            if ($i==0){
-                                            
-                                            ?>
-                                  
-
-                                    <img src="<?=site_url()?>assets/uploads/products/<?=$image['pd_img_image']?>" alt="<?=$image['prod_name']?>" title="<?=((trim($image['pd_img_description']) != '') ? $image['pd_img_description'] : $image['prod_name'])?>"/>
-
-
-
-                                    <?php
-                                }  $i++; }} ?>
-
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="product-box-details-area">
-        
-                                    <div class="products-details">
-                                        <h2>
-                                        <?php
-                                        
-                                      
-                                          
-                                          
-                                          if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
-                                              <h2>
-                                                  <img src="<?=site_url()?>assets/uploads/brands/<?=$productdetails['Brand'][0]['brand_image']?>" alt="<?//=$image['prod_name']?>" title="<?=((isset($productdetails['Brand']) && isset($productdetails['Brand'][0]) && isset($productdetails['Brand'][0]['brand_name'])) ?  $productdetails['Brand'][0]['brand_name'] : '')?>" />
-                                              </h2>
-                                          <?php } ?>
- 
-                                        </h2>
-    
-                                       
-                                        <p> <?php
-                                        
-                                      
-                                        
-                                        
-                                        if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
-                                    
-
-                                    <?php
-                               echo $productdetails['Brand'][0]['brand_name'];
-                                
-                                } ?>
-                                        ,  <?=$product['prod_name']?></p>
-                                    </div>
-
-                                    <form action="<?php echo base_url('productssample/addToCartqty/'); ?>" method="post">
-                                    
-                                    
-                                    <div class="matrial-details">
-                                      
-    
-                                        <div class="details-table-sec">
-                                         
-                                            <table id="part" cellspacing="0">
-                                                <tr>
-                                                    <th class="label">
-                                                        Part Number :
-                                                    </th>
-                                                    <td>
-                                                    <?php echo $pnumber=$prodPoints['Part Number'];?>
-                                                    </td>
-                                                </tr>
-                                                
-                                                <tr>
-                                                    <th class="label">
-                                                        Availability :
-                                                    </th>
-                                                    <td>
-                                                        <span class="btn-sec">
-                                                        <a href="#" class="default-btn small-btn instock-btn"> Instock</a>   
-                                                        </span>  
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="label">
-                                                        SKU :
-                                                    </th>
-                                                    <td>
-                                                    <?php echo $pnumber=$prodPoints['SKU'];?>
-                                                    </td>
-                                                </tr>
-    
-                                                <tr>
-                                                    <th class="label">
-                                                        Country origin :
-                                                    </th>
-                                                    <td>
-                                                    <?php echo $pnumber=$prodPoints['Country origin'];?>
-                                                    </td>
-                                                </tr>
-    
-                                                <tr>
-                                                    <th class="label">
-                                                        Price :
-                                                    </th>
-                                                    <td class="font-weight-600">
-                                                    <span class="smallText"> AED<?php echo $pnumber=$prodPoints['Price'];?></span>
-                                                    </td>
-    
-                                                </tr>
-    
-                                                <tr>
-                                                    <th class="label">
-                                                        Quantity :
-                                                    </th>
-                                                    <td>
-                                                    <input type="hidden" id="prdid" name="prdid" value="<?php echo $product['prod_id'];?>" >
-
-<input type="number" id="quantity" name="quantity" min="1" max="500000">
-    
-    
-                                                    </td>
-                                                </tr>
-                                             
-                                        </table>
-                                        </div>
-
-
-
-        
-                                        
-                                        <div class="button-area">
-                                            <div class="btn-sec mt-30">
-                                              
-                                                <button  class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</button>
-
-                                                <a href="<?php echo base_url().'bulkenquiry';?>" class="th-btn btn-sm ml-20">
-                                                     
-                                                    Bulk Order
-                                                </a>
-                                            </div>
-        
-                                            
-                                        </div>
-
-                                        </form>
-                                       
-                                    </div>
-                                  
-        
-                                   
-        
-                                    
-                                   
-        
-                                
-                                </div>
-                                </div>
-                            </div-->
-                        </div>
+                       
 
 
                        
@@ -1221,24 +665,14 @@ Product list Area
 
                 <div class="row">
                     <div class="prouct-specificaion mt-2">
-                        <h4>Description for  <?php
-                                        
-                                        //print_r($productdetails['Brand']);
-                                        
-                                        
-                                        if (isset($productdetails['Brand']) && ! empty($productdetails['Brand']) && isset($productdetails['Brand'][0])) { ?>
-                                    
-
-                                    <?php
-                               echo $productdetails['Brand'][0]['brand_name'];
-                                
-                                } ?>  <?=$product['prod_name']?></h4>
+                        <h4>Description for <?=$product['prod_name']?></h4>
                         <p><?=html_entity_decode(nl2br($prodDesc))?></p>
                     </div>
                     <div class="Specifications mt-2">
                         <h4>Specifications</h4>
 
                         <div class="specification-table">
+                        <?=$product['prdspec']?>
                             <!--table border="1" cellpadding="1" cellspacing="1">
                                 <tbody>
                                  <tr>
@@ -1308,35 +742,32 @@ Product list Area
                                  </tr>
                                 </tbody>
                                </table-->
-
-                               <?=$product['prdspec']?>
-
-
-
                         </div>
 
                     </div>
                 </div>
 
+               
 
-
-
-                
                 
             </div>
         </div>
        
     </div>
 </section>
+
 <?php include('footer.php');?>
   
-   
+   <!--==============================
+Cta Area  
+==============================-->
+
     <!--div class="footer-top-newsletter">
         <div class="container z-index-common">
             <div class="newsletter-wrap">
                 <div class="newsletter-content">
                     <div class="email-icon">
-                        <img src="assets/img/icon/email_2.svg" alt="Icon">
+                        <img src="<?php //echo base_url().'electricalshop1/assets/img/icon/email_2.svg';?>" alt="Icon">
                     </div>
                     <h4 class="newsletter-title">Sign Up to Get Updates & News About Us.</h4>
                 </div>
@@ -1357,7 +788,7 @@ Product list Area
                         <div class="widget footer-widget">
                             <div class="th-widget-about">
                                 <div class="about-logo">
-                                    <a href="#"><img src="assets/img/logo-eletrical.png" alt="eletrical"></a>
+                                    <a href="#"><img src="<?php echo base_url().'electricalshop1/assets/img/logo-eletrical.png';?>" alt="eletrical"></a>
                                 </div>
                                 <p class="about-text">ELECTRICAL SHOPE is a team of highly skilled and experienced engineers ensuring excellence in multi-disciplinary areas with proficiency in all kinds of Products, Solutions, and Services. Our team is committed to offer an amazing experience for the client .</p>
                                 <div class="th-social">
@@ -1431,7 +862,7 @@ Product list Area
                 </div>
             </div>
         </div>
-        <div class="copyright-wrap" data-bg-src="assets/img/bg/copyright_bg_1.png">
+        <div class="copyright-wrap" data-bg-src="<?php echo base_url().'electricalshop1/assets/img/bg/copyright_bg_1.png';?>">
             <div class="container">
                 <div class="row gy-2 align-items-center">
                     <div class="col-md-6">
@@ -1440,7 +871,7 @@ Product list Area
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="developed-area">
-                         Created with <img src="assets/img/e-shop/heartbeat.png"> by <a href="https://pocketfriendlyweb.com/" target="_blank">PocketFriendlyWeb</a>
+                         Created with <img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/heartbeat.png';?>"> by <a href="https://pocketfriendlyweb.com/" target="_blank">PocketFriendlyWeb</a>
                         </div>
                     </div>
                 </div>
@@ -1448,37 +879,55 @@ Product list Area
         </div>
     </footer-->
 
+    <!--********************************
+			Code End  Here 
+	******************************** -->
+<!-- whatsapp -->
     <!--div class="button__cover">
         <a href="tel:+971 50 964 8779 "><i class="fab fa-whatsapp"></i></a>
         <a href="#" target="_blank"> <i class="fas fa-location-dot"></i> </a>
     </div>
 
+   
     <div class="scroll-top">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
         </svg>
     </div-->
 
+    <!--==============================
+    All Js File
+============================== -->
+
+
+
+   
+
+
+
     <script src="<?php echo base_url().'electricalshop1/assets/js/vendor/jquery-3.6.0.min.js';?>"></script>
    
-    <script src="<?php echo base_url().'electricalshop1/assets/js/swiper-bundle.min.js';?>"></script>
+   <script src="<?php echo base_url().'electricalshop1/assets/js/swiper-bundle.min.js';?>"></script>
+ 
+   <script src="<?php echo base_url().'electricalshop1/assets/js/bootstrap.min.js';?>"></script>
+ 
+   <script src="<?php echo base_url().'electricalshop1/assets/js/jquery.magnific-popup.min.js';?>"></script>
   
-    <script src="<?php echo base_url().'electricalshop1/assets/js/bootstrap.min.js';?>"></script>
+   <script src="<?php echo base_url().'electricalshop1/assets/js/jquery.counterup.min.js';?>"></script>
   
-    <script src="<?php echo base_url().'electricalshop1/assets/js/jquery.magnific-popup.min.js';?>"></script>
-   
-    <script src="<?php echo base_url().'electricalshop1/assets/js/jquery.counterup.min.js';?>"></script>
-   
-    <script src="<?php echo base_url().'electricalshop1/assets/js/jquery-ui.min.js';?>"></script>
-   
-    <script src="<?php echo base_url().'electricalshop1/assets/js/imagesloaded.pkgd.min.js';?>"></script>
-    <script src="<?php echo base_url().'electricalshop1/assets/js/isotope.pkgd.min.js';?>"></script>
+   <script src="<?php echo base_url().'electricalshop1/assets/js/jquery-ui.min.js';?>"></script>
+  
+   <script src="<?php echo base_url().'electricalshop1/assets/js/imagesloaded.pkgd.min.js';?>"></script>
+   <script src="<?php echo base_url().'electricalshop1/assets/js/isotope.pkgd.min.js';?>"></script>
 
-    
-    <script src="<?php echo base_url().'electricalshop1/assets/js/main.js';?>"></script>
+   
+   <script src="<?php echo base_url().'electricalshop1/assets/js/main.js';?>"></script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"> </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"> </script>
+
+
+   
 
 <script>
 
@@ -1572,6 +1021,7 @@ submitHandler: function(form) {
 
 
 </script>
+
 
 
 
