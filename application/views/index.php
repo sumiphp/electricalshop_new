@@ -823,7 +823,7 @@ Cta Area
                                                 
                                           if ($product['addtoquote']==1){?> 
 
-                                                    <a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote---</a>
+                                                    <a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
                                                     
                                                     
                                                     <?php } else { ?>                         
