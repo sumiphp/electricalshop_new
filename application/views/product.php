@@ -453,7 +453,11 @@ Hero Area
     }
     ?>
 
-<?php include('header.php');?>
+<?php 
+
+//print_r($product);
+
+include('header.php');?>
 <div class="breadcumb-wrapper " data-bg-src="<?php echo base_url().'electricalshop1/assets/img/e-shop/inner-banner-img.png';?>">
     <div class="container">
         <div class="row">
@@ -470,8 +474,8 @@ Hero Area
             <div class="col-lg-8 col-md-8">
                 <div class="inner-banner-content">
                     <h1 class="breadcumb-title"><?=$product['prod_name']?> </h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                    <a href="#" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span> 9843245333</a>
+                    <p> <?php echo $product['prdshdesc'];?></p>
+                    <a href="#" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span>  <?=$sitedetails['phone_number_1']?></a>
                 
                 </div>
 
@@ -546,6 +550,9 @@ Product list Area
                                        
                                         <p><?=$product['prod_name']?></p>
                                     </div>
+
+                                    
+                                    <form action="<?php echo base_url('productssample/addToCartqty/'); ?>" method="post">
                                     
                                     <div class="matrial-details">
                                       
@@ -558,7 +565,7 @@ Product list Area
                                                         Part Number :
                                                     </th>
                                                     <td>
-                                                        00000
+                                                    <?php echo $pnumber=$prodPoints['Part Number'];?>
                                                     </td>
                                                 </tr>
                                                 
@@ -569,7 +576,7 @@ Product list Area
                                                     <td>
                                                         <span class="btn-sec">
                                                             <a href="#" class="default-btn small-btn instock-btn"> Instock</a>    
-                                                            <a href="#" class="default-btn small-btn request-btn"> Request </a> 
+                                                            <!--a href="#" class="default-btn small-btn request-btn"> Request </a--> 
                                                         </span>  
                                                     </td>
                                                 </tr>
@@ -578,7 +585,7 @@ Product list Area
                                                         SKU :
                                                     </th>
                                                     <td>
-                                                        Schneider
+                                                    <?php echo $pnumber=$prodPoints['SKU'];?>
                                                     </td>
                                                 </tr>
     
@@ -587,7 +594,7 @@ Product list Area
                                                         Country origin :
                                                     </th>
                                                     <td>
-                                                        France
+                                                    <?php echo $pnumber=$prodPoints['Country origin'];?>
                                                     </td>
                                                 </tr>
     
@@ -596,15 +603,15 @@ Product list Area
                                                         Price :
                                                     </th>
                                                     <td class="font-weight-600">
-                                                        <span class="smallText"> AED 1000</span> AED 850 +VAT 
-                                                    <span class="inner-select">
+                                                        <span class="smallText"> AED <?php echo $pnumber=$prodPoints['Price'];?></span> <!--AED 850 +VAT--> 
+                                                    <!--span class="inner-select">
                                                         <select id="currencyList" class="select-box">
                                                             <option value="AED" selected="selected" label="AED">AED</option>
                                                             <option value="EUR" label="EUR">EUR</option>
                                                             <option value="JPY" label="JPY">JPY</option>
                                                             <option value="USD" label="USD">USD</option>
                                                             </select>
-                                                    </span> 
+                                                    </span--> 
                                                     </td>
     
                                                 </tr>
@@ -614,7 +621,12 @@ Product list Area
                                                         Quantity :
                                                     </th>
                                                     <td>
-                                                        <input type="number" id="quantity" name="quantity" min="1" max="5">
+                                                      
+
+
+                                                        <input type="hidden" id="prdid" name="prdid" value="<?php echo $product['prod_id'];?>" >
+
+<input type="number" id="quantity" name="quantity" min="1" max="500000">
     
                                                     </td>
                                                 </tr>
@@ -625,15 +637,26 @@ Product list Area
                                         
                                         <div class="button-area">
                                             <div class="btn-sec mt-30">
-                                                <a href="#" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
+                                                <!--a href="#" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
                                                 <a href="#" class="th-btn btn-sm ml-20">
-                                                      <!-- <img src="assets/img/btn-cart.png"/> -->
+                                                   
                                                     Bulk Order
-                                                </a>
+                                                </a-->
+
+                                                <button  class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</button>
+
+
+<a href="<?php echo base_url().'bulkenquiry';?>"><button type="button" class="th-btn"><i class="far fa-cart-shopping mr-5"></i>   Bulk Enquiry</button> </a>
+
+
+
+
                                             </div>
         
                                             
                                         </div>
+                                        </form>
+                                      
                                        
                                     </div>
                                   
