@@ -248,7 +248,24 @@ Product Area
                                             
                                             if ($username==''){?>
                                     <a href="<?php echo base_url('home/login'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                    <?php } else { ?>
+                                    <?php } else {
+
+
+                                        if ($product['addtoquote']==1){
+
+?>
+
+<a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+
+
+
+
+<?php }else{
+
+
+
+?>
+
 
 
 
@@ -257,7 +274,7 @@ Product Area
                                         <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
 
 
-                                        <?php } ?>
+                                        <?php  }} ?>
                                           
 
 
@@ -267,7 +284,7 @@ Product Area
                                 </div>
                                 <div class="product-content">
                                    
-                                    <h3 class="product-title"><a href="#"><?=$product['prod_name']?></a></h3>
+                                    <h3 class="product-title"><a href="<?php echo site_url().'product/'.$product['prod_canonial_name']?>"><?=$product['prod_name']?></a></h3>
                                     <p> <?php
                                             $this->db->where('prod_dt_prodid',$product['prod_id']);
         $this->db->where('prod_dt_typeid',5);
@@ -324,7 +341,8 @@ Product Area
                                                 
                                                 ?>
 
-<a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+<a href="<?php echo base_url('bulkenquiry
+'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
 
 
 
@@ -446,8 +464,31 @@ Product list Area
 
 
 
+
+
+
+
                                     <a href="<?php echo base_url('home/login'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
                                     <?php  } else { 
+
+
+if ($product['addtoquote']==1){
+
+    ?>
+    
+    <a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+    
+    
+    
+    
+    <?php }else{
+    
+    
+    
+   
+    
+
+
  
                                                 ?>
 
@@ -455,7 +496,7 @@ Product list Area
                                         <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
 
 
-                                        <?php  } ?>
+                                        <?php } } ?>
                                           
 
                                         <a href="javascript:void(0)" onclick=addwishlist(<?php echo $product['prod_id'];?>) class="icon-btn"><i class="far fa-heart"></i></a>
@@ -497,7 +538,7 @@ Product list Area
                                         </div>
                                         <?php //echo $user ;
                                         
-                                        //echo "bbbbb".$product['addtoquote'];
+                                       //echo "bbbbb".$product['addtoquote'];
                                         
                                         
                                         ?>
@@ -506,14 +547,25 @@ Product list Area
                                             
                                             $username=$this->session->userdata('username');
                                             
-                                            if ($username==''){?>
+                                            if ($username==''){
+                                                
+                                                if ($product['addtoquote']==1){
+                                                
+                                                
+                                                ?>
+
+<a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
 
 
-                                                <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
+
+<?php } else { ?>
+
+
+                                                <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart </a>
                                         
                                             
                                             
-                                            <?php } else { 
+                                            <?php } } else { 
                                                 
                                                 //echo "kkk".$product['addtoquote'];
                                                 if ($product['addtoquote']==1){
@@ -529,7 +581,7 @@ Product list Area
                                                 
                                                 
                                                 ?>
-                                            <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
+                                            <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart </a>
                                             <?php }} ?>
                                         </div>
                                        
@@ -589,11 +641,27 @@ Product list Area
                                             
                                             if ($username==''){?>
                                     <a href="<?php echo base_url('home/login'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                    <?php } else { ?>
+                                    <?php } else { 
+                                        
+                                        
+                                        if ($product['addtoquote']==1){
+
+                                            ?>
+                                            
+                                            <a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+                                            
+                                            
+                                            
+                                            
+                                            <?php }else{  
+                                        
+                                        
+                                        
+                                        ?>
                                         <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
 
 
-                                        <?php } ?>
+                                        <?php }} ?>
                                           
 
 
@@ -637,10 +705,23 @@ Product list Area
                                             
                                             $username=$this->session->userdata('username');
                                             
-                                            if ($username==''){?>
+                                            if ($username==''){
+                                                
+                                                
+                                                if ($product['addtoquote']==1){        
+                                                
+                                                ?>
+                                                 <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
 
 
-                                                <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
+<?php } else {?>
+
+    <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
+
+    <?php } ?>
+
+
+                                               
                                         
                                             
                                             
@@ -660,7 +741,7 @@ Product list Area
                                                 
                                                 
                                                 ?>
-                                            <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
+                                            <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart </a>
                                             <?php } } ?>
 
 
@@ -765,13 +846,34 @@ Cta Area
                                             
                                             $username=$this->session->userdata('username');
                                             
-                                            if ($username==''){?>
+                                            if ($username==''){
+                                                
+                                                
+                                                
+                                                ?>
                                     <a href="<?php echo base_url('home/login'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                    <?php } else { ?>
+                                    <?php } else {
+                                        
+                                        
+                                        if ($product['addtoquote']==1){
+
+                                            ?>
+                                            
+                                            <a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+                                            
+                                            
+                                            
+                                            
+                                            <?php }else{  
+                                                     
+                                        
+                                        
+                                        
+                                        ?>
                                         <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
 
 
-                                        <?php } ?>
+                                        <?php }} ?>
                                           
 
 
@@ -782,8 +884,8 @@ Cta Area
                         <div class="product-content">
                           
                             <h3 class="product-title"><a href="<?php echo site_url().'product/'.$product['prod_canonial_name']?>" ><?=$product['prod_id']?> <?=$product['prod_name']?></a></h3>
-                            <div class="star-rating mt-2" role="img" aria-label="Rated 5.00 out of 5">
-                                <span>Rated <strong class="rating">4.00</strong> out of 5 based on <span class="rating">1</span> customer rating</span>
+                            <div class="star-rating mt-2" role="img" aria-label="Rated 3.00 out of 5">
+                                <span>Rated <strong class="rating">3.00</strong> out of 5 based on <span class="rating">1</span> customer rating</span>
                             </div>
                             <div class="price-area mt-2">
                                 <span class="price">
@@ -812,14 +914,20 @@ Cta Area
                                             
                                             $username=$this->session->userdata('username');
                                             
-                                            if ($username==''){?>
+                                            if ($username==''){
+                                                
+                                                if ($product['addtoquote']==1){?> 
+
+<a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+                                                
+                                               <?php } else { ?>
 
 
                                                 <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
                                         
                                             
                                             
-                                            <?php } else { 
+                                            <?php  } } else { 
                                                 
                                           if ($product['addtoquote']==1){?> 
 
