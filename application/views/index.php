@@ -509,7 +509,7 @@ Product list Area
                                             if ($username==''){?>
 
 
-                                                <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart---</a>
+                                                <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
                                         
                                             
                                             

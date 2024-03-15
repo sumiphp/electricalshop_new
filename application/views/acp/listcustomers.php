@@ -27,7 +27,10 @@
             <!-- header area end -->
 
             <!-- page title area start -->
-            <?php $this->load->view('acp/includes/page-head', array('page_title' => $page_title, 'breadcrum' => $page_breadcrumb)); ?>
+            <?php 
+            //$page_title='Customers';
+            
+            $this->load->view('acp/includes/page-head', array('page_title' => $page_title, 'breadcrum' => $page_breadcrumb)); ?>
             <!-- page title area end -->
 
             <div class="main-content-inner p-0">

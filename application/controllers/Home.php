@@ -391,7 +391,7 @@ else{
 
         $config["base_url"] = base_url() . "Home/productsByCategory";
         $config["total_rows"] = $this->frontend->get_countproducts(null, [], [], 3, null, $category);
-        $config["per_page"] = 2;
+        $config["per_page"] = 10;
         $config["uri_segment"] = 3;
         $this->pagination->initialize($config);
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;

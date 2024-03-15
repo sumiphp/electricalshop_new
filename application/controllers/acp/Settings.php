@@ -754,7 +754,7 @@ $data['result']=$this->commonModel->get_customers($config["per_page"],$page);
 $data['newsletter']=$this->sm->get_newsletter();
 $data['siteinf']=$this->sm->get_siteinf();*/
 $this->data['page_title'] = "List Customers";
-$this->data['page_breadcrumb'] = array("Carousel" => array('active' => false, 'link' => site_url().'acp/Settings/listcustomers'), ((empty($uid))? "List" : (($view)? "View" : "List" )) => array('active' => true, 'link' => ''));
+$this->data['page_breadcrumb'] = array("Customers" => array('active' => false, 'link' => site_url().'acp/Settings/listcustomers'), ((empty($uid))? "List" : (($view)? "View" : "List" )) => array('active' => true, 'link' => ''));
 	//$this->data['page_breadcrumb'] = array("Products" => array('active' => false, 'link' => site_url().'acp/listmenus'), "Product Brands" => array('active' => false, 'link' => site_url().'acp/Productbrands'), "List Brands" => array('active' => true, 'link' => ''));
 	$this->data['innersub_menu_active'] = "List  Carousal";
 	$this->load->view('acp/listcustomers', $this->data);
