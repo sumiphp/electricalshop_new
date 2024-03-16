@@ -48,7 +48,7 @@ class Manage_frontend extends CI_Model
         if (empty($where)) {
             $getProducts = $this->db->order_by('P.prod_id', 'DESC')->get()->result_array();
         }
-   //echo $this->db->last_query();
+  //echo $this->db->last_query();
 		return $getProducts;
     }
 
@@ -150,6 +150,7 @@ class Manage_frontend extends CI_Model
         else $this->db->limit($limit['limit'], 0);
     }
     if (empty($where)) {
+        //echo 'enter';
         //$where='clearsaleflag=1';
         //$this->db->where($where);
         $getProducts = $this->db->order_by('P.prod_id', 'DESC')->get()->num_rows();
@@ -747,7 +748,7 @@ $this->db->where('mostviewed',1);
       if (empty($where)) {
            $getProducts = $this->db->order_by('P.prod_id', 'DESC')->get()->result_array();
         }
-     //echo $this->db->last_query();
+   //echo $this->db->last_query();
 		return $getProducts;
     }
 

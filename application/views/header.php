@@ -137,7 +137,19 @@
                           
                         </div>
                         <div class="header-icons">
+
+                        <?php $username=$this->session->userdata('username');?>
+
+                        <?php if ( $username==''){?>
                             <a href="<?=base_url().'login';?>" class="icon-btn d-none d-sm-block"><i class="far fa-user"></i></a>
+                        
+                        <?php }else{?>
+                            <a href="<?=base_url().'Home/logout';?>" class="icon-btn d-none d-sm-block"><i class="far fa-user"></i></a>
+                        
+                        <?php }?>
+
+                           
+                           
                             <a href="<?php echo base_url().'wishlist';?>" class="icon-btn d-none d-sm-block">
                                 <span class="badge wishlistcount"><?php echo $wishlistcount;?></span>
                                 <i class="far fa-heart"></i>

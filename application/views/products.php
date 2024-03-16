@@ -216,10 +216,31 @@ Product list Area
                                         
                                             
                                             
-                                            <?php } else { ?>
+                                            <?php } else { 
+
+
+
+                                                if ($product['addtoquote']==1){
+
+?>
+
+<a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+
+
+
+
+<?php }else{
+
+
+
+?>
+
+
+
+
                                             
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                            <?php } ?>
+                                            <?php }} ?>
 
 
                                             <!--a href="#" class="icon-btn"><i class="far fa-cart-plus"></i></a-->
@@ -272,7 +293,7 @@ Product list Area
 
                                                 <?php if ($product['addtoquote']==1){?> 
 
-<a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote---</a>
+<a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
 
 
 <?php } else { ?>
@@ -414,7 +435,7 @@ Cta Area
                                 <?php } ?>
                               
                                 <li class="menu-item-has-children1">
-                                    <a href="#"><b>Brand</b> </a>
+                                    <a href="#"><b>Brand-</b> </a>
                                     <ul class="sub-menu1">
 
 
@@ -499,10 +520,29 @@ Cta Area
                                         
                                             
                                             
-                                            <?php } else { ?>
+                                            <?php } else { 
+
+
+                                                if ($product['addtoquote']==1){
+
+?>
+
+<a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+
+
+
+
+<?php }else{
+
+
+
+?>
+
+
+                                                
                                             
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                            <?php } ?>
+                                            <?php }} ?>
 
 
                                 <a href="javascript:void(0)" onclick=addwishlist(<?php echo $product['prod_id'];?>) class="icon-btn"><i class="far fa-heart"></i></a>

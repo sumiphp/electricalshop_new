@@ -354,7 +354,7 @@ else{
             $this->data['catdt']=$this->frontend->catdt($category);
            // print_r($this->data['categories']);
 //die;
-
+$this->session->set_userdata('catid',$category);
             $config = array();
 
           
@@ -386,15 +386,16 @@ else{
         $config['num_tag_open']     = '<li class="page-item">';
         $config['num_tag_close']    = '</li>';
 
-        
-      
+        //$config['enable_query_strings'] = TRUE;
+        //$config['use_page_numbers'] = TRUE;
 
-        $config["base_url"] = base_url() . "Home/productsByCategory";
+        $config["base_url"] = base_url() . "Home/productsByCategory/$category";
         $config["total_rows"] = $this->frontend->get_countproducts(null, [], [], 3, null, $category);
-        $config["per_page"] = 10;
-        $config["uri_segment"] = 3;
+        //$config["per_page"] = 10;
+      $config["per_page"] = 3;
+        $config["uri_segment"] = 4;
         $this->pagination->initialize($config);
-        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
         $this->data["links"] = $this->pagination->create_links();	
         $limit=array('limit'=>"$config[per_page]",'offset'=>$page);
 
@@ -1089,7 +1090,7 @@ $this->data['custwishlist']=$this->product->custwishlist($custID);
       
 
         $config["base_url"] = base_url() . "Home/clearencesale";
-        $config["total_rows"] = $this->frontend->get_countproductsclear(null,[], [],null,'-5');
+       $config["total_rows"] = $this->frontend->get_countproductsclear(null,[], [],null,'-5');
         $config["per_page"] = 2;
         $config["uri_segment"] = 3;
 
@@ -1286,7 +1287,7 @@ $this->load->view('bulkenquiry', $this->data);
             $config['num_tag_close']    = '</li>';
     
             $this->pagination->initialize($config);
-          $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+           $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
             $this->data["links"] = $this->pagination->create_links();	
             $limit=array('limit'=>"$config[per_page]",'offset'=>$page);
             //print_r($limit);

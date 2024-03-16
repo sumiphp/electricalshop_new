@@ -188,10 +188,28 @@ Product list Area
                                             
                                             <?php } else {
                                                 
-                                                ?>
+                                             
+
+
+if ($product['addtoquote']==1){
+
+?>
+
+<a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+
+
+
+
+<?php }else{
+
+
+
+?>
+
+
                                             
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                            <?php } ?>
+                                            <?php }} ?>
 
 
                                             <!--a href="#" class="icon-btn"><i class="far fa-cart-plus"></i></a-->
@@ -235,11 +253,19 @@ Product list Area
                                             if ($username==''){?>
 
 
+<?php if ($product['addtoquote']==1){?> 
+    <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+
+
+    <?php } else { ?>
+
+
+
                                                 <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
                                         
                                             
                                             
-                                            <?php } else { ?>
+                                            <?php } } else { ?>
 
 <?php if ($product['addtoquote']==1){?> 
 
@@ -299,8 +325,8 @@ Product list Area
                 </div>
                 <div class="col-lg-8 col-md-8">
                     <div class="banner-center-content">
-                        <h2>Capacitor Switches & Sockets</h2>
-                        <p>Electrical shope is one of the largest and reputed distributor and wholesaler of electrical, Electronics and Automation products in Dubai-UAE</p>
+                        <h2>Clearence Sale</h2>
+                        <p>AMPS Electric Trading is one of the largest and reputed distributor and wholesaler of electrical, Electronics and Automation products in Dubai-UAE</p>
                         <h4>Special Discount</h4>
 
                         <a href="#" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
@@ -428,10 +454,26 @@ Cta Area
                                         
                                             
                                             
-                                            <?php } else { ?>
+                                            <?php } else { 
+
+                                                if ($product['addtoquote']==1){
+
+?>
+
+<a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+
+
+
+
+<?php }else{
+
+
+
+?>
+
                                             
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                            <?php } ?>
+                                            <?php }} ?>
 
 
                                 <a href="javascript:void(0)" onclick=addwishlist(<?php echo $product['prod_id'];?>) class="icon-btn"><i class="far fa-heart"></i></a>
@@ -474,11 +516,18 @@ Cta Area
                                             if ($username==''){?>
 
 
+<?php if ($product['addtoquote']==1){?> 
+    <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+
+
+    <?php } else { ?>
+
+
                                                 <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
                                         
                                             
                                             
-                                            <?php } else { ?>
+                                            <?php  } } else { ?>
 
 
                                                 <?php if ($product['addtoquote']==1){?> 

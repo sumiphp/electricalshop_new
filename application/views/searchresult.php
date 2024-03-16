@@ -126,9 +126,9 @@ Hero Area
             </div>
             <div class="col-lg-7 col-md-7">
                 <div class="inner-banner-content">
-                    <h1 class="breadcumb-title">CIRCUIT BREAKER Best price </h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-                    <a href="#" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span> 9843245333</a>
+                    <h1 class="breadcumb-title">Search result </h1>
+                    <p>Get ready to light up your world with our electrifying clearance sale! From gadgets to appliances, we've got everything you need to power up your home or workspace at unbeatable prices</p>
+                    <a href="#" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span> <?=$sitedetails['phone_number_1']?></a>
                 
                 </div>
 
@@ -182,7 +182,7 @@ Product list Area
                                 <div class="th-product product-grid">
                                     <div class="product-img">
                                         <img src="<?=site_url()?>assets/uploads/products/<?=$product['prod_primary_image']?>" alt="<?=$product['prod_name']?>" title="<?=$product['prod_name']?>">
-                                        <span class="product-tag">10% OFF</span>
+                                        <span class="product-tag"><?php echo $product['discountper'];?> OFF</span>
                                         <span class="product-tag-second">Sale</span>
                                         <div class="actions">
                                             <a href="<?=site_url().'product/'.$product['prod_canonial_name']?>" class="icon-btn popup-content1"><i class="far fa-eye"></i></a>
@@ -197,10 +197,30 @@ Product list Area
                                         
                                             
                                             
-                                            <?php } else { ?>
+                                            <?php } else {
+                                                
+                                             
+
+
+if ($product['addtoquote']==1){
+
+?>
+
+<a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+
+
+
+
+<?php }else{
+
+
+
+?>
+
+
                                             
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                            <?php } ?>
+                                            <?php }} ?>
 
 
                                             <!--a href="#" class="icon-btn"><i class="far fa-cart-plus"></i></a-->
@@ -237,20 +257,38 @@ Product list Area
                                         <div class="add-cart-btn mt-4">
                                             
 
-                                            <?php 
+                                        <?php 
                                             
                                             $username=$this->session->userdata('username');
                                             
                                             if ($username==''){?>
 
 
+<?php if ($product['addtoquote']==1){?> 
+    <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+
+
+    <?php } else { ?>
+
+
+
                                                 <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
                                         
                                             
                                             
-                                            <?php } else { ?>
+                                            <?php } } else { ?>
+
+<?php if ($product['addtoquote']==1){?> 
+
+    <a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+
+
+<?php } else { ?>
+
+
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
-                                            <?php } ?>
+                                            <?php } } ?>
+
 
                                         </div>
                                        
@@ -299,8 +337,8 @@ Product list Area
                 </div>
                 <div class="col-lg-8 col-md-8">
                     <div class="banner-center-content">
-                        <h2>Capacitor Switches & Sockets</h2>
-                        <p>Electrical shope is one of the largest and reputed distributor and wholesaler of electrical, Electronics and Automation products in Dubai-UAE</p>
+                        <h2>Search Result</h2>
+                        <p>AMPS Electric Trading is one of the largest and reputed distributor and wholesaler of electrical, Electronics and Automation products in Dubai-UAE</p>
                         <h4>Special Discount</h4>
 
                         <a href="#" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
@@ -419,7 +457,7 @@ Cta Area
                     <div class="th-product product-grid">
                         <div class="product-img">
                             <img  src="<?=site_url()?>assets/uploads/products/<?=$product['prod_primary_image']?>" alt="<?=$product['prod_name']?>" alt="Product Image">
-                            <span class="product-tag">10% OFF</span>
+                            <span class="product-tag"><?php echo $product['discountper'];?> OFF</span>
                             <span class="product-tag-second">Sale</span>
                             <div class="actions">
                                 <a href="<?=site_url().'product/'.$product['prod_canonial_name']?>" class="icon-btn popup-content1"><i class="far fa-eye"></i></a>
@@ -436,10 +474,30 @@ Cta Area
                                         
                                             
                                             
-                                            <?php } else { ?>
+                                            <?php } else {
+                                                
+                                             
+
+
+if ($product['addtoquote']==1){
+
+?>
+
+<a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+
+
+
+
+<?php }else{
+
+
+
+?>
+
+
                                             
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
-                                            <?php } ?>
+                                            <?php }} ?>
 
 
                                 <a href="javascript:void(0)" onclick=addwishlist(<?php echo $product['prod_id'];?>) class="icon-btn"><i class="far fa-heart"></i></a>
@@ -482,13 +540,31 @@ Cta Area
                                             if ($username==''){?>
 
 
+<?php if ($product['addtoquote']==1){?> 
+    <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+
+
+    <?php } else { ?>
+
+
+
                                                 <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
                                         
                                             
                                             
-                                            <?php } else { ?>
+                                            <?php } } else { ?>
+
+<?php if ($product['addtoquote']==1){?> 
+
+    <a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+
+
+<?php } else { ?>
+
+
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
-                                            <?php } ?>
+                                            <?php } } ?>
+
 
                             </div>
                         </div>
