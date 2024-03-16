@@ -31,6 +31,23 @@ class Checkout extends CI_Controller{
         if($this->cart->total_items() <= 0){
             redirect('productssample/');
         }
+
+
+        $username=$this->session->userdata('username');
+        //die;
+     
+       //$custID=10;
+        $custname=$this->session->userdata('username');
+        if ($custname==''){
+         redirect("home/index");
+     
+        }
+     
+
+
+
+
+
         
         $custData = $data = array();
         
@@ -93,12 +110,6 @@ class Checkout extends CI_Controller{
 
         $this->categories = $this->frontend->getCategories();
         $data['recent_categories'] = array_slice($this->categories, 0, 9);
-
-   $username=$this->session->userdata('username');
-   //die;
-
-  //$custID=10;
-   $custname=$this->session->userdata('username');
 
 
    $custID=$this->product->getcustdata($custname);
@@ -235,6 +246,11 @@ $insertship = $this->product->insertbill($shipdetail);
     //function orderSuccess($ordID){
 
         function orderSuccess(){
+            $custname=$this->session->userdata('username');
+            if ($custname=='')
+            {
+                redirect('Home/index');
+            }     
            $ordID=$_GET['ordid'];
         // Fetch order data from the database
         $data['order'] = $this->product->getOrder($ordID);
@@ -249,7 +265,7 @@ $insertship = $this->product->insertbill($shipdetail);
         // Load order details view
         //$this->load->view($this->controller.'/order-success', $data);
         //$custID=1;
-        $custname=$this->session->userdata('username');
+      
  
 
         $custID=$this->product->getcustdata($custname);

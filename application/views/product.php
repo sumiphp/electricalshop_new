@@ -597,7 +597,19 @@ Product list Area
                                                     </th>
                                                     <td>
                                                         <span class="btn-sec">
-                                                            <a href="#" class="default-btn small-btn instock-btn"> Instock</a>    
+                                                           <?php $prdstk= $product['instock'];
+                                                            if ($prdstk==1){
+
+                                                                ?>
+                                                                <a href="#" class="default-btn small-btn instock-btn">Instock
+                                                            </a>
+                                                            <?php } if ($prdstk==0) {?>
+                                                           
+                                                               
+                                                                 <a href="<?php echo base_url().'bulkenquiry';?>" class="default-btn small-btn instock-btn"> Request </a> 
+                                                           <?php }
+                                                            
+                                                            ?>   
                                                             <!--a href="#" class="default-btn small-btn request-btn"> Request </a--> 
                                                         </span>  
                                                     </td>
@@ -664,8 +676,19 @@ Product list Area
                                                    
                                                     Bulk Order
                                                 </a-->
+                                                <?php 
+                                                
+                                                $custname=$this->session->userdata('username');
+                                                
+                                                
+                                                if ($custname==''){?>
+                                                    <a href="<?php echo base_url().'login';?>"><button type="button" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</button> </a>
+
+                                                
+                                                <?php } else { ?>
 
                                                 <button  class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</button>
+                                                <?php } ?>
 
 
 <a href="<?php echo base_url().'bulkenquiry';?>"><button type="button" class="th-btn"><i class="far fa-cart-shopping mr-5"></i>   Bulk Enquiry</button> </a>

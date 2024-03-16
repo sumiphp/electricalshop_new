@@ -33,6 +33,11 @@ class Cart extends CI_Controller{
        // $this->load->view('cart/index', $data);
        //$custID=1;
        $custname=$this->session->userdata('username');
+       if ($custname==''){
+
+        redirect("home/index");
+
+    }
 
 
     $custID=$this->product->getcustdata($custname);

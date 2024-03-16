@@ -116,23 +116,41 @@ Checkout Area
                 <?php //print_r($custwishlist);?>
                 <form id="frmcontact" novalidate="true" class="contactForm" method="post" action="<?php echo base_url().'Home/contactenquiryprocess';?>">
                             <div class="row">
+                                <?php if (isset($custdetails->name)){
+                                    
+                                    $name=$custdetails->name;
+                                    $email=$custdetails->email;
+                                    $phone=$custdetails->phone;
+                                    
+                                    ?>
+
+
+
+                               <?php } else {
+                                
+                                $name='';
+                                $email='';
+                                $phone='';
+                                ?>
+
+                                <?php } ?>
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" name="name" id="name" class="form-control" required="" data-error="Please enter your name" placeholder="Your Name" value="<?php echo $custdetails->name;?>" >
+                                        <input type="text" name="name" id="name" class="form-control" required="" data-error="Please enter your name" placeholder="Your Name" value="<?php echo $name;?>" >
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
     
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="form-group">
-                                        <input type="email" name="email" id="email" class="form-control" required="" data-error="Please enter your email" placeholder="Your Email" value="<?php echo $custdetails->email;?>">
+                                        <input type="email" name="email" id="email" class="form-control" required="" data-error="Please enter your email" placeholder="Your Email" value="<?php echo $email;?>">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
     
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" name="phone_number" id="phone_number" required="" data-error="Please enter your number" class="form-control" placeholder="Your Phone" value="<?php echo $custdetails->phone;?>">
+                                        <input type="text" name="phone_number" id="phone_number" required="" data-error="Please enter your number" class="form-control" placeholder="Your Phone" value="<?php echo $phone;?>">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>

@@ -63,6 +63,11 @@ class Home extends CI_Controller {
 
 
         $custname=$this->session->userdata('username');
+
+       
+
+
+
 if($custname!=''){
 
         $custID=$this->product->getcustdata($custname);
@@ -906,7 +911,9 @@ $this->data['custwishlist']=$this->product->custwishlist($custID);
         //$custID=1;
         
         $custname=$this->session->userdata('username');
-
+        //echo "hello";
+        //die;
+        
         if($custname!=''){
 
             $custID=$this->product->getcustdata($custname);
