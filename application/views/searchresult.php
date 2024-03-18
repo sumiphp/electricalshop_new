@@ -206,7 +206,7 @@ if ($product['addtoquote']==1){
 
 ?>
 
-<a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+<a href="<?php echo base_url('viewquote'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
 
 
 
@@ -280,7 +280,7 @@ if ($product['addtoquote']==1){
 
 <?php if ($product['addtoquote']==1){?> 
 
-    <a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+    <a href="<?php echo base_url('viewquote'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
 
 
 <?php } else { ?>
@@ -483,7 +483,7 @@ if ($product['addtoquote']==1){
 
 ?>
 
-<a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+<a href="<?php echo base_url('viewquote'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
 
 
 
@@ -556,7 +556,7 @@ if ($product['addtoquote']==1){
 
 <?php if ($product['addtoquote']==1){?> 
 
-    <a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+    <a href="<?php echo base_url('viewquote'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
 
 
 <?php } else { ?>

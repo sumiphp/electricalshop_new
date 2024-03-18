@@ -97,7 +97,7 @@ label.error.errpopupmsg {
             <div class="col-lg-7 col-md-7">
                 <div class="inner-banner-content">
                     <h1 class="breadcumb-title">Wishlist</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                    <p>Our extensive inventory includes a wide range of electrical supplies, from wiring and cables to switches, outlets, lighting fixtures, and more. We source our products from trusted manufacturers known for their durability, performance, and safety standards, ensuring that our customers receive only the best.</p>
                     <a href="tel:+<?=$sitedetails['phone_number_1']?>" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span><?=$sitedetails['phone_number_1']?></a>
                 
                 </div>
@@ -200,12 +200,17 @@ label.error.errpopupmsg {
                                     
                                 </bdi></span>
                                 </td>
-                                <td class="product-date">
+                                <!--td class="product-date">
                                     <time class="entry-date" datetime="2021-11-21 03:54:24">November 21, 2021</time>
-                                </td>
+                                </td-->
                                 <td class="product-stock">
                                     <p class="stock in-stock">
-                                        <span><i class="fas fa-check"></i></span><span class="tinvwl-txt">In stock</span>
+                                        <span><i class="fas fa-check"></i></span><span class="tinvwl-txt"><?php if ($rowdt->instock==1){
+                                            echo 'Instock';
+                                        }else{
+                                            
+                                            echo 'Request';
+                                        }?></span>
                                     </p>
                                 </td>
                                 <td class="product-action">

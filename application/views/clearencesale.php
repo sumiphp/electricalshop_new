@@ -195,7 +195,7 @@ if ($product['addtoquote']==1){
 
 ?>
 
-<a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+<a href="<?php echo base_url('viewquote'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
 
 
 
@@ -269,7 +269,7 @@ if ($product['addtoquote']==1){
 
 <?php if ($product['addtoquote']==1){?> 
 
-    <a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+    <a href="<?php echo base_url('viewquote'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
 
 
 <?php } else { ?>
@@ -412,14 +412,14 @@ Cta Area
                             </div>
         
                             <div class="col-md-auto">
-                                <form class="woocommerce-ordering" method="get">
+                                <form class="woocommerce-ordering" method="get" onchange="gotopage()">
                                     <select name="orderby" class="orderby" aria-label="Shop order">
-                                        <option value="menu_order" selected="selected">Default Sorting</option>
-                                        <option value="popularity">Sort by popularity</option>
+                                        <option value="" required>Default Sorting</option>
+                                        <!--option value="popularity">Sort by popularity</option>
                                         <option value="rating">Sort by average rating</option>
-                                        <option value="date">Sort by latest</option>
-                                        <option value="price">Sort by price: low to high</option>
-                                        <option value="price-desc">Sort by price: high to low</option>
+                                        <option value="date">Sort by latest</option-->
+                                        <option value="asc">Sort by price: low to high</option>
+                                        <option value="desc">Sort by price: high to low</option>
                                     </select>
                                 </form>
                             </div>
@@ -460,7 +460,7 @@ Cta Area
 
 ?>
 
-<a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+<a href="<?php echo base_url('viewquote'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
 
 
 
@@ -532,7 +532,7 @@ Cta Area
 
                                                 <?php if ($product['addtoquote']==1){?> 
 
-<a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+<a href="<?php echo base_url('viewquote'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
 
 
 <?php } else { ?>
@@ -704,7 +704,27 @@ submitHandler: function(form) {
 
 });  
 
+function gotopage(){
+    //alert("hello");
+var orderby=$(".orderby").val();
+//alert(orderby);
+    <?php 
+    
+    
+    $uriseg1=$this->uri->segment(1);
+    $uriseg2=$this->uri->segment(2);
+    $uriseg3=$this->uri->segment(3);
+    $url="$uriseg1/$uriseg2/$uriseg3";
+    ?>
 
+   window.location.href="<?php echo base_url().$url;?>?sort="+orderby;
+
+
+
+
+
+
+}
 
 </script>
 

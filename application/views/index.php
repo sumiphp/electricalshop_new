@@ -255,7 +255,7 @@ Product Area
 
 ?>
 
-<a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+<a href="<?php echo base_url('viewquote'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
 
 
 
@@ -341,7 +341,7 @@ Product Area
                                                 
                                                 ?>
 
-<a href="<?php echo base_url('bulkenquiry
+<a href="<?php echo base_url('viewquote
 '); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
 
 
@@ -476,7 +476,7 @@ if ($product['addtoquote']==1){
 
     ?>
     
-    <a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+    <a href="<?php echo base_url('viewquote'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
     
     
     
@@ -571,7 +571,7 @@ if ($product['addtoquote']==1){
                                                 if ($product['addtoquote']==1){
 
                                                     ?>
-<a href="<?php echo base_url('bulkenquiry
+<a href="<?php echo base_url('viewquote
 '); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
 
 
@@ -609,7 +609,7 @@ if ($product['addtoquote']==1){
 
         <section id="latest_prd">&nbsp;</section>
 
-        <?php if (! empty($latest_products)) { ?>
+        <?php if (!empty($latest_products)) { ?>
         <div class="latest-product mt-50" >
             <div class="row justify-content-lg-between justify-content-center align-items-end">
                 <div class="col-lg">
@@ -623,7 +623,7 @@ if ($product['addtoquote']==1){
                 <!-- Single item -->
                 <div class="tab-pane fade show active" id="nav-one" role="tabpanel" aria-labelledby="nav-one-tab">
                     <div class="slider-area">
-                        <div class="swiper th-slider has-shadow productSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"}}}'>
+                        <div class="swiper th-slider has-shadow productSlider11" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"}}}'>
                             <div class="swiper-wrapper">
                             <?php foreach ($latest_products as $product) { ?>
                                 <div class="swiper-slide">
@@ -648,7 +648,7 @@ if ($product['addtoquote']==1){
 
                                             ?>
                                             
-                                            <a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+                                            <a href="<?php echo base_url('viewquote'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
                                             
                                             
                                             
@@ -732,7 +732,7 @@ if ($product['addtoquote']==1){
                         if ($product['addtoquote']==1){
 
                             ?>
-<a href="<?php echo base_url('bulkenquiry
+<a href="<?php echo base_url('viewquote
 '); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
 
 
@@ -758,8 +758,8 @@ if ($product['addtoquote']==1){
     
                             </div>
                         </div>
-                        <button data-slider-prev=".productSlider1" class="slider-arrow slider-prev"><i class="far fa-arrow-left"></i></button>
-                        <button data-slider-next=".productSlider1" class="slider-arrow slider-next"><i class="far fa-arrow-right"></i></button>
+                        <button data-slider-prev=".productSlider11" class="slider-arrow slider-prev"><i class="far fa-arrow-left"></i></button>
+                        <button data-slider-next=".productSlider11" class="slider-arrow slider-next"><i class="far fa-arrow-right"></i></button>
                     </div>
                 </div>
                
@@ -859,7 +859,7 @@ Cta Area
 
                                             ?>
                                             
-                                            <a href="<?php echo base_url('bulkenquiry'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+                                            <a href="<?php echo base_url('viewquote'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
                                             
                                             
                                             
@@ -931,7 +931,7 @@ Cta Area
                                                 
                                           if ($product['addtoquote']==1){?> 
 
-                                                    <a href="<?php echo base_url('bulkenquiry'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+                                                    <a href="<?php echo base_url('viewquote'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
                                                     
                                                     
                                                     <?php } else { ?>                         

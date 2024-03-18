@@ -212,6 +212,7 @@ echo $dt->country_name;
 
 
         <div class="button__cover">
+        <a href="mailto:<?=$sitedetails['email_1']?>"><i class="fa fa-envelope"></i></a>
         <a href="<?=$sitedetails['whatsapp_number']?>"><i class="fab fa-whatsapp"></i></a>
         <a href="https://maps.app.goo.gl/cEzx5gaEhvf6D92N7" target="_blank"> <i class="fas fa-location-dot"></i> </a>
     </div>

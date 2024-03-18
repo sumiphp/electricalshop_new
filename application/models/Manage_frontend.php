@@ -15,8 +15,19 @@ class Manage_frontend extends CI_Model
 
     public function getProducts($where = null, $limit = array(), $sort = array(), $prod_opt_type = null, $productsByBrand = null, $productsByCategory = null)
 	{
-        $this->db->select('P.*, UNIX_TIMESTAMP(P.prod_updated_date) AS unix_prod_updated_date')
+        if (isset($_GET['sort'])){
+        $sort=$_GET['sort'];
+        }
+
+        /*if (isset($_GET['sort'])){
+        $this->db->select('P.*,d.*, UNIX_TIMESTAMP(P.prod_updated_date) AS unix_prod_updated_date')
             ->from('products AS P')->where_in('P.prod_status', array(1));
+        }else{*/
+            $this->db->select('P.*, UNIX_TIMESTAMP(P.prod_updated_date) AS unix_prod_updated_date')
+            ->from('products AS P')->where_in('P.prod_status', array(1));
+
+        //}
+
         if (!empty($where)) {
             $this->db->where($where);
             $getProducts = $this->db->get()->row_array();
@@ -27,20 +38,43 @@ class Manage_frontend extends CI_Model
         if (!empty($productsByCategory)) {
             $this->db->join('product_category AS PC', 'PC.pc_prod_id = P.prod_id');
             $this->db->join('category AS C', 'C.cat_id = PC.pc_cat_id');
+            if (isset($_GET['sort'])){
+            $this->db->join('product_details AS d', 'd.prod_dt_prodid = P.prod_id');
+            }
             $this->db->where('C.cat_canonial_name', $productsByCategory);
+            if (isset($_GET['sort'])){
+            $this->db->where('d.prod_dt_typeid',4);
+        }
         }
         if (!empty($productsByBrand)) {
             $this->db->join('product_brand AS PB', 'PB.pb_prod_id = P.prod_id');
             $this->db->join('brands AS B', 'B.brand_id = PB.pb_brand_id');
+            /*if (isset($_GET['sort'])){
+            $this->db->join('product_details AS d', 'd.prod_dt_prodid = P.prod_id');
+            }*/
             $this->db->where('B.brand_canonial_name', $productsByBrand);
+            //if (isset($_GET['sort'])){
+            //$this->db->where('d.prod_dt_typeid',4);
+            //}
         }
-        if (!empty($sort)) {
+        /*if (!empty($sort)) {
             if (isset($sort['field']) && isset($sort['order'])) $this->db->order_by($sort['field'], $sort['order']);
             else $this->db->order_by('P.prod_id', 'DESC');
         } else if (empty($where)) {
             $this->db->order_by('P.prod_id', 'DESC');
-        }
+        }*/
         //print_r($limit);
+        if (!empty($sort)) {
+            if ($sort=='asc'){
+            //$this->db->order_by('P.prod_id', 'ASC');
+              $this->db->order_by('P.prod_price', 'ASC');
+            }
+            else{
+                //$this->db->order_by('P.prod_id', 'DESC');
+                $this->db->order_by('P.prod_price', 'DESC');
+            }
+
+        }
         if (!empty($limit)) {
             if (isset($limit['offset'])) $this->db->limit($limit['limit'], $limit['offset']);
             else $this->db->limit($limit['limit'], 0);
@@ -82,12 +116,29 @@ class Manage_frontend extends CI_Model
         $this->db->join('brands AS B', 'B.brand_id = PB.pb_brand_id');
         $this->db->where('B.brand_canonial_name', $productsByBrand);
     }
-    if (!empty($sort)) {
+    if (isset($_GET['sort'])){
+        $sort=$_GET['sort'];
+        }
+    /*if (!empty($sort)) {
         if (isset($sort['field']) && isset($sort['order'])) $this->db->order_by($sort['field'], $sort['order']);
         else $this->db->order_by('P.prod_id', 'DESC');
     } else if (empty($where)) {
         $this->db->order_by('P.prod_id', 'DESC');
+    }*/
+
+
+    if (!empty($sort)) {
+        if ($sort=='asc'){
+        //$this->db->order_by('P.prod_id', 'ASC');
+          $this->db->order_by('P.prod_price', 'ASC');
+        }
+        else{
+            //$this->db->order_by('P.prod_id', 'DESC');
+            $this->db->order_by('P.prod_price', 'DESC');
+        }
+
     }
+    
     //print_r($limit);
     if (!empty($limit)) {
         if (isset($limit['offset'])) $this->db->limit($limit['limit'], $limit['offset']);
@@ -230,12 +281,12 @@ class Manage_frontend extends CI_Model
             $this->db->join('brands AS B', 'B.brand_id = PB.pb_brand_id');
             $this->db->where('B.brand_canonial_name', $productsByBrand);
         }
-        if (!empty($sort)) {
+        /*if (!empty($sort)) {
             if (isset($sort['field']) && isset($sort['order'])) $this->db->order_by($sort['field'], $sort['order']);
             else $this->db->order_by('P.prod_id', 'DESC');
         } else if (empty($where)) {
             $this->db->order_by('P.prod_id', 'DESC');
-        }
+        }*/
         //print_r($limit);
         if (!empty($limit)) {
             if (isset($limit['offset'])) $this->db->limit($limit['limit'], $limit['offset']);
@@ -636,6 +687,7 @@ class Manage_frontend extends CI_Model
         //if (empty($where)) {
 
 $this->db->where('mostviewed',1);
+$this->db->where('prod_status',1);
 
 
             $getProducts = $this->db->order_by('P.prod_views', 'DESC')->get()->result_array();

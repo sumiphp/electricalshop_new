@@ -70,6 +70,8 @@ $route['contact-us'] = 'Home/contactUs';
 
 $route['clearencesale'] = 'Home/clearencesale';
 $route['bulkenquiry'] = 'Home/bulkenquiry';
+$route['viewquote'] = 'Home/viewquote';
+
 $route['login'] = 'Home/login';
 $route['register'] = 'Home/register';
 

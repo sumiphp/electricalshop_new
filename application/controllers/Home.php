@@ -395,12 +395,12 @@ $this->session->set_userdata('catid',$category);
         //$config['use_page_numbers'] = TRUE;
 
         $config["base_url"] = base_url() . "Home/productsByCategory/$category";
-        $config["total_rows"] = $this->frontend->get_countproducts(null, [], [], 3, null, $category);
-        //$config["per_page"] = 10;
-      $config["per_page"] = 3;
-        $config["uri_segment"] = 4;
+      $config["total_rows"] = $this->frontend->get_countproducts(null, [], [], null, null, $category);
+       $config["per_page"] = 10;
+      //$config["per_page"] = 1;
+        $config["uri_segment"] = 3;
         $this->pagination->initialize($config);
-        $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
         $this->data["links"] = $this->pagination->create_links();	
         $limit=array('limit'=>"$config[per_page]",'offset'=>$page);
 
@@ -490,7 +490,7 @@ $this->session->set_userdata('catid',$category);
 
         $config["base_url"] = base_url() . "Home/productsByCategorysort";
         $config["total_rows"] = $this->frontend->get_countproductssort(null, [], [], 3, null, $category);
-        $config["per_page"] = 2;
+        $config["per_page"] = 10;
         $config["uri_segment"] = 3;
         $this->pagination->initialize($config);
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
@@ -785,28 +785,36 @@ public function forgetpasswordemailprocess(){
 
 //echo "kkkkk";
 //die;
-$this->db->where('user_primary_email',$usernameemail);
+$this->db->where('email',$usernameemail);
 $this->db->select('*');
-$this->db->from('users');
+$this->db->from('userlogin');
 $query1 = $this->db->get();
-$user_firstnamedt =$query1->result_array();
 $count = $query1->num_rows();
+$user_firstnamedt =$query1->result_array();
+
 //$count=$this->data['usercount'];
 
-echo $count;
+//echo $count;
 //die;
-echo $this->db->last_query();
+//echo $this->db->last_query();
 //die;
 
-print_r($user_firstnamedt);
-die;
+//print_r($user_firstnamedt);
+//die;
 $name=$user_firstnamedt->user_firstname; 
-$pass=rand(10000,99999);
+$pass=rand(100000,999999);
 if ($count==0){
     $this->sendemailpassword($usernameemail,$pass,$name);
     $this->session->set_flashdata('flash_msg','Wrong Email,Please enter correct email id');
     redirect("home/forgetpasswordemail");
  }else {
+
+    $pass1=md5($pass);
+    $this->db->where('email',"$usernameemail");
+    $this->db->update('userlogin', array('password' => $pass1));
+
+
+
 
     $this->sendemailpassword($usernameemail,$pass,$name);
 
@@ -866,6 +874,11 @@ if ($count==0){
         //$this->data['custwishlist']=$this->product->get_custwishlist();
 
         $custname=$this->session->userdata('username');
+
+        if ($custname==''){
+            redirect("home/index");
+
+        }
  
 
 $custID=$this->product->getcustdata($custname);
@@ -1228,6 +1241,57 @@ $this->load->view('bulkenquiry', $this->data);
     }
 
 
+
+
+    public function viewquote(){
+
+        $this->data['page_title'] = "Contact Us";
+        $this->data['metatag']= $this->frontend->getmetatag();
+        $this->data['getga']= $this->frontend->getga();
+        $this->data['menus']=$this->frontend->get_menus();
+        
+        $this->data['gt']=$this->db->get('site')->row();
+        $this->data['homepagedetails']= $this->frontend->homepagedetails();
+        $this->data['site']= $this->frontend->sitedetails();
+        
+        $custname=$this->session->userdata('username');
+        
+        
+        $custID=$this->product->getcustdata($custname);
+        
+        if($custname!=''){
+        
+            $custID=$this->product->getcustdata($custname);
+        
+        
+           
+                //$custID=1;
+                $this->db->where('customer_id',$custID);
+                $this->db->select('*');
+                $this->db->from('wishlist');
+                $query = $this->db->get();
+                $this->data['wishlistcount'] = $query->num_rows();
+        }
+        else{
+        $this->data['wishlistcount'] =0;
+        }
+        $this->data['custdetails']=$this->product->getcustdetails($custID);
+        $this->load->view('viewquote', $this->data);
+        
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function  searchproducts(){
 
         $this->data['page_title'] = "Search Result";
@@ -1348,6 +1412,37 @@ $this->load->view('bulkenquiry', $this->data);
         $this->htmlmailcontactus($name,$subject,$email,$phone,$message,$email,$toemailid);
         echo "Your enquiry send successfully";
         }
+
+
+
+        public function contactquoteprocess(){
+            $name=$this->input->post('name');
+            $subject=$this->input->post('msg_subject');
+            $email=$this->input->post('email');
+            $phone=$this->input->post('phone_number');
+            $message=$this->input->post('message');	
+            $producttype=$this->input->post('producttype');	
+            $brand=$this->input->post('brand');	
+            $data = array(
+                'cus_name' =>"$name",
+                'cus_subject' =>"$subject",
+                'cus_email' =>"$email",
+                'cus_phone' =>"$phone",
+                'cus_message' =>"$message",
+                'brand'=>"$brand",
+                'producttype'=>"$producttype",
+              'type'=>"2"
+             );
+             $this->db->insert('contact_us',$data);
+             //echo $this->db->last_query();
+             $toemailid='sumilaifix@gmail.com';
+             
+            $this->htmlmailcontactus($name,$subject,$email,$phone,$message,$email,$toemailid);
+            echo "Your quote send successfully";
+            }
+
+
+
 
 
 

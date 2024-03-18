@@ -30,16 +30,16 @@
 
 
 
-    <link rel="stylesheet" href="<?php echo base_url().'electricalshop1/assets2/css/bootstrap.min.css';?>">
+    <link rel="stylesheet" href="<?php echo base_url().'electricalshop1/assets/css/bootstrap.min.css';?>">
     <!-- Fontawesome Icon -->
-    <link rel="stylesheet" href="<?php echo base_url().'electricalshop1/assets2/css/fontawesome.min.css';?>">
+    <link rel="stylesheet" href="<?php echo base_url().'electricalshop1/assets/css/fontawesome.min.css';?>">
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="<?php echo base_url().'electricalshop1/assets2/css/magnific-popup.min.css';?>">
+    <link rel="stylesheet" href="<?php echo base_url().'electricalshop1/assets/css/magnific-popup.min.css';?>">
     <!-- Swiper Js -->
-    <link rel="stylesheet" href="<?php echo base_url().'electricalshop1/assets2/css/swiper-bundle.min.css';?>">
+    <link rel="stylesheet" href="<?php echo base_url().'electricalshop1/assets/css/swiper-bundle.min.css';?>">
     <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="<?php echo base_url().'electricalshop1/assets2/css/style.css';?>">
-    <link rel="stylesheet" href="<?php echo base_url().'electricalshop1/assets2/css/responsive.css';?>">
+    <link rel="stylesheet" href="<?php echo base_url().'electricalshop1/assets/css/style.css';?>">
+    <link rel="stylesheet" href="<?php echo base_url().'electricalshop1/assets/css/responsive.css';?>">
 
 
 
@@ -61,7 +61,7 @@ label.error.errpopupmsg {
 <body>
 
     
-    <div class="preloader ">
+    <!--div class="preloader ">
        
         <div class="preloader-inner">
             <div class="loader">
@@ -73,7 +73,7 @@ label.error.errpopupmsg {
                 <span></span>
             </div>
         </div>
-    </div><!--==============================
+    </div--><!--==============================
 Product Lightbox
 ==============================-->
     <div id="QuickView" class="white-popup mfp-hide">
@@ -283,7 +283,7 @@ Product Lightbox
                     </li>
                     
                     <li>
-                        <a href="#">Clearance</a>
+                        <a href="#">Clearance---</a>
                     </li>
                     <li><a href="#">About Us</a></li>
                   
@@ -606,7 +606,7 @@ Product list Area
                                                             <?php } if ($prdstk==0) {?>
                                                            
                                                                
-                                                                 <a href="<?php echo base_url().'bulkenquiry';?>" class="default-btn small-btn instock-btn"> Request </a> 
+                                                                 <a href="<?php echo base_url().'bulkenquiry';?>" class="default-btn small-btn instock1-btn"> Request </a> 
                                                            <?php }
                                                             
                                                             ?>   
@@ -967,23 +967,23 @@ Cta Area
     All Js File
 ============================== -->
 
-    <script src="<?php echo base_url().'electricalshop1/assets2/js/vendor/jquery-3.6.0.min.js';?>"></script>
+    <script src="<?php echo base_url().'electricalshop1/assets/js/vendor/jquery-3.6.0.min.js';?>"></script>
    
-   <script src="<?php echo base_url().'electricalshop1/assets2/js/swiper-bundle.min.js';?>"></script>
+   <script src="<?php echo base_url().'electricalshop1/assets/js/swiper-bundle.min.js';?>"></script>
  
-   <script src="<?php echo base_url().'electricalshop1/assets2/js/bootstrap.min.js';?>"></script>
+   <script src="<?php echo base_url().'electricalshop1/assets/js/bootstrap.min.js';?>"></script>
  
-   <script src="<?php echo base_url().'electricalshop1/assets2/js/jquery.magnific-popup.min.js';?>"></script>
+   <script src="<?php echo base_url().'electricalshop1/assets/js/jquery.magnific-popup.min.js';?>"></script>
   
-   <script src="<?php echo base_url().'electricalshop1/assets2/js/jquery.counterup.min.js';?>"></script>
+   <script src="<?php echo base_url().'electricalshop1/assets/js/jquery.counterup.min.js';?>"></script>
   
-   <script src="<?php echo base_url().'electricalshop1/assets2/js/jquery-ui.min.js';?>"></script>
+   <script src="<?php echo base_url().'electricalshop1/assets/js/jquery-ui.min.js';?>"></script>
   
-   <script src="<?php echo base_url().'electricalshop1/assets2/js/imagesloaded.pkgd.min.js';?>"></script>
-   <script src="<?php echo base_url().'electricalshop1/assets2/js/isotope.pkgd.min.js';?>"></script>
+   <script src="<?php echo base_url().'electricalshop1/assets/js/imagesloaded.pkgd.min.js';?>"></script>
+   <script src="<?php echo base_url().'electricalshop1/assets/js/isotope.pkgd.min.js';?>"></script>
 
    
-   <script src="<?php echo base_url().'electricalshop1/assets2/js/main.js';?>"></script>
+   <script src="<?php echo base_url().'electricalshop1/assets/js/main.js';?>"></script>
 
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"> </script>

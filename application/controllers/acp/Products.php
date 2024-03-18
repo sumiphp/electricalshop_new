@@ -140,7 +140,8 @@ class Products extends CI_Controller {
 				'discountper'=>trim($prod['discountper']),
                 'mostviewed'=>trim($prod['mostviewed']),
 				'instock'=>trim($prod['instock']),
-				'prdshdesc'=>trim($prod['prdshdesc'])
+				'prdshdesc'=>trim($prod['prdshdesc']),
+				'prod_price'=>trim($prod['4_price']),
 			);
 
 
