@@ -59,7 +59,7 @@
                         <!--li title="View" class="mr-3"><a href="<?//=site_url()?>acp/Productbrand/view/<?php //echo $res['carouselid'];?>" class="text-secondary"><i class="fa fa-eye"></i></a></li-->
                         <li title="Edit" class="mr-3"><a href="<?=site_url()?>acp/Settings/editcarousel/<?php echo $res['carouselid'];?>" class="text-secondary"><i class="fa fa-pencil"></i></a></li>
                         <?php// if ($brandVal['brand_status'] == 1) { ?>
-                            <!--li title="Make unavailable" class="mr-3 lock" data-action="lock" data-brandid="<?php echo $res['carouselid'];?>"><a href="#"><i class="fa fa-unlock text-success"></i></a></li-->
+                            <!--li title="Make unavailable" class="mr-3 lock" data-action="lock" data-brandid="<?php //echo $res['carouselid'];?>"><a href="#"><i class="fa fa-unlock text-success"></i></a></li-->
                         <?php //} else { ?>
                             <!--li title="Make available" class="mr-3 unlock" data-action="unlock" data-brandid="<?php //echo $res['carouselid'];?>"><a href="#"><i class="fa fa-lock text-danger"></i></a></li-->
                         <?php //} ?>

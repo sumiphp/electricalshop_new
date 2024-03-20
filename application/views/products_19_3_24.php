@@ -266,18 +266,9 @@ Product list Area
         $pricedt=$query->row();
         
         echo  $currency.' '.$pricedt->prod_dt_desc;
-
-
-        $this->db->where('prod_dt_prodid',$product['prod_id']);
-        $this->db->where('prod_dt_typeid',15);
-       // $this->db->order_by("orderno", "asc");
-        $this->db->select('*');
-        $this->db->from('product_details');
-        $query = $this->db->get();
-        $partdt=$query->row();
         
         ?>
-                            <div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>                 
+                                            
                                             
                                             
                                             <!--del class="right">$06.99</del--></span>
@@ -353,12 +344,12 @@ Product list Area
     <div class="center-banner" data-bg-src="<?php echo base_url().'electricalshop1/assets/img/e-shop/banner-center.png';?>">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-md-5">
+                <div class="col-lg-4 col-md-4">
                     <div class="img-box">
                         <img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/box-product.png';?>"/>
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-7">
+                <div class="col-lg-8 col-md-8">
                     <div class="banner-center-content">
                     <h2>
                     <?php 
@@ -443,9 +434,8 @@ Cta Area
                                 <li><a href="<?=site_url()?>products/category/<?=$category['cat_canonial_name']?>"> <?=$category['cat_name']?>  </a></li>
                                 <?php } ?>
                               
-                                <li class="menu-item-has-children1 ">
-                                    
-                                    <a href="#" class="sub-cat">Brand</a>
+                                <li class="menu-item-has-children1">
+                                    <a href="#"><b>Brand-</b> </a>
                                     <ul class="sub-menu1">
 
 
@@ -577,25 +567,7 @@ Cta Area
         
         echo  $currency.' '.$pricedt->prod_dt_desc;
         
-       
-        
-        
-        $this->db->where('prod_dt_prodid',$product['prod_id']);
-        $this->db->where('prod_dt_typeid',15);
-       // $this->db->order_by("orderno", "asc");
-        $this->db->select('*');
-        $this->db->from('product_details');
-        $query = $this->db->get();
-        $partdt=$query->row();
-        
-        ?>
-        
-        <div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>
-        
-        
-        
-        
-        <!--del class="right">$06.99</del--></span>
+        ?><!--del class="right">$06.99</del--></span>
 
 
        

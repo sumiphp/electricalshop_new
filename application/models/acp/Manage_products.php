@@ -238,7 +238,8 @@ class Manage_products extends CI_Model
                 'discountper'=>trim($prod['discountper']),
                 'mostviewed'=>trim($prod['mostviewed']),
                 'instock'=>trim($prod['instock']),
-                'prdshdesc'=>trim($prod['prdshdesc'])
+                'prdshdesc'=>trim($prod['prdshdesc']),
+                'prod_price'=>trim($prod['prod_price']),
                 
             );
 

@@ -246,9 +246,18 @@ if ($product['addtoquote']==1){
         $pricedt=$query->row();
         
         echo  $currency.' '.$pricedt->prod_dt_desc;
+
+
+        $this->db->where('prod_dt_prodid',$product['prod_id']);
+        $this->db->where('prod_dt_typeid',15);
+       // $this->db->order_by("orderno", "asc");
+        $this->db->select('*');
+        $this->db->from('product_details');
+        $query = $this->db->get();
+        $partdt=$query->row();
         
         ?>
-                                            
+                                <div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>              
                                             
                                             
                                             <!--del class="right">$06.99</del--></span>
@@ -341,7 +350,7 @@ if ($product['addtoquote']==1){
                         <p>AMPS Electric Trading is one of the largest and reputed distributor and wholesaler of electrical, Electronics and Automation products in Dubai-UAE</p>
                         <h4>Special Discount</h4>
 
-                        <a href="#" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
+                        <a href="<?php echo base_url().'products/category/capacitor-switches-sockets';?>" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
                     </div>
                 </div>
 
@@ -388,7 +397,7 @@ Cta Area
                                         ?>
                                
                                 <li class="menu-item-has-children1">
-                                    <a href="#"><b>Brand</b> </a>
+                                    <a href="#" class="sub-cat"><b>Brand</b> </a>
 
                                     <?php 
                                     
@@ -432,7 +441,7 @@ Cta Area
                             </div>
         
                             <div class="col-md-auto">
-                                <form class="woocommerce-ordering" method="get">
+                                <!--form class="woocommerce-ordering" method="get">
                                     <select name="orderby" class="orderby" aria-label="Shop order">
                                         <option value="menu_order" selected="selected">Default Sorting</option>
                                         <option value="popularity">Sort by popularity</option>
@@ -441,7 +450,22 @@ Cta Area
                                         <option value="price">Sort by price: low to high</option>
                                         <option value="price-desc">Sort by price: high to low</option>
                                     </select>
+                                </form-->
+
+                                <form class="woocommerce-ordering" method="get" onchange="gotopage()">
+                                    <select name="orderby" class="orderby" aria-label="Shop order">
+                                        <option value="" required>Default Sorting</option>
+                                        <!--option value="popularity">Sort by popularity</option>
+                                        <option value="rating">Sort by average rating</option>
+                                        <option value="date">Sort by latest</option-->
+                                        <option value="asc">Sort by price: low to high</option>
+                                        <option value="desc">Sort by price: high to low</option>
+                                    </select>
                                 </form>
+
+
+
+
                             </div>
                         </div>
                     </div>
@@ -521,8 +545,24 @@ if ($product['addtoquote']==1){
         $pricedt=$query->row();
         
         echo  $currency.' '.$pricedt->prod_dt_desc;
+
+
+
+        $this->db->where('prod_dt_prodid',$product['prod_id']);
+        $this->db->where('prod_dt_typeid',15);
+       // $this->db->order_by("orderno", "asc");
+        $this->db->select('*');
+        $this->db->from('product_details');
+        $query = $this->db->get();
+        $partdt=$query->row();
         
-        ?><!--del class="right">$06.99</del--></span>
+        ?><!--del class="right">$06.99</del-->
+        
+        <div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>
+    
+    
+    
+    </span>
 
 
        
@@ -719,6 +759,33 @@ submitHandler: function(form) {
 }
 
 });  
+
+
+
+function gotopage(){
+    //alert("hello");
+var orderby=$(".orderby").val();
+//alert(orderby);
+    <?php 
+    
+    
+    $uriseg1=$this->uri->segment(1);
+    $uriseg2=$this->uri->segment(2);
+    $uriseg3=$this->uri->segment(3);
+    $url="$uriseg1/$uriseg2/$uriseg3";
+    ?>
+
+   window.location.href="<?php echo base_url().$url;?>?sort="+orderby;
+
+
+
+
+
+
+}
+
+
+
 
 
 

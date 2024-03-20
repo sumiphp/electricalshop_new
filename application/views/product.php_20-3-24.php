@@ -533,13 +533,9 @@ Product list Area
 
                   
 
-                  <div id="thumbs" class="mb-20" >
-                  <?php foreach ($productdetails['Images'] as $image) { 
-                    //echo $image['pd_img_image'];
-                    $url=site_url().'assets/uploads/products/'.$image['pd_img_image'];
-                    
-                    ?>
-                    <img src="<?=site_url()?>assets/uploads/products/<?=$image['pd_img_image']?>"  onclick="displayimg('<?php echo $url;?>')" />
+                  <div id="thumbs" class="mb-20">
+                  <?php foreach ($productdetails['Images'] as $image) { ?>
+                    <img src="<?=site_url()?>assets/uploads/products/<?=$image['pd_img_image']?>" />
                     <?php } ?>
                     <!--img src="<?php //echo base_url().'electricalshop1/assets/img/e-shop/small-product2.png';?>"/>
                     <img src="<?php //echo base_url().'electricalshop1/assets/img/e-shop/small-product3.png';?>" />
@@ -1066,13 +1062,6 @@ $('#newsmsg').html('');
 
 
 <script>
-
-
-function displayimg(src1){
-    //alert("src");
-    //$('#largeImage').src=src1;
-    $("#largeImage").attr("src",src1);
-}
 
 $('form[id="frmser"]').validate({  
 rules: {  

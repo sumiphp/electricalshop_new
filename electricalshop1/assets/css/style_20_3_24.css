@@ -923,7 +923,7 @@ textarea.is-invalid {
   display: inline-block;
   padding: 0;
   background-color: var(--theme-color);
-  color: var(--black-color);
+  color: var(--white-color);
   position: absolute;
   top: 50%;
   border: none;
@@ -1846,7 +1846,7 @@ textarea.is-invalid {
 }
 
 .scroll-top svg {
-  color: var(--black-color);
+  color: var(--theme-color);
   border-radius: 50%;
   background: var(--white-color);
 }
@@ -5579,7 +5579,7 @@ ol.wp-block-rss {
 
 .aed-sec {
   border-radius: 30px !important;
-  background: #d8ece2;
+  background: #fff;
   width: 110px;
   height: 45px;
   text-align: center;
@@ -6549,7 +6549,14 @@ ul.price-sec
 }
 
 .instock-btn {
-  background: #dc3545;
+  background: green;
+  padding: 4px 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.instock1-btn {
+  background: red;
   padding: 4px 10px;
   border-radius: 5px;
   color: #fff;
@@ -7442,7 +7449,7 @@ blockquote.has-very-dark-gray-color {
 
 .blog-single .blog-img .slider-arrow:hover {
   background-color: var(--theme-color);
-  color: var(--black-color);
+  color: var(--white-color);
 }
 
 .slider-arrow:hover

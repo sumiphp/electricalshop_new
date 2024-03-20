@@ -120,7 +120,9 @@ Subscribers</span></a>
                         <a href="<?=site_url()?>acp/Settings/listbillingdetails" aria-expanded="true"><i class="fa fa-quote-right"></i><span>Billing details</span></a>
                     </li>
 
-
+                    <li class="<?=(($main_menu_active == 'Customers')? 'active' : '')?>" style="<?=((!hasUserAccess(13))? 'display:none;' : '')?>">
+                        <a href="<?=site_url()?>acp/Settings/listorders" aria-expanded="true"><i class="fa fa-quote-right"></i><span>Orders</span></a>
+                    </li>
 
 
                     <li class="<?=(($main_menu_active == 'Contact Us')? 'active' : '')?>" style="<?=((!hasUserAccess(13))? 'display:none;' : '')?>">

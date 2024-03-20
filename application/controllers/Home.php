@@ -396,7 +396,7 @@ $this->session->set_userdata('catid',$category);
 
         $config["base_url"] = base_url() . "Home/productsByCategory/$category";
       $config["total_rows"] = $this->frontend->get_countproducts(null, [], [], null, null, $category);
-       $config["per_page"] = 10;
+       $config["per_page"] = 100;
       //$config["per_page"] = 1;
         $config["uri_segment"] = 3;
         $this->pagination->initialize($config);
@@ -1111,7 +1111,7 @@ $this->data['custwishlist']=$this->product->custwishlist($custID);
 
         $config["base_url"] = base_url() . "Home/clearencesale";
        $config["total_rows"] = $this->frontend->get_countproductsclear(null,[], [],null,'-5');
-        $config["per_page"] = 2;
+        $config["per_page"] = 10;
         $config["uri_segment"] = 3;
 
         $config['next_link']        = 'Next';
@@ -1300,8 +1300,10 @@ $this->load->view('bulkenquiry', $this->data);
 
         $custname=$this->session->userdata('username');
 
-
-       
+        $serquery=$this->input->post('serquery');
+        if($serquery!=''){
+        $this->session->set_userdata('serquery',$serquery);
+        }
 
 
         if($custname!=''){
@@ -1322,9 +1324,10 @@ $this->load->view('bulkenquiry', $this->data);
     }
         //$serquery='TeSys Deca ';
 
-        $serquery=$this->input->post('serquery');
+       
         if ($serquery==''){
-            $serquery=$this->uri->segment(3) ;
+            //$serquery=$this->uri->segment(3) ;
+           echo "hhh".$serquery=  $this->session->userdata('serquery');
         }
         if (empty($prod_slug) || ($prod_slug === 'listall')) {
 

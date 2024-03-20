@@ -131,7 +131,7 @@ Hero Area
                                                     <span class="title2" data-ani="slideinup" data-ani-delay="0.3s"><?php echo $re['title3'];?> </span>
                                                 </h1>
                                                 <p class="hero-text" data-ani="slideinup" data-ani-delay="0.5s"> <?php echo $re['title4'];?></p>
-                                                <a href="<?php echo base_url().'products/category/capacitor-switches-sockets';?>" class="th-btn style4" data-ani="slideinup" data-ani-delay="0.6s">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
+                                                <a href="<?php echo base_url().'products';?>" class="th-btn style4" data-ani="slideinup" data-ani-delay="0.6s">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -204,7 +204,7 @@ Feature Area
 Product List AREA  
 ==============================-->
 
-  <!--==============================
+   <!--==============================
 Product Area  
 ==============================-->
 <section class="space-top space-bottom bg-blue">
@@ -233,20 +233,132 @@ Product Area
                         <?php foreach ($featured_products as $product) { ?>
 
                         <div class="swiper-slide">
-                            <div class="product-grid our-product">
-                                <div class="img-area">
+                            <div class="th-product product-grid">
+                                <div class="product-img">
                                     <img src="<?=site_url()?>assets/uploads/products/<?=$product['prod_primary_image']?>" alt="<?=$product['prod_name']?>" title="<?=$product['prod_name']?>" alt="Product Image">
                                   
-                                   
+                                    <div class="actions">
+
+                                    <a href="<?php echo site_url().'product/'.$product['prod_canonial_name']?>" class="icon-btn popup-content1"><i class="far fa-eye"></i></a>
+
+
+                                            <?php 
+                                            
+                                            $username=$this->session->userdata('username');
+                                            
+                                            if ($username==''){?>
+                                    <a href="<?php echo base_url('home/login'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+                                    <?php } else {
+
+
+                                        if ($product['addtoquote']==1){
+
+?>
+
+<a href="<?php echo base_url('viewquote'); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+
+
+
+
+<?php }else{
+
+
+
+?>
+
+
+
+
+
+                                        
+                                        <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
+
+
+                                        <?php  }} ?>
+                                          
+
+
+                                        
+                                        <a href="javascript:void(0)" onclick=addwishlist(<?php echo $product['prod_id'];?>) class="icon-btn"><i class="far fa-heart"></i></a>
+                                    </div>
                                 </div>
-                                <div class="product-area">
+                                <div class="product-content">
                                    
                                     <h3 class="product-title"><a href="<?php echo site_url().'product/'.$product['prod_canonial_name']?>"><?=$product['prod_name']?></a></h3>
-                                   
+                                    <p> <?php
+                                            $this->db->where('prod_dt_prodid',$product['prod_id']);
+        $this->db->where('prod_dt_typeid',5);
+       // $this->db->order_by("orderno", "asc");
+        $this->db->select('*');
+        $this->db->from('product_details');
+        $query = $this->db->get();
+        $rowdt=$query->row();
+        $string1=$rowdt->prod_dt_desc;
+        //echo substr($string1, 0, 100); 
+        //echo $rowdt->prdshdesc;
+        //echo  $currency.' '.$pricedt->prod_dt_desc;
+        echo $product['prdshdesc'];
+        
+        ?>
+                                            </p>
                                   
                                    
                                 </div>
-                              
+                                <div class="btn-area mt-4">
+                                    <!--a href="<?//=site_url().'product/'.$product['prod_canonial_name']?>" class="th-btn btn-sm">View More--</a-->
+
+
+                                    <?php 
+                                            
+                                            $username=$this->session->userdata('username');
+                                            
+                                            if ($username==''){
+                                                
+                                                
+                                                if ($product['addtoquote']==1){
+
+                                                    ?>
+<a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+
+
+
+                                                <?php }else{
+                                                
+                                                
+                                                
+                                                ?>
+
+
+                                                <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
+                                        
+                                            
+                                            
+                                            <?php } } else { 
+                                                
+                                                
+                                                if ($product['addtoquote']==1){            
+                                                
+                                                
+                                                ?>
+
+<a href="<?php echo base_url('viewquote
+'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+
+
+
+
+<?php } else { ?>
+
+
+
+
+
+                                            <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
+                                            <?php } } ?>
+
+
+
+                                </div>
                             </div>
                         </div>
 
@@ -268,7 +380,6 @@ Product Area
 
     </div>
 </section>
-
 
     <!--==============================
 Product list Area  
@@ -416,23 +527,10 @@ if ($product['addtoquote']==1){
         $pricedt=$query->row();
         
         echo  $currency.' '.$pricedt->prod_dt_desc;
-
-
-
-        $this->db->where('prod_dt_prodid',$product['prod_id']);
-        $this->db->where('prod_dt_typeid',15);
-       // $this->db->order_by("orderno", "asc");
-        $this->db->select('*');
-        $this->db->from('product_details');
-        $query = $this->db->get();
-        $partdt=$query->row();
-
-        //echo $partdt->prod_dt_desc;
-
         
         ?>
                                             
-                                            <div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>                            
+                                            
                                             
                                             
                                             <!--del class="right">-$06.99</del--></span>
@@ -597,22 +695,8 @@ if ($product['addtoquote']==1){
         $pricedt=$query->row();
         
         echo  $currency.' '.$pricedt->prod_dt_desc;
-
-
-        $this->db->where('prod_dt_prodid',$product['prod_id']);
-        $this->db->where('prod_dt_typeid',15);
-       // $this->db->order_by("orderno", "asc");
-        $this->db->select('*');
-        $this->db->from('product_details');
-        $query = $this->db->get();
-        $partdt=$query->row();
         
-        ?><!--del class="right"><?//=$currency?>06.99</del-->
-        
-        <div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>
-    
-    
-    </span>
+        ?><!--del class="right"><?//=$currency?>06.99</del--></span>
     
                                             </div>
                                             <div class="add-cart-btn mt-4">
@@ -703,7 +787,7 @@ Cta Area
                         <?php echo $homepagedetails->label9;?>
                         </h2>
                         <h4>  <?php echo $homepagedetails->label10;?></h4>
-                        <a href="<?php echo base_url().'products/category/capacitor-switches-sockets';?>" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
+                        <a href="<?php echo base_url().'products';?>" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-xxl-4 col-lg-5">
@@ -711,15 +795,15 @@ Cta Area
                         <div class="col-xxl-12 col-lg-12">
                             <div class="offer-box mega-hover second-box" data-bg-src="<?php echo base_url().'assets/uploads/homepage/'.$homepagedetails->image2;?>">
                                 <span class="box-subtitle bg-theme"> <?php echo $homepagedetails->label11;?></span>
-                                <h3 class="box-title "> <?php echo $homepagedetails->label12;?>   <?php echo $homepagedetails->label13;?></h3>
-                                <a href="<?php echo base_url().'products/category/capacitor-switches-sockets';?>" class="th-btn style4 btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
+                                <h3 class="box-title text-white"> <?php echo $homepagedetails->label12;?> <br>  <?php echo $homepagedetails->label13;?></h3>
+                                <a href="<?php echo base_url().'products';?>" class="th-btn style4 btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
                             </div>
                         </div>
                         <div class="col-xxl-12 col-lg-12">
                             <div class="offer-box mega-hover second-box" data-bg-src="<?php echo base_url().'assets/uploads/homepage/'.$homepagedetails->image3;?>">
                             <span class="box-subtitle bg-theme"> <?php echo $homepagedetails->label11;?></span>
                                 <h3 class="box-title"> <?php echo $homepagedetails->label15;?> <br>  <?php echo $homepagedetails->label16;?></h3>
-                                <a href="<?php echo base_url().'products/category/capacitor-switches-sockets';?>" class="th-btn style4 btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
+                                <a href="<?php echo base_url().'products';?>" class="th-btn style4 btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
@@ -748,7 +832,7 @@ Cta Area
              </div>
              <div class="row recent-product">
              <?php foreach ($most_viewed as $product) { ?>
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="th-product product-grid">
                         <div class="product-img">
                             <!--img src="<?php //echo base_url().'electricalshop/assets/img/e-shop/product/1.png';?>" alt="Product Image"-->
@@ -816,18 +900,9 @@ Cta Area
         $pricedt=$query->row();
         
         echo  $currency.' '.$pricedt->prod_dt_desc;
-
-
-        $this->db->where('prod_dt_prodid',$product['prod_id']);
-        $this->db->where('prod_dt_typeid',15);
-       // $this->db->order_by("orderno", "asc");
-        $this->db->select('*');
-        $this->db->from('product_details');
-        $query = $this->db->get();
-        $partdt=$query->row();
         
         ?>
-                      <div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>           
+                                
                                 
                                 
                                 <!--del class="right">$06.99</del--></span>
@@ -883,24 +958,19 @@ Cta Area
       <!--==============================
 Our Store Sec  
 ==============================-->
-<section class="space-bottom bg-smoke2" style="background: url(https://ampsqr.com/assets/uploads/homepage/1710768767banner2nd.png);background-repeat: no-repeat;background-size: cover;">
+<section class="space" style="background: url(<?php echo base_url().'assets/uploads/homepage/'.$homepagedetails->banner2;?>);background-repeat: no-repeat;background-size: cover;">
     <div class="our-store-bg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6">
-                <div class="text-left store-content">
-                    <h2 class="mb-25">   <?php echo $homepagedetails->title1;?></h2>
+                <div class="text-center">
+                    <h2 class="mb-35">   <?php echo $homepagedetails->title1;?></h2>
                     <h3>   <?php echo $homepagedetails->title2;?></h3>
                     <p> <?php echo $homepagedetails->membershipdesc;?></p>
-
-                    <a href="<?php echo base_url().'home/register';?>" class="th-btn">Join Member</a>
-
                 </div>
 
-               
-            </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
+                <div class="text-center add-cart-btn mt-4">
+                    <a href="<?php echo base_url().'home/login';?>" class="th-btn">Join Member</a>
+                </div>
             </div>
         </div>
     </div>
@@ -923,7 +993,7 @@ Our Store Sec
                  
                     
                  foreach ($brands as $brand) { ?>
-                <div class="col-lg-2 col-md-3 col-sm-3">
+                <div class="col-lg-2">
                     <div class="brand-card">
                       
                         <img src="<?=site_url()?>assets/uploads/brands/<?=$brand['brand_image']?>" alt="<?=$brand['brand_name']?>">

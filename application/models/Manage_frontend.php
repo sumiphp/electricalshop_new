@@ -42,6 +42,7 @@ class Manage_frontend extends CI_Model
             $this->db->join('product_details AS d', 'd.prod_dt_prodid = P.prod_id');
             }
             $this->db->where('C.cat_canonial_name', $productsByCategory);
+            $this->db->where('prod_status',1);
             if (isset($_GET['sort'])){
             $this->db->where('d.prod_dt_typeid',4);
         }
@@ -53,6 +54,7 @@ class Manage_frontend extends CI_Model
             $this->db->join('product_details AS d', 'd.prod_dt_prodid = P.prod_id');
             }*/
             $this->db->where('B.brand_canonial_name', $productsByBrand);
+            $this->db->where('prod_status',1);
             //if (isset($_GET['sort'])){
             //$this->db->where('d.prod_dt_typeid',4);
             //}
@@ -110,11 +112,13 @@ class Manage_frontend extends CI_Model
         $this->db->join('product_category AS PC', 'PC.pc_prod_id = P.prod_id');
         $this->db->join('category AS C', 'C.cat_id = PC.pc_cat_id');
         $this->db->where('C.cat_canonial_name', $productsByCategory);
+        $this->db->where('prod_status',1);
     }
     if (!empty($productsByBrand)) {
         $this->db->join('product_brand AS PB', 'PB.pb_prod_id = P.prod_id');
         $this->db->join('brands AS B', 'B.brand_id = PB.pb_brand_id');
         $this->db->where('B.brand_canonial_name', $productsByBrand);
+        $this->db->where('prod_status',1);
     }
     if (isset($_GET['sort'])){
         $sort=$_GET['sort'];
@@ -783,12 +787,41 @@ $this->db->where('prod_status',1);
         $this->db->join('product_details PD', 'P.prod_id = PD.prod_dt_prodid');
 
 
-        if (!empty($sort)) {
+        /*if (!empty($sort)) {
             if (isset($sort['field']) && isset($sort['order'])) $this->db->order_by($sort['field'], $sort['order']);
             else $this->db->order_by('P.prod_id', 'DESC');
         } else if (empty($where)) {
             $this->db->order_by('P.prod_id', 'DESC');
+        }*/
+
+
+        if (isset($_GET['sort'])){
+            $sort=$_GET['sort'];
+            }
+        /*if (!empty($sort)) {
+            if (isset($sort['field']) && isset($sort['order'])) $this->db->order_by($sort['field'], $sort['order']);
+            else $this->db->order_by('P.prod_id', 'DESC');
+        } else if (empty($where)) {
+            $this->db->order_by('P.prod_id', 'DESC');
+        }*/
+    
+    
+        if (!empty($sort)) {
+            if ($sort=='asc'){
+            //$this->db->order_by('P.prod_id', 'ASC');
+              $this->db->order_by('P.prod_price', 'ASC');
+            }
+            else{
+                //$this->db->order_by('P.prod_id', 'DESC');
+                $this->db->order_by('P.prod_price', 'DESC');
+            }
+    
         }
+
+
+
+
+
         if (!empty($limit)) {
             if (isset($limit['offset'])) $this->db->limit($limit['limit'], $limit['offset']);
             else $this->db->limit($limit['limit'], 0);
@@ -797,10 +830,11 @@ $this->db->where('prod_status',1);
         $this->db->or_like('cat_name',"$serstring" );
         $this->db->or_like('brand_name ',"$serstring");
         $this->db->or_like('prod_dt_desc',"$serstring" );
+        $this->db->group_by('prod_id'); 
       if (empty($where)) {
            $getProducts = $this->db->order_by('P.prod_id', 'DESC')->get()->result_array();
         }
-   //echo $this->db->last_query();
+  //echo $this->db->last_query();
 		return $getProducts;
     }
 
@@ -848,6 +882,7 @@ $this->db->where('prod_status',1);
         $this->db->or_like('cat_name',"$serstring" );
         $this->db->or_like('brand_name ',"$serstring");
         $this->db->or_like('prod_dt_desc',"$serstring" );
+        $this->db->group_by('prod_id');
       if (empty($where)) {
            $getProducts = $this->db->order_by('P.prod_id', 'DESC')->get()->num_rows();
         }
@@ -902,6 +937,7 @@ $this->db->where('prod_status',1);
     $this->db->or_like('brand_name ',"$serstring");
     $this->db->or_like('prod_dt_desc',"$serstring" );
     $this->db->like('P.prod_opt_type',$prod_opt_type);
+    $this->db->group_by('prod_id'); 
     /*$this->db->like('P.prod_dt_typeid',15);*/
   //if (empty($where)) {
        $getProducts = $this->db->order_by('P.prod_id', 'DESC')->get()->result_array();

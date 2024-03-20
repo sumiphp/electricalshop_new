@@ -11,10 +11,7 @@
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <?php 
-                            
-                            //print_r($categories);
-                            ?>
+    
    
 
     <!--==============================
@@ -98,8 +95,6 @@ label.error.errpopupmsg {
             </div>
         </div>
     </div-->
-   
-    
 
     <?php include('header.php');?>
 
@@ -120,35 +115,8 @@ Hero Area
             </div>
             <div class="col-lg-7 col-md-7">
                 <div class="inner-banner-content">
-                    <h1 class="breadcumb-title"><?php 
-                    if (isset($catdt)){
-                    
-                    
-                    echo $catdt->cat_name; }?> 
-                    
-                    <?php 
-                    if (isset($branddt)){
-                    
-                    
-                    echo $branddt->brand_name; }?> 
-                
-                
-                </h1>
-                    <p><?php 
-                    if (isset($catdt)){
-                    
-                    
-                    echo $catdt->cat_shdesc; }?>
-                    
-                    <?php 
-                    if (isset($branddt)){
-                    
-                    
-                    echo $branddt->brandshortdesc; }?> 
-                
-                
-                
-                </p>
+                    <h1 class="breadcumb-title">Clearence Sale</h1>
+                    <p>Get ready to light up your world with our electrifying clearance sale! From gadgets to appliances, we've got everything you need to power up your home or workspace at unbeatable prices. Don't miss out on this electrifying opportunity to grab top-quality electrical items at jaw-dropping discounts!</p>
                     <a href="#" class="th-btn call-bnr-btn"><span class="icon-des"><i class="fa fa-phone"></i></span> <?=$sitedetails['phone_number_1']?></a>
                 
                 </div>
@@ -169,39 +137,41 @@ Product list Area
 ==============================-->
 <section class="mt-50 space-bottom">
     <div class="container">
-    <?php if (count($best_selling)>0){?>
+       
         <div class="row justify-content-lg-between justify-content-center align-items-end">
             <div class="col-lg">
                 <div class="title-area text-center text-lg-start">
-                    <h2 class="sec-title">Best Selling</h2>
+                    <h2 class="sec-title">Clearence Sale</h2>
                 </div>
             </div>
-            <!--div class="col-auto mt-n2 mt-lg-0">
-                <div class="sec-btn">
+            <div class="col-auto mt-n2 mt-lg-0">
+                <!--div class="sec-btn">
                     <div class="nav tab-menu1" role="tablist">
                         <button class="tab-btn active" id="nav-one-tab" data-bs-toggle="tab" data-bs-target="#nav-one" role="tab" aria-controls="nav-one" aria-selected="true">Top Products</button>
                         <button class="tab-btn" id="nav-two-tab" data-bs-toggle="tab" data-bs-target="#nav-two" role="tab" aria-controls="nav-two" aria-selected="false">Best Selling Products</button>
                         <button class="tab-btn" id="nav-three-tab" data-bs-toggle="tab" data-bs-target="#nav-three" role="tab" aria-controls="nav-three" aria-selected="false">Latest Products</button>
                     </div>
-                </div>
-            </div-->
+                </div-->
+            </div>
         </div>
-     
+
+<?php if (count($clearencesale)>0){?>
+
         <div class="tab-content best-selling-product">
-            <!-- Single item -->
+           
             <div class="tab-pane fade show active" id="nav-one" role="tabpanel" aria-labelledby="nav-one-tab">
                 <div class="slider-area">
                     <div class="swiper th-slider has-shadow productSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"}}}'>
                         <div class="swiper-wrapper">
 
 
-                        <?php foreach ($best_selling as $product) { ?>
+                        <?php foreach ($clearencesale as $product) { ?>
 
                             <div class="swiper-slide">
                                 <div class="th-product product-grid">
                                     <div class="product-img">
                                         <img src="<?=site_url()?>assets/uploads/products/<?=$product['prod_primary_image']?>" alt="<?=$product['prod_name']?>" title="<?=$product['prod_name']?>">
-                                        <span class="product-tag"><?php echo $product['discountper'];?>% OFF</span>
+                                        <span class="product-tag"><?php echo $product['discountper'];?> OFF</span>
                                         <span class="product-tag-second">Sale</span>
                                         <div class="actions">
                                             <a href="<?=site_url().'product/'.$product['prod_canonial_name']?>" class="icon-btn popup-content1"><i class="far fa-eye"></i></a>
@@ -216,11 +186,12 @@ Product list Area
                                         
                                             
                                             
-                                            <?php } else { 
+                                            <?php } else {
+                                                
+                                             
 
 
-
-                                                if ($product['addtoquote']==1){
+if ($product['addtoquote']==1){
 
 ?>
 
@@ -234,8 +205,6 @@ Product list Area
 
 
 ?>
-
-
 
 
                                             
@@ -258,7 +227,7 @@ Product list Area
                                                 
                                             <?php
                                             $this->db->where('prod_dt_prodid',$product['prod_id']);
-        $this->db->where('prod_dt_typeid',4);
+                                            $this->db->where('prod_dt_typeid',4);
        // $this->db->order_by("orderno", "asc");
         $this->db->select('*');
         $this->db->from('product_details');
@@ -267,7 +236,6 @@ Product list Area
         
         echo  $currency.' '.$pricedt->prod_dt_desc;
 
-
         $this->db->where('prod_dt_prodid',$product['prod_id']);
         $this->db->where('prod_dt_typeid',15);
        // $this->db->order_by("orderno", "asc");
@@ -275,9 +243,16 @@ Product list Area
         $this->db->from('product_details');
         $query = $this->db->get();
         $partdt=$query->row();
+
+
+
         
         ?>
-                            <div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>                 
+
+        
+<div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>
+
+                                            
                                             
                                             
                                             <!--del class="right">$06.99</del--></span>
@@ -293,20 +268,26 @@ Product list Area
                                             if ($username==''){?>
 
 
+<?php if ($product['addtoquote']==1){?> 
+    <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+
+
+    <?php } else { ?>
+
+
+
                                                 <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
                                         
                                             
                                             
-                                            <?php } else { ?>
+                                            <?php } } else { ?>
 
+<?php if ($product['addtoquote']==1){?> 
 
-                                                <?php if ($product['addtoquote']==1){?> 
-
-<a href="<?php echo base_url('viewquote'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+    <a href="<?php echo base_url('viewquote'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
 
 
 <?php } else { ?>
-
 
 
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
@@ -323,7 +304,6 @@ Product list Area
                             <?php } ?>
 
 
-                        
 
                         </div>
                     </div>
@@ -337,10 +317,10 @@ Product list Area
 
         <?php } else { ?>
 
-<div class='text-center'><h6 style='color:red'>Sorry No Product found</h6></div>
+            <div class='text-center'><h6 style='color:red'>Sorry No Product found</h6></div>
 
 
-<?php } ?>
+            <?php } ?>
 
 
 
@@ -348,57 +328,20 @@ Product list Area
     </div>
 </section>
 
-
+  
   <section>
     <div class="center-banner" data-bg-src="<?php echo base_url().'electricalshop1/assets/img/e-shop/banner-center.png';?>">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-md-5">
+                <div class="col-lg-4 col-md-4">
                     <div class="img-box">
                         <img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/box-product.png';?>"/>
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-7">
+                <div class="col-lg-8 col-md-8">
                     <div class="banner-center-content">
-                    <h2>
-                    <?php 
-                    if (isset($catdt)){
-                    
-                    
-                    echo $catdt->cat_name; }?> 
-                    
-                
-                    <?php 
-                    if (isset($branddt)){
-                    
-                    
-                    echo $branddt->brand_name; }?> 
-                
-                
-                
-                </h2>
-                    <p><?php 
-                    if (isset($catdt)){
-                    
-                    
-                    echo $catdt->cat_shdesc; }?> 
-                    
-                
-                    <?php 
-                    if (isset($branddt)){
-                    
-                    
-                    echo $branddt->brandshortdesc; }?> 
-                
-                
-                
-                
-                
-                </p>
-
-
-
-                      
+                        <h2>Clearence Sale</h2>
+                        <p>AMPS Electric Trading is one of the largest and reputed distributor and wholesaler of electrical, Electronics and Automation products in Dubai-UAE</p>
                         <h4>Special Discount</h4>
 
                         <a href="#" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
@@ -419,7 +362,8 @@ Product list Area
 Cta Area  
 ==============================-->
 
-<?php if (count($products)>0){ ?>
+
+<?php //if (count($products)>0){ ?>
 
   <section class="mt-50">
     <div class="container">
@@ -431,46 +375,37 @@ Cta Area
                         <nav class="category-menu">
                             <ul>
 
-                            <?php 
-                            
-                            //print_r($categories);
-                            
-                            foreach ($categories as $category) { ?>
+                            <?php foreach ($categories as $category) { ?>
                                                                
                                                           
 
 
                                 <li><a href="<?=site_url()?>products/category/<?=$category['cat_canonial_name']?>"> <?=$category['cat_name']?>  </a></li>
                                 <?php } ?>
-                              
-                                <li class="menu-item-has-children1 ">
-                                    
-                                    <a href="#" class="sub-cat">Brand</a>
+                               
+                                <li class="menu-item-has-children1">
+                                    <a href="#"><b>Brand</b> </a>
                                     <ul class="sub-menu1">
-
 
                                     <?php 
                                     
                                     //print_r($brands);
                                     
                                     
-                                    foreach ($brands as $brand) { ?>
+                                   foreach ($brands as $brand) { ?>
                                                                 <li>
                                                                     <a href="<?=site_url()?>products/brand/<?=$brand['brand_canonial_name']?>">
                                                                         <?=$brand['brand_name']?>
                                                                     </a>
                                                                 </li>
-                                                            <?php } ?></ul>
+                                                            <?php } ?>
 
 
-
-                                                            <!--ul class="sub-menu">
-
+                                        <!--li><a href="#">Alfanar   </a></li>
                                         <li><a href="#">Alfanar   </a></li>
                                         <li><a href="#">Alfanar   </a></li>
-                                        <li><a href="#">Alfanar   </a></li>
-                                        <li><a href="#">Alfanar   </a></li>
-                                    </ul-->
+                                        <li><a href="#">Alfanar   </a></li-->
+                                    </ul>
                                 </li>
                                 <!--li><a href="#">Pricing</a>
                                     <ul class="price-sec">
@@ -493,10 +428,10 @@ Cta Area
         
                             <div class="col-md-auto">
                                 <form class="woocommerce-ordering" method="get" onchange="gotopage()">
-                                    <select name="orderby" id="orderby" class="orderby" aria-label="Shop order" required>
-                                        <option value="" selected="selected">Sorting</option>
+                                    <select name="orderby" class="orderby" aria-label="Shop order">
+                                        <option value="" required>Default Sorting</option>
                                         <!--option value="popularity">Sort by popularity</option>
-                                      
+                                        <option value="rating">Sort by average rating</option>
                                         <option value="date">Sort by latest</option-->
                                         <option value="asc">Sort by price: low to high</option>
                                         <option value="desc">Sort by price: high to low</option>
@@ -506,14 +441,18 @@ Cta Area
                         </div>
                     </div>
                     <div class="row recent-product">
-                    <?php foreach ($products as $product) { ?>
+                    <?php 
+                    
+                  
+                    
+                    foreach ($productsclear as $product) { ?>
 
 
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="th-product product-grid">
                         <div class="product-img">
                             <img  src="<?=site_url()?>assets/uploads/products/<?=$product['prod_primary_image']?>" alt="<?=$product['prod_name']?>" alt="Product Image">
-                            <span class="product-tag"><?php echo $product['discountper'];?>% OFF</span>
+                            <span class="product-tag"><?php echo $product['discountper'];?> OFF</span>
                             <span class="product-tag-second">Sale</span>
                             <div class="actions">
                                 <a href="<?=site_url().'product/'.$product['prod_canonial_name']?>" class="icon-btn popup-content1"><i class="far fa-eye"></i></a>
@@ -532,7 +471,6 @@ Cta Area
                                             
                                             <?php } else { 
 
-
                                                 if ($product['addtoquote']==1){
 
 ?>
@@ -548,8 +486,6 @@ Cta Area
 
 ?>
 
-
-                                                
                                             
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="icon-btn"><i class="far fa-cart-plus"></i></a>
                                             <?php }} ?>
@@ -576,10 +512,10 @@ Cta Area
         $pricedt=$query->row();
         
         echo  $currency.' '.$pricedt->prod_dt_desc;
-        
-       
-        
-        
+
+
+
+
         $this->db->where('prod_dt_prodid',$product['prod_id']);
         $this->db->where('prod_dt_typeid',15);
        // $this->db->order_by("orderno", "asc");
@@ -588,14 +524,14 @@ Cta Area
         $query = $this->db->get();
         $partdt=$query->row();
         
-        ?>
+        ?><!--del class="right">$06.99</del-->
         
-        <div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>
-        
-        
-        
-        
-        <!--del class="right">$06.99</del--></span>
+    
+            
+<div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>
+    
+    
+    </span>
 
 
        
@@ -613,12 +549,18 @@ Cta Area
                                             if ($username==''){?>
 
 
+<?php if ($product['addtoquote']==1){?> 
+    <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Quote</a>
+
+
+    <?php } else { ?>
+
+
                                                 <a href="<?php echo base_url('home/login'); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
                                         
                                             
                                             
-                                            <?php } else { ?>
-
+                                            <?php  } } else { ?>
 
 
                                                 <?php if ($product['addtoquote']==1){?> 
@@ -632,54 +574,61 @@ Cta Area
 
 
 
+
                                             <a href="<?php echo base_url('productssample/addToCart/'.$product['prod_id']); ?>" class="th-btn"><i class="far fa-cart-shopping mr-5"></i> Add to Cart</a>
-                                            <?php }} ?>
+                                            <?php } } ?>
 
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <?php }  ?>
-             
+                <?php } ?>
+                               
+            
                 
              </div>
-           
-            <?php echo $links;
-            
-            
-            
-            
-            
-            ?>
                     <!--div class="th-pagination text-center pt-50">
                         <ul>
-                            <li><a href="blog.html">1</a></li>
+                           <a href="blog.html">1</a></li>
                             <li><a href="blog.html">2</a></li>
                             <li><a href="blog.html">3</a></li>
                             <li><a href="blog.html"><i class="far fa-arrow-right"></i></a></li>
                         </ul>
                     </div-->
+
+                    <?php echo $links;?>
+
+                    <!--div class="th-pagination text-center pt-50"> 
+                       
+                  </div-->
+
+
+
                 </div>
             </div>
         </div>
     </div>
+ 
 
-    <?php } else { ?>
+  <?php //} else { ?>
 
-<div class='text-center'><h6 style='color:red'>Sorry No Product found</h6></div>
+<!--div class='text-center'><h6 style='color:red'>Sorry No Product found</h6></div-->
 
 
-<?php } ?>
-  </section>
-  
-
+<?php //} ?>
+</section>
 
 
 
     <?php include('footer.php');?>
 
- 
+    
+
+    <!--********************************
+			Code End  Here 
+	******************************** -->
+<!-- whatsapp -->
 
 
 
@@ -766,35 +715,7 @@ $.ajax({
 
 }
 
-
-
-
-
-
-function gotopage(){
-    //alert("hello");
-var orderby=$("#orderby").val();
-//alert(orderby);
-    <?php 
-    
-    
-    $uriseg1=$this->uri->segment(1);
-    $uriseg2=$this->uri->segment(2);
-    $uriseg3=$this->uri->segment(3);
-    $url="$uriseg1/$uriseg2/$uriseg3";
-    ?>
-
-   window.location.href="<?php echo base_url().$url;?>?sort="+orderby;
-
-
-
-
-
-
-}
-
 </script>
-
 
 
 <script>
@@ -816,24 +737,29 @@ submitHandler: function(form) {
 
 });  
 
+function gotopage(){
+    //alert("hello");
+var orderby=$(".orderby").val();
+//alert(orderby);
+    <?php 
+    
+    
+    $uriseg1=$this->uri->segment(1);
+    $uriseg2=$this->uri->segment(2);
+    $uriseg3=$this->uri->segment(3);
+    $url="$uriseg1/$uriseg2/$uriseg3";
+    ?>
 
+   window.location.href="<?php echo base_url().$url;?>?sort="+orderby;
+
+
+
+
+
+
+}
 
 </script>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
 
 
 

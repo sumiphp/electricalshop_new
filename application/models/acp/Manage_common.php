@@ -180,6 +180,37 @@ public function get_customers($bid = null)
 
 
 
+public function get_listorders($bid = null)
+{
+
+	
+	 $this->db->select('*');
+	 $this->db->from('orders');
+	 $query = $this->db->get();
+	 return $query->result_array();
+ 
+ }
+
+ function get_countlistorders(){
+
+   $this->db->select('*');
+   //$this->db->from('customers');
+   $this->db->from('orders');
+   $query = $this->db->get();
+   return $rowcount = $query->num_rows();
+
+
+}
+
+
+
+
+
+
+
+
+
+
 		public function getMenu($bid = null)
    {
  

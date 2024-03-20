@@ -235,8 +235,23 @@ if ($product['addtoquote']==1){
         $pricedt=$query->row();
         
         echo  $currency.' '.$pricedt->prod_dt_desc;
+
+        $this->db->where('prod_dt_prodid',$product['prod_id']);
+        $this->db->where('prod_dt_typeid',15);
+       // $this->db->order_by("orderno", "asc");
+        $this->db->select('*');
+        $this->db->from('product_details');
+        $query = $this->db->get();
+        $partdt=$query->row();
+
+
+
         
         ?>
+
+        
+<div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>
+
                                             
                                             
                                             
@@ -326,10 +341,10 @@ if ($product['addtoquote']==1){
                 <div class="col-lg-8 col-md-8">
                     <div class="banner-center-content">
                         <h2>Clearence Sale</h2>
-                        <p>AMPS Electric Trading is one of the largest and reputed distributor and wholesaler of electrical, Electronics and Automation products in Dubai-UAE</p>
+                        <p>AMPS Electric Trading is one of the largest and reputed distributor and wholesaler of electrical, Electronics and Automation products in Doha-Qatar</p>
                         <h4>Special Discount</h4>
 
-                        <a href="#" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
+                        <a href="<?php echo base_url().'products/category/capacitor-switches-sockets';?>" class="th-btn btn-sm">Shop Now<i class="fas fa-chevrons-right ms-2"></i></a>
                     </div>
                 </div>
 
@@ -369,7 +384,7 @@ Cta Area
                                 <?php } ?>
                                
                                 <li class="menu-item-has-children1">
-                                    <a href="#"><b>Brand</b> </a>
+                                <a href="#" class="sub-cat">Brand</a>
                                     <ul class="sub-menu1">
 
                                     <?php 
@@ -497,8 +512,26 @@ Cta Area
         $pricedt=$query->row();
         
         echo  $currency.' '.$pricedt->prod_dt_desc;
+
+
+
+
+        $this->db->where('prod_dt_prodid',$product['prod_id']);
+        $this->db->where('prod_dt_typeid',15);
+       // $this->db->order_by("orderno", "asc");
+        $this->db->select('*');
+        $this->db->from('product_details');
+        $query = $this->db->get();
+        $partdt=$query->row();
         
-        ?><!--del class="right">$06.99</del--></span>
+        ?><!--del class="right">$06.99</del-->
+        
+    
+            
+<div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>
+    
+    
+    </span>
 
 
        

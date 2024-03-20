@@ -808,44 +808,6 @@ textarea.is-invalid {
   color: inherit;
 }
 
-.our-product .product-title a
-{
-  font-size: 20px;
-  padding-top: 20px;
-}
-
-.product-title a
-{
-  font-size: 18px;
-  text-align: center !important;
-  color: #000 !important;
-  display: block;
-  padding-top: 0px;
-  text-transform: capitalize;
-}
-
-.th-product
-{
-  position: relative;
-}
-
-.our-store-bg {
-  padding-top: 60px;
-}
-
-.add-cart-btn
-{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 20px;
-}
-
-.product-grid img 
-{
-  border-radius: 10px;
-}
-
 /*------------------- 2.4. Slick Slider -------------------*/
 .swiper-wrapper.row {
   -webkit-flex-wrap: nowrap;
@@ -923,7 +885,7 @@ textarea.is-invalid {
   display: inline-block;
   padding: 0;
   background-color: var(--theme-color);
-  color: var(--black-color);
+  color: var(--white-color);
   position: absolute;
   top: 50%;
   border: none;
@@ -950,7 +912,7 @@ textarea.is-invalid {
 
 .slider-arrow:hover {
   background-color: var(--theme-color2);
-  color: var(--black-color);
+  color: var(--white-color);
 }
 
 .arrow-margin .slider-arrow {
@@ -1499,7 +1461,6 @@ textarea.is-invalid {
   padding: 21px 30px;
   min-width: 170px;
   border-radius: 5px;
-  box-shadow: 14px -1px 13px 6px rgba(0, 0, 0, 0.08);
 }
 
 .th-btn:before {
@@ -1615,15 +1576,6 @@ textarea.is-invalid {
 .th-btn.btn-sm {
   padding: 16px 25px;
   min-width: 152px;
-}
-
-.part-no
-{
-  color: #01b357;
-  font-weight: 600;
-  font-style: italic;
-  padding: 10px;
-  display: block;
 }
 
 .icon-btn {
@@ -1846,7 +1798,7 @@ textarea.is-invalid {
 }
 
 .scroll-top svg {
-  color: var(--black-color);
+  color: var(--theme-color);
   border-radius: 50%;
   background: var(--white-color);
 }
@@ -5579,7 +5531,7 @@ ol.wp-block-rss {
 
 .aed-sec {
   border-radius: 30px !important;
-  background: #d8ece2;
+  background: #fff;
   width: 110px;
   height: 45px;
   text-align: center;
@@ -5718,8 +5670,6 @@ ol.wp-block-rss {
 .category-menu {
   position: absolute;
   text-align: left;
-  height: 100vh;
-  overflow-y: scroll;
   top: 100%;
   left: 0;
   background-color: var(--white-color);
@@ -7442,7 +7392,7 @@ blockquote.has-very-dark-gray-color {
 
 .blog-single .blog-img .slider-arrow:hover {
   background-color: var(--theme-color);
-  color: var(--black-color);
+  color: var(--white-color);
 }
 
 .slider-arrow:hover
@@ -9395,7 +9345,7 @@ table.woocommerce-product-attributes {
 
 .recent-product .product-content
 {
-  padding: 0px 10px 0;
+  padding: 20px 10px 0;
 }
 
 .img-first-box .box-subtitle
@@ -14825,30 +14775,16 @@ span.select2-selection.select2-selection--single:focus {
   margin-bottom: 20px;
   padding-left: 30px;
 }
-.banner-center-content
-{
-  padding-top: 50px;
-}
+
 .second-box .box-title
 {
-  margin-left: 50% !important;
+  margin-left: 50%;
  
 }
 
 .second-box .box-subtitle{
   margin-left: 50%;
  
-}
-
-a.sub-cat {
-  display: block;
-  background: #c7ffe2;
-  border: 1px solid #5cf5a6;
-  border-left: 0;
-  border-right: 0;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
 }
 
 .second-box .th-btn.btn-sm
@@ -14861,21 +14797,11 @@ a.sub-cat {
 {
   padding: 18px 20px;
 }
-.offer-box .box-title
-{
-  margin-left: 0%;
-}
+
 .offer-box {
   padding: 40px 30px;
   border-radius: 20px;
   background-position: center center;
- 
- 
-}
-
-.offer-box img
-{
-  border-radius: 5px;
 }
 
 .offer-box .box-subtitle {
@@ -14893,8 +14819,7 @@ a.sub-cat {
 
 .offer-box .box-title {
   margin-bottom: 23px;
-  color: #000;
-  font-size:22px;
+  color: #fff;
 }
 
 .offer-box  h4

@@ -923,7 +923,7 @@ textarea.is-invalid {
   display: inline-block;
   padding: 0;
   background-color: var(--theme-color);
-  color: var(--black-color);
+  color: var(--white-color);
   position: absolute;
   top: 50%;
   border: none;
@@ -1846,7 +1846,7 @@ textarea.is-invalid {
 }
 
 .scroll-top svg {
-  color: var(--black-color);
+  color: var(--theme-color);
   border-radius: 50%;
   background: var(--white-color);
 }
@@ -5579,7 +5579,7 @@ ol.wp-block-rss {
 
 .aed-sec {
   border-radius: 30px !important;
-  background: #d8ece2;
+  background: #fff;
   width: 110px;
   height: 45px;
   text-align: center;
@@ -5718,8 +5718,6 @@ ol.wp-block-rss {
 .category-menu {
   position: absolute;
   text-align: left;
-  height: 100vh;
-  overflow-y: scroll;
   top: 100%;
   left: 0;
   background-color: var(--white-color);
@@ -7442,7 +7440,7 @@ blockquote.has-very-dark-gray-color {
 
 .blog-single .blog-img .slider-arrow:hover {
   background-color: var(--theme-color);
-  color: var(--black-color);
+  color: var(--white-color);
 }
 
 .slider-arrow:hover
@@ -14825,10 +14823,7 @@ span.select2-selection.select2-selection--single:focus {
   margin-bottom: 20px;
   padding-left: 30px;
 }
-.banner-center-content
-{
-  padding-top: 50px;
-}
+
 .second-box .box-title
 {
   margin-left: 50% !important;
@@ -14838,17 +14833,6 @@ span.select2-selection.select2-selection--single:focus {
 .second-box .box-subtitle{
   margin-left: 50%;
  
-}
-
-a.sub-cat {
-  display: block;
-  background: #c7ffe2;
-  border: 1px solid #5cf5a6;
-  border-left: 0;
-  border-right: 0;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
 }
 
 .second-box .th-btn.btn-sm
@@ -14871,11 +14855,6 @@ a.sub-cat {
   background-position: center center;
  
  
-}
-
-.offer-box img
-{
-  border-radius: 5px;
 }
 
 .offer-box .box-subtitle {

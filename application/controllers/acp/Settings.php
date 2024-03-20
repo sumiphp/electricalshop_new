@@ -611,6 +611,21 @@ public function getbillingdetailsTable(){
 }
 
 
+
+public function getordersTable(){
+
+	if ($this->input->is_ajax_request()) {
+		//$this->data['carousal'] = $this->commonModel->getcarousal();
+		$this->data['billcustomers'] = $this->commonModel->get_listorders();
+	$this->load->view('acp/includes/ordersTable', $this->data);
+	}
+
+}
+
+
+
+
+
 public function getcustomersTable()
 {
 	if ($this->input->is_ajax_request()) {
@@ -734,6 +749,48 @@ $this->load->view('acp/listbillingdetails', $this->data);
 
 
 }
+
+
+
+public function listorders(){
+	$this->load->model('acp/Manage_common', 'commonModel');
+
+
+	$config = array();
+//$config["base_url"] = base_url()."acp/Settings/listmenus";
+$config["base_url"] = base_url()."acp/Settings/listorders";
+//$config["total_rows"] = $this->commonModel->get_countmenu();
+//$config["total_rows"] = $this->commonModel->get_countcarousel();
+$config["total_rows"] = $this->commonModel->get_countlistorders();
+$config["per_page"] = 10;
+$config["uri_segment"] = 3;
+$this->pagination->initialize($config);
+$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+$data["links"] = $this->pagination->create_links();	
+//$data['result']=$this->commonModel->get_menuadmin($config["per_page"],$page);
+//$data['result']=$this->commonModel->get_carousel($config["per_page"],$page);
+
+$data['result']=$this->commonModel->get_listorders($config["per_page"],$page);
+/*$data['contactus']=$this->sm->get_contactus();
+$data['newsletter']=$this->sm->get_newsletter();
+$data['siteinf']=$this->sm->get_siteinf();*/
+$this->data['page_title'] = "List Orders";
+$this->data['page_breadcrumb'] = array("Orders" => array('active' => false, 'link' => site_url().'acp/Settings/listbillingdetails'), ((empty($uid))? "List" : (($view)? "View" : "List" )) => array('active' => true, 'link' => ''));
+	//$this->data['page_breadcrumb'] = array("Products" => array('active' => false, 'link' => site_url().'acp/listmenus'), "Product Brands" => array('active' => false, 'link' => site_url().'acp/Productbrands'), "List Brands" => array('active' => true, 'link' => ''));
+	$this->data['innersub_menu_active'] = "List Orders";
+	//$this->load->view('acp/listcarousal1', $this->data);
+$this->load->view('acp/listorders', $this->data);
+
+
+
+}
+
+
+
+
+
+
+
 
 
 

@@ -59,10 +59,10 @@
                                 </p>
                                 <div class="th-social">
                                     <?php //print_r($sitedetails);?>
-                                    <a href="<?php echo $sitedetails['facebook_url']?>"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="<?php echo $sitedetails['facebook_url']?>" target='_blank'><i class="fab fa-facebook-f"></i></a>
                                      
-                                    <a href="<?php echo $sitedetails['twitter_url']?>"><i class="fab fa-twitter"></i></a>
-                                    <a href="<?php echo $sitedetails['site_linkldn']?>"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="<?php echo $sitedetails['instagram_url']?>" target='_blank' ><i class="fab fa-instagram"></i></a>
+                                    <a href="<?php echo $sitedetails['site_linkldn']?>" target='_blank'><i class="fab fa-linkedin-in"></i></a>
                                   
                                  
                                     <a href="<?=$sitedetails['whatsapp_number']?>"><i class="fab fa-whatsapp"></i></a>
