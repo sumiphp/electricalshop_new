@@ -31,24 +31,7 @@
         $slno = 0;
         foreach ($menu as $k => $res) {
             $slno++; ?>
-            <!--tr>
-                <td><?=$slno?></td>
-                <td><?=trim($brandVal['brand_name'])?></td>
-                <td><?=truncateString($brandVal['brand_desc'])?></td>
-                <td><?=date(SITE_DATE_FORMAT.' '.SITE_TIME_FORMAT, $brandVal['unix_brand_updated_date'])?></td>
-                <td>
-                    <ul class="d-flex justify-content-center">
-                        <li title="View" class="mr-3"><a href="<?=site_url()?>acp/Productbrand/view/<?=$brandVal['brand_id']?>" class="text-secondary"><i class="fa fa-eye"></i></a></li>
-                        <li title="Edit" class="mr-3"><a href="<?=site_url()?>acp/Productbrand/edit/<?=$brandVal['brand_id']?>" class="text-secondary"><i class="fa fa-pencil"></i></a></li>
-                        <?php if ($brandVal['brand_status'] == 1) { ?>
-                            <li title="Make unavailable" class="mr-3 lock" data-action="lock" data-brandid="<?=$brandVal['brand_id']?>"><a href="#"><i class="fa fa-unlock text-success"></i></a></li>
-                        <?php } else { ?>
-                            <li title="Make available" class="mr-3 unlock" data-action="unlock" data-brandid="<?=$brandVal['brand_id']?>"><a href="#"><i class="fa fa-lock text-danger"></i></a></li>
-                        <?php } ?>
-                        <li data-brandid="<?=$brandVal['brand_id']?>" data-action="delete" data-toggle="modal" data-target="#confirm" class="delete"><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
-                    </ul>
-                </td>
-            </tr-->
+            
 
             <tr role="row" class="odd" id="<?php echo $res['menuid'];?>" >
                                                       <td class="sorting_1"><?php echo $res['menuname'];?></td>
@@ -89,14 +72,10 @@
                                                       <td class="sorting_1"><?php echo $res['orderno'];?></td> 
                                                       <td>
                                                       <ul class="d-flex justify-content-center">
-                        <!--li title="View" class="mr-3"><a href="<?//=site_url()?>acp/Productbrand/view/<?php //echo $res['menuid'];?>" class="text-secondary"><i class="fa fa-eye"></i></a></li-->
+                      
                         <li title="Edit" class="mr-3"><a href="<?=site_url()?>acp/Settings/editmenu/<?php echo $res['menuid'];?>" class="text-secondary"><i class="fa fa-pencil"></i></a></li>
                         
-                        <?php// if ($brandVal['brand_status'] == 1) { ?>
-                            <!--li title="Make unavailable" class="mr-3 lock" data-action="lock" data-brandid="<?php echo $res['menuid'];?>"><a href="#"><i class="fa fa-unlock text-success"></i></a></li-->
-                        <?php //} else { ?>
-                            <!--li title="Make available" class="mr-3 unlock" data-action="unlock" data-menuid="<?php //echo $res['menuid'];?>"><a href="#"><i class="fa fa-lock text-danger"></i></a></li-->
-                        <?php //} ?>
+                       
                         <li data-menuid="<?php echo $res['menuid'];?>" data-action="delete" data-toggle="modal" data-target="#confirm" class="delete"><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
                     </ul>
                                                       </td>

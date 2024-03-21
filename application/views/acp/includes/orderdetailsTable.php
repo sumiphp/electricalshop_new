@@ -2,12 +2,12 @@
     <thead class="text-capitalize">
         <tr>
             <th>No</th>
-            <th>Customer Name:</th>
+            <th>Order:</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
            
-            <th>Grand Total</th>
-          
-            <th class="no-sorting">Order No</th>  <th>Details</th>
-           
+            <th class="no-sorting">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -21,24 +21,40 @@
                 <td><?=$slno?></td>
                 <td><?php //echo trim($customerVal['customer_id']);
                 
-                $custid=trim($customerVal['customer_id']);
-                $this->db->where('userid',$custid);
+                echo $orderid=trim($customerVal['order_id']);
+                /*$this->db->where('userid',$custid);
         $this->db->from('userlogin');
         $query = $this->db->get();
          $dt=$query->row();
-        // echo $this->db->last_query();
-            echo $dt->name.' '.$dt->lastname;    
+       
+            echo $dt->name.' '.$dt->lastname;*/    
+                
+                
+                ?></td> <td><?php //echo trim($customerVal['customer_id']);
+                
+                echo $orderid=trim($customerVal['product_id']);
+                /*$this->db->where('userid',$custid);
+        $this->db->from('userlogin');
+        $query = $this->db->get();
+         $dt=$query->row();
+       
+            echo $dt->name.' '.$dt->lastname;*/    
                 
                 
                 ?></td>
-
-                <td><?=$customerVal['grand_total']?></td>
+                 <td><?=$customerVal['quantity']?></td>
+                <td><?=$customerVal['sub_total']?></td>
               
-               
+              
 
                
-<td><?=$customerVal['id'];?></td> <td><a href=<?php echo base_url().'acp/Settings/orderdetails?ordid='.$customerVal['id'];?>>Details</a></td>
-                
+                <td>
+                    <ul class="d-flex justify-content-center">
+                       
+
+                        <li data-custid="<?=$customerVal['id']?>" data-action="delete" data-toggle="modal" data-target="#confirm" class="delete"><a href="#" class="text-danger"><i class="ti-trash"></i></a></li>
+                    </ul>
+                </td>
             </tr>
         <?php } ?>
     </tbody>

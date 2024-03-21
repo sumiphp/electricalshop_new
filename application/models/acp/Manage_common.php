@@ -203,11 +203,53 @@ public function get_listorders($bid = null)
 }
 
 
+function get_countlistorderdetails($orderid){
+
+	$this->db->where('order_id',$orderid);
+	$this->db->select('*');
+	//$this->db->from('customers');
+	$this->db->from('order_items');
+	$query = $this->db->get();
+	//echo $this->db->last_query();
+	return $rowcount = $query->num_rows();
+ 
+ 
+ }
 
 
+ function getdataorders($orderid){
+
+	$this->db->where('order_id',$orderid);
+	  $this->db->select('*');
+	  $this->db->from('order_items');
+	  $query = $this->db->get();
+	 // echo $this->db->last_query();
+	  return $query->result_array();
+ }
 
 
+ public function get_listorderdetails($per_page=null,$page=null,$orderid=null)
+ {
+	//$orderid=68;
+	$this->db->where('order_id',$orderid);
+	  $this->db->select('*');
+	  $this->db->from('order_items');
+	  $query = $this->db->get();
+	  //echo $this->db->last_query();
+	  return $query->result_array();
+  
+  }
 
+
+  public function get_listorderdetails1($orderid=null) {
+  $this->db->where('order_id',$orderid);
+  $this->db->select('*');
+  $this->db->from('order_items');
+  $query = $this->db->get();
+  //echo $this->db->last_query();
+  return $query->result_array();
+
+}
 
 
 

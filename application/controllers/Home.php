@@ -1327,7 +1327,7 @@ $this->load->view('bulkenquiry', $this->data);
        
         if ($serquery==''){
             //$serquery=$this->uri->segment(3) ;
-           echo "hhh".$serquery=  $this->session->userdata('serquery');
+           $serquery=$this->session->userdata('serquery');
         }
         if (empty($prod_slug) || ($prod_slug === 'listall')) {
 

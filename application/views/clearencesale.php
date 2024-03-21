@@ -171,7 +171,7 @@ Product list Area
                                 <div class="th-product product-grid">
                                     <div class="product-img">
                                         <img src="<?=site_url()?>assets/uploads/products/<?=$product['prod_primary_image']?>" alt="<?=$product['prod_name']?>" title="<?=$product['prod_name']?>">
-                                        <span class="product-tag"><?php echo $product['discountper'];?> OFF</span>
+                                        <span class="product-tag"><?php echo $product['discountper'];?>% OFF</span>
                                         <span class="product-tag-second">Sale</span>
                                         <div class="actions">
                                             <a href="<?=site_url().'product/'.$product['prod_canonial_name']?>" class="icon-btn popup-content1"><i class="far fa-eye"></i></a>
@@ -333,12 +333,12 @@ if ($product['addtoquote']==1){
     <div class="center-banner" data-bg-src="<?php echo base_url().'electricalshop1/assets/img/e-shop/banner-center.png';?>">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-5 col-md-5">
                     <div class="img-box">
                         <img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/box-product.png';?>"/>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-8">
+                <div class="col-lg-7 col-md-7">
                     <div class="banner-center-content">
                         <h2>Clearence Sale</h2>
                         <p>AMPS Electric Trading is one of the largest and reputed distributor and wholesaler of electrical, Electronics and Automation products in Doha-Qatar</p>
@@ -452,7 +452,7 @@ Cta Area
                     <div class="th-product product-grid">
                         <div class="product-img">
                             <img  src="<?=site_url()?>assets/uploads/products/<?=$product['prod_primary_image']?>" alt="<?=$product['prod_name']?>" alt="Product Image">
-                            <span class="product-tag"><?php echo $product['discountper'];?> OFF</span>
+                            <span class="product-tag"><?php echo $product['discountper'];?>% OFF</span>
                             <span class="product-tag-second">Sale</span>
                             <div class="actions">
                                 <a href="<?=site_url().'product/'.$product['prod_canonial_name']?>" class="icon-btn popup-content1"><i class="far fa-eye"></i></a>
