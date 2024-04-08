@@ -586,6 +586,16 @@ public function getcarousalTable()
 	}
 }
 
+
+
+public function getcurrencyTable()
+{
+	if ($this->input->is_ajax_request()) {
+		$this->data['currency'] = $this->commonModel->getcurrency();
+		$this->load->view('acp/includes/currencyTable', $this->data);
+	}
+}
+
 public function getcarousalTable1()
 {
 	if ($this->input->is_ajax_request()) {
@@ -689,6 +699,51 @@ $this->data['page_breadcrumb'] = array("Carousel" => array('active' => false, 'l
 //$this->load->view('acp/addmenu', $this->data);
 
 }
+
+
+
+
+public function listcurrency(){
+	$this->load->model('acp/Manage_common', 'commonModel');
+
+
+	$config = array();
+//$config["base_url"] = base_url()."acp/Settings/listmenus";
+$config["base_url"] = base_url()."acp/Settings/listcurrency";
+//$config["total_rows"] = $this->commonModel->get_countmenu();
+$config["total_rows"] = $this->commonModel->get_countcarousel();
+$config["per_page"] = 10;
+$config["uri_segment"] = 3;
+$this->pagination->initialize($config);
+$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+$data["links"] = $this->pagination->create_links();	
+//$data['result']=$this->commonModel->get_menuadmin($config["per_page"],$page);
+$data['result']=$this->commonModel->get_carousel($config["per_page"],$page);
+/*$data['contactus']=$this->sm->get_contactus();
+$data['newsletter']=$this->sm->get_newsletter();
+$data['siteinf']=$this->sm->get_siteinf();*/
+$this->data['page_title'] = "List Currency";
+$this->data['page_breadcrumb'] = array("Currency" => array('active' => false, 'link' => site_url().'acp/Settings/listcurrency'), ((empty($uid))? "List" : (($view)? "View" : "List" )) => array('active' => true, 'link' => ''));
+	//$this->data['page_breadcrumb'] = array("Products" => array('active' => false, 'link' => site_url().'acp/listmenus'), "Product Brands" => array('active' => false, 'link' => site_url().'acp/Productbrands'), "List Brands" => array('active' => true, 'link' => ''));
+	$this->data['innersub_menu_active'] = "List  Currency";
+	$this->load->view('acp/listcurrency', $this->data);
+
+
+//$this->load->view('acp/addmenu', $this->data);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //public function listcarousal1(){
@@ -912,6 +967,35 @@ public function action()
 			acp_show404();
 		}
 	}
+
+
+
+	public function actioncurrency()
+	{
+		if ($this->input->is_ajax_request()) {
+			// Fetching data from form
+			$brand = $this->input->post('brand', true);
+			$action = $this->input->post('action', true); // 2=> delete / 0=> lock / 1=> unlock
+			$resp = $this->commonModel->actioncurrency($brand, $action);
+			if ($resp) {
+				send_json_response(array('status' => 'success', 'title' => 'Success', 'message' => 'Carousel '.(($action == 'delete')? 'deleted' : (($action == 'unlock')? 'unlocked' : 'locked')).' successfully.'));
+			} else {
+				send_json_response(array('status' => 'error', 'title' => 'Error', 'message' => 'Oops! Something has went wrong.'));
+			}
+		} else {
+			acp_show404();
+		}
+	}
+
+
+
+
+
+
+
+
+
+
 
 
 	public function actioncust()

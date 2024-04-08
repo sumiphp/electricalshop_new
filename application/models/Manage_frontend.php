@@ -408,7 +408,9 @@ class Manage_frontend extends CI_Model
     {
         $getBrands = array();
         $this->db->select('B.*, UNIX_TIMESTAMP(B.brand_updated_date) AS unix_brand_updated_date')->from('brands B');
-        $this->db->where_in('B.brand_status', array(0, 1));
+        $this->db->where_in('B.brand_status', array( 1));
+
+        //$this->db->where('B.brand_status', array(0, 1));
         if (!empty($bid)) {
             $this->db->where(array('B.brand_id' => $bid));
             $getBrands = $this->db->get()->row_array();
@@ -417,15 +419,18 @@ class Manage_frontend extends CI_Model
             if (isset($sort['field']) && isset($sort['order'])) $this->db->order_by($sort['field'], $sort['order']);
             else $this->db->order_by('B.brand_id', 'DESC');
         } else {
-            $this->db->order_by('B.brand_id', 'DESC');
+            //$this->db->order_by('B.brand_id', 'DESC');
         }
         if (!empty($limit)) {
             if (isset($limit['offset'])) $this->db->limit($limit['limit'], $limit['offset']);
             else $this->db->limit($limit['limit'], 0);
         }
         if (empty($bid)) {
-            $getBrands = $this->db->order_by('B.brand_id', 'DESC')->get()->result_array();
+            //$getBrands = $this->db->order_by('B.brand_id', 'ASC')->get()->result_array();
+            $getBrands = $this->db->order_by('B.brand_orderno', 'ASC')->get()->result_array();
         }
+
+         //echo $this->db->last_query();
         return $getBrands;
     }
 

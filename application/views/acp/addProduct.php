@@ -88,7 +88,7 @@
                                         </div>
 
                                         <div class="col-md-6 mb-3">
-                                            <label for="prod_desc" class="col-form-label">Product category*</label>
+                                            <label for="prod_desc" class="col-form-label">Product categoryy*</label>
                                             <select class="form-control" id="prod_brand" name="prod_brand" required="required" style="height: 45px;">
                                                 <option value="">Choose category</option>
                                                 <?php foreach ($brands as $key => $brand) { ?>

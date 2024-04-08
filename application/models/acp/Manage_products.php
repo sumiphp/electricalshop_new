@@ -240,6 +240,8 @@ class Manage_products extends CI_Model
                 'instock'=>trim($prod['instock']),
                 'prdshdesc'=>trim($prod['prdshdesc']),
                 'prod_price'=>trim($prod['prod_price']),
+                'prod_price2'=>trim($prod['prod_price']),
+                'prod_price3'=>trim($prod['prod_price']),
                 
             );
 

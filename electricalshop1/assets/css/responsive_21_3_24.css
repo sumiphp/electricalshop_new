@@ -120,11 +120,6 @@
         height: auto;
     }
 
-    .th-btn
-    {
-        margin-bottom: 10px;
-    }
-
 }
 
 
@@ -158,63 +153,6 @@
 
 /* Mobile Layout: 320px. */
 @media only screen and (max-width: 767px) {
-
-    .th-btn
-    {
-        margin-bottom: 10px;
-    }
-
-    .store-content {
-        text-align: center;
-    }
-
-    .inner-banner-content
-    {
-        text-align: center;
-    }
-
-    .banner-center-content
-    {
-        text-align: center;
-    }
-
-    .add-cart-btn
-    {
-        position: relative;
-        bottom: 0;
-    }
-
-    .product-content
-    {
-        height: auto;
-    }
-
-    .th-product
-    {
-        min-height: auto;
-    }
-
-    .our-store-bg h2 {
-        color: #000;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .our-store-bg h3
-    {
-        font-size: 14px;
-    }
-
-    .our-store-bg p {
-      text-align: center;
-    }
-    
-    p 
-
-    .inner-banner-content
-    {
-        text-align: center;
-    }
 
     .product-grid img
     {

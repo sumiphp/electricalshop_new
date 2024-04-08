@@ -286,6 +286,15 @@ function get_countlistorderdetails($orderid){
 	
 	}
 
+	function get_countcurrency(){
+		$this->db->select('*');
+			$this->db->from('currencyconversion');
+			$query = $this->db->get();
+			return $query->num_rows();
+		
+		
+		}
+
 
 
 	function get_countsubscribers(){
@@ -324,6 +333,41 @@ function get_countlistorderdetails($orderid){
 	
 	
 	}
+
+
+	public function get_currency($limit,$start){
+		$this->db->limit($limit,$start);
+		//$this->db->limit($limit,$start);
+		$this->db->select('*');
+		$this->db->from('currencyconversion');
+		$query = $this->db->get();
+		return $query->result_array();
+	
+	
+	
+	}
+
+
+
+
+
+	public function getcurrency(){
+		//$this->db->limit($limit,$start);
+		//$this->db->limit($limit,$start);
+		$this->db->select('*');
+		$this->db->from('currencyconversion');
+		$query = $this->db->get();
+		return $query->result_array();
+	
+	
+	
+	}
+
+
+
+
+
+
 	public function getcarousalrow($id){
 
 $this->db->where('carouselid',$id);
@@ -404,6 +448,38 @@ $this->db->where('carouselid',$id);
 		}
         return false;
 	}
+
+
+
+
+	public function actioncurrency($currency = null, $action = null)
+	{
+		//$menu=37;
+		if (!empty($currency) && !empty($action)) {
+			if ($action == 'delete') { // Delete this product
+                //$this->db->update("{$this->table["brands"]}", array('brand_status' => 2), array('menuid' => $menu)));
+
+				$this->db->where('currencyid',$currency);
+                $this->db->delete('currencyconversion');
+                return true;
+			} else if ($action == 'unlock') { // Make available in frontend
+				//$this->db->update("{$this->table["brands"]}", array('brand_status' => 1), array('menuid' => $menu)));
+                return true;
+			} else if ($action == 'lock') { // Make unavailable in frontend
+				//$this->db->update("{$this->table["brands"]}", array('brand_status' => 0), array('menuid' => $menu)));
+                return true;
+			}
+		}
+        return false;
+	}
+
+
+
+
+
+
+
+
 
 
 	public function actioncust($custid = null, $action = null)

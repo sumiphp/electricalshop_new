@@ -5949,7 +5949,7 @@ ul.price-sec
 
 .category-menu a:hover {
   background-color: var(--smoke-color2);
-  color: var(--theme-color);
+  color: var(--black-color);
 }
 
 .category-menu.close-category {

@@ -432,7 +432,7 @@ if ($product['addtoquote']==1){
         
         ?>
                                             
-                                            <div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>                            
+                                            <div class="part-no">SKU :<?=$partdt->prod_dt_desc;?></div>                            
                                             
                                             
                                             <!--del class="right">-$06.99</del--></span>
@@ -609,7 +609,7 @@ if ($product['addtoquote']==1){
         
         ?><!--del class="right"><?//=$currency?>06.99</del-->
         
-        <div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>
+        <div class="part-no">SKU :<?=$partdt->prod_dt_desc;?></div>
     
     
     </span>
@@ -799,7 +799,7 @@ Cta Area
                         </div>
                         <div class="product-content">
                           
-                            <h3 class="product-title"><a href="<?php echo site_url().'product/'.$product['prod_canonial_name']?>" ><?=$product['prod_id']?> <?=$product['prod_name']?></a></h3>
+                            <h3 class="product-title"><a href="<?php echo site_url().'product/'.$product['prod_canonial_name']?>" ><?//=$product['prod_id']?> <?=$product['prod_name']?></a></h3>
                             <div class="star-rating mt-2" role="img" aria-label="Rated 3.00 out of 5">
                                 <span>Rated <strong class="rating">3.00</strong> out of 5 based on <span class="rating">1</span> customer rating</span>
                             </div>
@@ -827,7 +827,7 @@ Cta Area
         $partdt=$query->row();
         
         ?>
-                      <div class="part-no">PartNo :<?=$partdt->prod_dt_desc;?></div>           
+                      <div class="part-no">SKU :<?=$partdt->prod_dt_desc;?></div>           
                                 
                                 
                                 <!--del class="right">$06.99</del--></span>
@@ -920,6 +920,8 @@ Our Store Sec
             <div class="row">
 
             <?php 
+
+            //print_r($brands);
                  
                     
                  foreach ($brands as $brand) { ?>

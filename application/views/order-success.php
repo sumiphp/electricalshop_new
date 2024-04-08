@@ -207,7 +207,7 @@ Checkout Arae
         <td></td>
         <td></td>
         <td><strong>Cart Total</strong></td>
-        <td class="text-right"><strong><?php echo '$'.$this->cart->total().' USD'; ?></strong></td>
+        <td class="text-right"><strong class="amount"><?php echo '$'.$this->cart->total().' USD'; ?></strong></td>
         <td></td>
     </tr>
     <?php } ?>

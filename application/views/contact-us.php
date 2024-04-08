@@ -464,7 +464,7 @@ Contact Info Area
                           
                           
                             <div class="contact-feature">
-                                <div class="box-icon">
+                                <div class="box-icon bg-title">
                                     <i class="fa-light fa-location-dot"></i>
                                 </div>
                                 <div class="media-body">
@@ -508,8 +508,9 @@ echo $dt->country_name;
                            
                          
                             <div class="contact-feature">
-                                <div class="box-icon bg-theme2">
+                                <div class="box-icon bg-title">
                                     <i class="fa-light fa-phone"></i>
+                                    
                                 </div>
                                 <div class="media-body">
                                     <h3 class="box-title">Phone Number</h3>
