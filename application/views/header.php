@@ -161,8 +161,16 @@
 
                             <div class="dropdown-link aed-sec">
                                 <a class="" href="#" ><img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/menu-icon.png';?>" alt="menuicon"  />  QAR</a>
+
+                                <select name='curr' onchange=curchange(this.value);>
+                                    <option>QAR</option>
+                                <option>SAR</option>
+                                <option>USD</option>
+                            </select>
                                
                             </div>
+
+                            
                          
                         </div>
                     </div>
@@ -194,6 +202,9 @@
     document.getElementById("cartbt").onclick = function () {
         location.href = "<?php echo base_url('cart'); ?>";
     };
+
+   
+
 </script>
 
 

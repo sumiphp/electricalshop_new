@@ -207,7 +207,7 @@ Checkout Arae
         <td></td>
         <td></td>
         <td><strong>Cart Total</strong></td>
-        <td class="text-right"><strong class="amount"><?php echo '$'.$this->cart->total().' USD'; ?></strong></td>
+        <td class="text-right"><strong class="amount" style='color:black'><?php echo '$'.$this->cart->total().' USD'; ?></strong></td>
         <td></td>
     </tr>
     <?php } ?>
@@ -224,7 +224,9 @@ Checkout Arae
                         </tr>
                         <tr class="order-total">
                             <th>Total</th>
-                            <td data-title="Total" colspan="4"><strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span><?php   $net=$order['grand_total']+$sitedetails['shippingamount'];
+<td data-title="Total" colspan="4"><strong><span class="woocommerce-Price-amount amount"  style='color:black'><bdi>
+    <span class="woocommerce-Price-currencySymbol"  style='color:black'>$</span>
+    <?php   $net=$order['grand_total']+$sitedetails['shippingamount'];
                                     echo $net.' USD';//echo $order['grand_total'].' USD'; ?></bdi></span></strong>
                             </td>
                         </tr>

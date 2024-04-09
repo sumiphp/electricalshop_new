@@ -107,7 +107,22 @@ label.error.errpopupmsg {
         </div>
     </div-->
 
-    <?php include('header.php');?>
+    <?php include('header.php');
+    
+    if (isset($_GET['cur']))
+    {
+       $cur=$_GET['cur']; 
+    }
+    else{
+        $cur=''; 
+    }
+    
+    
+    
+    
+    
+    
+    ?>
 
     <!--==============================
 Hero Area
@@ -785,6 +800,18 @@ var orderby=$(".orderby").val();
 }
 
 
+
+
+function curchange(val){
+   <?php $url=base_url().'Home/searchproducts';
+
+
+
+?>
+
+    alert("curchange");
+    location.href="<?php echo $url;?>"+'?cur='+val;
+}
 
 
 

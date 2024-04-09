@@ -10,7 +10,23 @@ label.error.errpopupmsg {
 }
 
 </style>
-<?php echo htmlspecialchars_decode($getga->site_ga_code); ?>
+
+
+
+<?php echo htmlspecialchars_decode($getga->site_ga_code); 
+
+if (isset($_GET['cur']))
+{
+   $cur=$_GET['cur']; 
+}
+else{
+    $cur=''; 
+}
+
+
+
+
+?>
 
 
 <head>
@@ -414,8 +430,20 @@ if ($product['addtoquote']==1){
         $this->db->from('product_details');
         $query = $this->db->get();
         $pricedt=$query->row();
+        if ($cur=='SAR'){
+            echo 'SAR '.$product['prod_price2'];
+
+        }
+        else if ($cur=='USD'){
+            echo 'USD '.$product['prod_price3'];
+
+        }
         
+        
+        
+        else{
         echo  $currency.' '.$pricedt->prod_dt_desc;
+        }
 
 
 
@@ -595,8 +623,22 @@ if ($product['addtoquote']==1){
         $this->db->from('product_details');
         $query = $this->db->get();
         $pricedt=$query->row();
+
+        if ($cur=='SAR'){
+            echo 'SAR '.$product['prod_price2'];
+
+        }
+        else if ($cur=='USD'){
+            echo 'USD '.$product['prod_price3'];
+
+        }
         
+        
+        
+        else{
         echo  $currency.' '.$pricedt->prod_dt_desc;
+        }
+        //echo  $currency.' '.$pricedt->prod_dt_desc;
 
 
         $this->db->where('prod_dt_prodid',$product['prod_id']);
@@ -815,7 +857,22 @@ Cta Area
         $query = $this->db->get();
         $pricedt=$query->row();
         
+        //echo  $currency.' '.$pricedt->prod_dt_desc;
+
+        if ($cur=='SAR'){
+            echo 'SAR '.$product['prod_price2'];
+
+        }
+        else if ($cur=='USD'){
+            echo 'USD '.$product['prod_price3'];
+
+        }
+        
+        
+        
+        else{
         echo  $currency.' '.$pricedt->prod_dt_desc;
+        }
 
 
         $this->db->where('prod_dt_prodid',$product['prod_id']);
@@ -1053,6 +1110,23 @@ $.ajax({
         });
 
 }
+
+
+function curchange(val){
+   <?php $url=base_url();
+
+
+
+?>
+
+    alert("curchange");
+    location.href="<?php echo $url;?>"+'?cur='+val;
+}
+
+
+
+
+
     
 </script>
 

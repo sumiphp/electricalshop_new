@@ -43,9 +43,25 @@
     if (isset($sitecurrency)) {
         $currency = $sitecurrency['currency'];
     }
+
+
+
     
+    if (isset($_GET['cur']))
+{
+   $cur=$_GET['cur']; 
+}
+else{
+    $cur=''; 
+}
+    
+    echo $cur;
     
     ?>
+
+
+
+
 
 <style>
 label.error.errpopupmsg {
@@ -265,7 +281,26 @@ Product list Area
         $query = $this->db->get();
         $pricedt=$query->row();
         
+        //echo  $currency.' '.$pricedt->prod_dt_desc;
+
+
+        
+        if ($cur=='SAR'){
+            echo 'SAR '.$product['prod_price2'];
+
+        }
+        else if ($cur=='USD'){
+            echo 'USD '.$product['prod_price3'];
+
+        }
+        
+        
+        
+        else{
         echo  $currency.' '.$pricedt->prod_dt_desc;
+        }
+
+
 
 
         $this->db->where('prod_dt_prodid',$product['prod_id']);
@@ -575,7 +610,22 @@ Cta Area
         $query = $this->db->get();
         $pricedt=$query->row();
         
+        //echo  $currency.' '.$pricedt->prod_dt_desc;
+        if ($cur=='SAR'){
+            echo 'SAR '.$product['prod_price2'];
+
+        }
+        else if ($cur=='USD'){
+            echo 'USD '.$product['prod_price3'];
+
+        }
+        
+        
+        
+        else{
         echo  $currency.' '.$pricedt->prod_dt_desc;
+        }
+
         
        
         
@@ -815,6 +865,39 @@ submitHandler: function(form) {
 }
 
 });  
+
+
+
+
+function curchange(val){
+   <?php $url=base_url().'Home/searchproducts';
+
+
+
+?>
+
+    alert("curchange");
+    var pURL = window.location.href.split('?')[0]; 
+    alert(pURL)
+    //location.href="<?php //echo $url;?>"+'?cur='+val;
+
+    location.href=pURL+'?cur='+val;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

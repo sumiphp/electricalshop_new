@@ -40,6 +40,16 @@
     if (isset($sitecurrency)) {
         $currency = $sitecurrency['currency'];
     }
+
+
+
+    if (isset($_GET['cur']))
+{
+   $cur=$_GET['cur']; 
+}
+else{
+    $cur=''; 
+}
     
     
     ?>
@@ -234,7 +244,27 @@ if ($product['addtoquote']==1){
         $query = $this->db->get();
         $pricedt=$query->row();
         
+        //echo  $currency.' '.$pricedt->prod_dt_desc;
+
+        if ($cur=='SAR'){
+            echo 'SAR '.$product['prod_price2'];
+
+        }
+        else if ($cur=='USD'){
+            echo 'USD '.$product['prod_price3'];
+
+        }
+        
+        
+        
+        else{
         echo  $currency.' '.$pricedt->prod_dt_desc;
+        }
+
+
+
+
+
 
         $this->db->where('prod_dt_prodid',$product['prod_id']);
         $this->db->where('prod_dt_typeid',15);
@@ -511,7 +541,22 @@ Cta Area
         $query = $this->db->get();
         $pricedt=$query->row();
         
+        //echo  $currency.' '.$pricedt->prod_dt_desc;
+
+        if ($cur=='SAR'){
+            echo 'SAR '.$product['prod_price2'];
+
+        }
+        else if ($cur=='USD'){
+            echo 'USD '.$product['prod_price3'];
+
+        }
+        
+        
+        
+        else{
         echo  $currency.' '.$pricedt->prod_dt_desc;
+        }
 
 
 
@@ -629,7 +674,19 @@ Cta Area
 			Code End  Here 
 	******************************** -->
 <!-- whatsapp -->
+<script>
 
+function curchange(val){
+   <?php $url=base_url().'clearencesale';
+
+
+
+?>
+
+    alert("curchange");
+    location.href="<?php echo $url;?>"+'?cur='+val;
+}
+</script>
 
 
     <script src="<?php echo base_url().'electricalshop1/assets/js/vendor/jquery-3.6.0.min.js';?>"></script>
