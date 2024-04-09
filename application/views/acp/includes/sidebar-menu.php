@@ -135,9 +135,17 @@ Subscribers</span></a>
                     </li>
 
 
-                    <li class="<?=(($main_menu_active == 'Meta tag')? 'active' : '')?>" style="<?=((!hasUserAccess(13))? 'display:none;' : '')?>">
-                        <a href="<?=site_url()?>acp/Settings/listcurrency" aria-expanded="true"><i class="fa fa-quote-right"></i><span>Currency Conversion</span></a>
+                    <li class="<?=(($main_menu_active == 'Clients')? 'active' : '')?>" style="<?=((!hasUserAccess(3))? 'display:none1;' : '')?>">
+                        <a href="#" aria-expanded="true"><i class="fa fa-users"></i><span>Currency Conversion</span></a>
+                        <ul class="collapse <?=(($main_menu_active == 'Clients')? 'in' : '')?>">
+                            <li><a href="<?=site_url()?>acp/Settings/listcurrency">List Currency Conversion</a></li>
+                            <li><a href="<?=site_url()?>acp/Settings/addcurrncy">Add  Currency Conversion</a></li>
+                        </ul>
                     </li>
+
+
+
+                   
 
 
                     <li class="<?//=(($main_menu_active == 'Meta tag')? 'active' : '')?>" style="<?//=((!hasUserAccess(13))? 'display:none;' : '')?>">

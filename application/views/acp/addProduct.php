@@ -200,6 +200,20 @@
                 Products.add();
             });
         <?php } ?>
+
+        
+
+
+       
+
+
+
+$('#4_price').on('input', function() {
+    alert("hhhh");
+  //$('#prodprice1').val($(this).val());
+});
+
+
     </script>
 </body>
 

@@ -1089,6 +1089,29 @@ public function action()
 	}
 
 
+
+	public function addcurrncy($cid = null, $view = false)
+	{
+		$this->data['page_title'] = ((empty($cid))? "Add" : (($view)? "View" : "Edit" ))."Currency Rate";
+		$this->data['page_breadcrumb'] = array("Currency Rate" => array('active' => false, 'link' => site_url().'acp/Settings/listcarousal'), ((empty($uid))? "Add" : (($view)? "View" : "Edit" )) => array('active' => true, 'link' => ''));
+		//$this->data['page_breadcrumb'] = array("Products" => array('active' => false, 'link' => site_url().'acp/Products'), "Product Brands" => array('active' => false, 'link' => site_url().'acp/Productbrands'), ((empty($cid))? "Add" : (($view)? "View" : "Edit" )) => array('active' => true, 'link' => ''));
+		$this->data['innersub_menu_active'] = ((empty($cid))? "Add Currency Rate" : "List Currency Rate");
+		$this->data['productbrand'] = array();
+		if (!empty($cid)) {
+			$this->data['productbrand'] = $this->acpProducts->getBrands($cid);
+		}
+		$this->load->view('acp/addcurrency', $this->data);
+	}
+
+
+
+
+
+
+
+
+
+
 	public function editcarousel($cid = null, $view = false)
 	{
 		$this->data['page_title'] = ((empty($cid))? "Add" : (($view)? "View" : "Edit" ))."Carousel";
@@ -1348,6 +1371,34 @@ public function action()
 		}
 	}
 
+	public function savecurrencyconversion(){
+
+		$date=$this->input->post('date');
+		$curr=$this->input->post('curr');
+		$amount=$this->input->post('amount');
+		$data = array(
+			//'description' =>"$description",
+			//'link' =>"$link",
+			'date'=>"$date",
+			'currency'=>"$curr",
+			'amount'=>"$amount",
+			//'title4'=>"$title4",
+			//'picture'=>$image1,
+			//'alttagimg1'=>"$alttag1",
+			//'active'=>"$status"		
+		 );
+		 //print_r($data);
+		 //$id=$this->uri->segment(3); 
+		 //$this->db->where('testimonialid',$id);
+		  //$this->db->update('testimonials', $data);
+		  //$this->db->insert('problems', $data);
+		  
+		  $this->db->insert('currencyconversion', $data);
+		 echo ($this->db->affected_rows() != 1) ? 'Error in Adding Currency Rate' : '<b>Currency Rate Added Successfully</b>';
+   
+
+
+	}
 
 	public function savecarousel(){
 

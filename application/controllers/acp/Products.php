@@ -120,6 +120,9 @@ class Products extends CI_Controller {
 				}
 			}
 
+
+
+
 			$productAdd = array(
 				'prod_name' => trim($prod['prodname']),
 				'prod_canonial_name' => trim($prod['prod_canonial_name']),
@@ -142,8 +145,8 @@ class Products extends CI_Controller {
 				'instock'=>trim($prod['instock']),
 				'prdshdesc'=>trim($prod['prdshdesc']),
 				'prod_price'=>trim($prod['4_price']),
-				'prod_price2'=>trim($prod['4_price']),
-				'prod_price3'=>trim($prod['4_price']),
+				//'prod_price2'=>trim($prod['4_price']),
+				//'prod_price3'=>trim($prod['4_price']),
 			);
 
 
