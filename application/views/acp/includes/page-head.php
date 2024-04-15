@@ -7,7 +7,7 @@
                 <ul class="breadcrumbs pull-left">
                     <?php 
                     
-                  print_r($page_breadcrumb);
+                  //print_r($page_breadcrumb);
                     
                     foreach ($page_breadcrumb as $breadcrumb => $detail) { ?>
                         <li><?=((!empty($detail['link']))? '<a href="'.$detail['link'].'"><span>'.ucwords($breadcrumb).'</span></a>' : '<span>'.ucwords($breadcrumb).'</span>')?></li>

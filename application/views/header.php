@@ -148,31 +148,36 @@
                         
                         <?php }?>
 
-                           
+                       
                            
                             <a href="<?php echo base_url().'wishlist';?>" class="icon-btn d-none d-sm-block">
                                 <span class="badge wishlistcount"><?php echo $wishlistcount;?></span>
                                 <i class="far fa-heart"></i>
                             </a>
+
+
+                           
                             <button type="button" class="icon-btn sideMenuToggler" id="cartbt">
                                 <span class="badge"><?php echo $this->cart->total_items();?></span>
                                 <i class="far fa-cart-shopping"></i>
-                            </button>
+                            </button> 
 
                             <div class="dropdown-link aed-sec">
                                 <a class="" href="#" ><img src="<?php echo base_url().'electricalshop1/assets/img/e-shop/menu-icon.png';?>" alt="menuicon"  />  QAR</a>
 
-                                <select name='curr' onchange=curchange(this.value);>
-                                    <option>QAR</option>
-                                <option>SAR</option>
-                                <option>USD</option>
-                            </select>
+                                
                                
                             </div>
 
                             
                          
-                        </div>
+                        </div> 
+
+                        <select name='curr' onchange=curchange(this.value); style='width:20%;display:inline'>
+                                    <option>QAR</option>
+                                <option>SAR</option>
+                                <option>USD</option>
+                            </select>
                     </div>
                 </div>
             </div>

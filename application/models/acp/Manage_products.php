@@ -216,11 +216,35 @@ class Manage_products extends CI_Model
 	{
 
 
-        $this->db->where('date',$url);
+        $date=Date('Y-m-d');
+        $this->db->limit(1);
+        $this->db->order_by('currencyid', 'desc');
+        $this->db->where('currency','SAR');
+    
+        $this->db->where('date <=',date('Y-m-d'));
         $this->db->select('*');
 $this->db->from('currencyconversion');
 $query = $this->db->get();
-$rowcount = $query->row();
+$row = $query->row();
+//secho $this->db->last_query();
+$amo1=$row->amount;
+$saramo=$amo1*$prod['prod_price'];
+$sarrate=$amo1;
+
+$this->db->limit(1);
+$this->db->order_by('currencyid', 'desc');
+$this->db->where('currency','USD');
+    $this->db->where('date <=',date('Y-m-d'));
+        $this->db->select('*');
+$this->db->from('currencyconversion');
+$query = $this->db->get();
+$row = $query->row();
+$amo2=$row->amount;
+$usdamo=$amo2*$prod['prod_price'];
+$usdrate=$amo2;
+
+
+
         $saveProduct = array();
         if (!empty($prod)) {            
             // Save product
@@ -247,8 +271,10 @@ $rowcount = $query->row();
                 'instock'=>trim($prod['instock']),
                 'prdshdesc'=>trim($prod['prdshdesc']),
                 'prod_price'=>trim($prod['prod_price']),
-                //'prod_price2'=>trim($prod['prod_price']),
-                //'prod_price3'=>trim($prod['prod_price']),
+                'prod_price2'=>trim($saramo),
+                'prod_price3'=>trim($usdamo),
+                'sarrate'=>$sarrate,
+                'usdrate'=>$usdrate
                 
             );
 

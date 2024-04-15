@@ -154,13 +154,13 @@ Hero Area
                     if (isset($catdt)){
                     
                     
-                    echo $catdt->cat_shdesc; }?>
+                    echo "".$catdt->cat_shdesc; }?>
                     
                     <?php 
                     if (isset($branddt)){
                     
                     
-                    echo $branddt->brandshortdesc; }?> 
+                    echo "".$branddt->brandshortdesc; }?> 
                 
                 
                 

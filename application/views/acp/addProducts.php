@@ -215,21 +215,21 @@
 
 
 
-                                                            <div class="form-group row">
+                                                            <div class="form-group row" style='display:none'>
 																<div class="col-md-12 mb-3"><?php //print_r($prodMain);?>
                                                                    
                                                                     <label for="prodname" class="col-form-label">Product Price2*</label>
-																	<input class="form-control" type="text" id="prodprice1" name="prodprice1" placeholder="Enter Product Price1" value="<?=((isset($prodMain['prod_price2']) && !empty($prodMain['prod_price2']))? $prodMain['prod_price2'] : '')?>" required="required">
+																	<input class="form-control" value=0 type="text" id="prodprice1" name="prodprice1" placeholder="Enter Product Price1" value="<?=((isset($prodMain['prod_price2']) && !empty($prodMain['prod_price2']))? $prodMain['prod_price2'] : '')?>" required="required">
                                                                    
 																</div>
 															</div>
 
 
-                                                            <div class="form-group row">
+                                                            <div class="form-group row" style='display:none'>
 																<div class="col-md-12 mb-3"><?php //print_r($prodMain);?>
                                                                    
                                                                     <label for="prodname" class="col-form-label">Product Price3*</label>
-																	<input class="form-control" type="text" id="prodprice2" name="prodprice2" placeholder="Enter Product Price1" value="<?=((isset($prodMain['prod_price3']) && !empty($prodMain['prod_price3']))? $prodMain['prod_price3'] : '')?>" required="required">
+																	<input class="form-control" value=0 type="text" id="prodprice2" name="prodprice2" placeholder="Enter Product Price1" value="<?=((isset($prodMain['prod_price3']) && !empty($prodMain['prod_price3']))? $prodMain['prod_price3'] : '')?>" required="required">
                                                                    
 																</div>
 															</div>
@@ -355,7 +355,7 @@
                                                                 <div class="form-group row">
                                                                     <div class="col-md-12 mb-3">
 
-                                                                    <label for="mostviewed" class="col-form-label"> Most viewed Product----</label>
+                                                                    <label for="mostviewed" class="col-form-label"> Most viewed Product</label>
                                                                     <select class="form-control" id="mostviewed" name="mostviewed" style="height:43px;" required>
 																	<option value="">Select</option>
 
@@ -434,20 +434,21 @@
                                                                         <label for="cust_opt_in" class="col-form-label pl-2">Featured</label>
                                                                     </div>
                                                                     <div class="col-md-3 mb-3">
-                                                                        <input type="checkbox" name="prod_opt_type[]" value="2" <?=((!empty($prod_opt_type))? ((in_array(2, $prod_opt_type))? 'checked="checked"' : '') : 'checked="checked"')?> >
-                                                                        <label for="cust_opt_in" class="col-form-label pl-2">New Arrival</label>
+                                                                        <input type="checkbox" name="prod_opt_type[]" value="2" <?=((!empty($prod_opt_type))? ((in_array(2, $prod_opt_type))? 'checked="checked"' : '') : '')?> >
+                                                                        <label for="cust_opt_in" class="col-fo
+                                                                        rm-label pl-2">New Arrival</label>
                                                                     </div>
                                                                     <div class="col-md-3 mb-3">
                                                                         <input type="checkbox" name="prod_opt_type[]" value="3" <?=((!empty($prod_opt_type))? ((in_array(3, $prod_opt_type))? 'checked="checked"' : '') : '')?> >
                                                                         <label for="cust_opt_in" class="col-form-label pl-2">Best Selling</label>
                                                                     </div>
                                                                     <div class="col-md-3 mb-3">
-                                                                        <input type="checkbox" name="prod_opt_type[]" value="4" <?=((!empty($prod_opt_type))? ((in_array(4, $prod_opt_type))? 'checked="checked"' : '') : 'checked="checked"')?> >
+                                                                        <input type="checkbox" name="prod_opt_type[]" value="4" <?=((!empty($prod_opt_type))? ((in_array(4, $prod_opt_type))? 'checked="checked"' : '') : '')?> >
                                                                         <label for="cust_opt_in" class="col-form-label pl-2">On Sale</label>
                                                                     </div>
 
                                                                     <div class="col-md-3 mb-3">
-                                                                        <input type="checkbox" name="prod_opt_type[]" value="5" <?=((!empty($prod_opt_type))? ((in_array(5, $prod_opt_type))? 'checked="checked"' : '') : 'checked="checked"')?> >
+                                                                        <input type="checkbox" name="prod_opt_type[]" value="5" <?=((!empty($prod_opt_type))? ((in_array(5, $prod_opt_type))? 'checked="checked"' : '') : '')?> >
                                                                         <label for="cust_opt_in" class="col-form-label pl-2">Clearence Sale</label>
                                                                     </div>
 
